@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/garretthead-portfolio/static/css/main.14b2c4be.css",
+    "main.js": "/garretthead-portfolio/static/js/main.61f6d887.js",
+    "static/media/Tiger.png": "/garretthead-portfolio/static/media/Tiger.684e82e642058ac0fc41.png",
+    "static/media/Background.jpg": "/garretthead-portfolio/static/media/Background.7e71d0a594e42c092829.jpg",
+    "static/media/McNeese.png": "/garretthead-portfolio/static/media/McNeese.31748a6c30379d2c51e6.png",
+    "static/media/InCentrik.png": "/garretthead-portfolio/static/media/InCentrik.3d21d3ff96db3c5f0031.png",
+    "index.html": "/garretthead-portfolio/index.html",
+    "main.14b2c4be.css.map": "/garretthead-portfolio/static/css/main.14b2c4be.css.map",
+    "main.61f6d887.js.map": "/garretthead-portfolio/static/js/main.61f6d887.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.14b2c4be.css",
+    "static/js/main.61f6d887.js"
+  ]
+}
