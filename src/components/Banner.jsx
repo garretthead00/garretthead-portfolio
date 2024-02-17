@@ -12,7 +12,7 @@ const Banner = () => {
       className="min-h-[85vh] lg:min-h-[78vh] flex items-center"
     >
       <div className="container mx-auto">
-        <div className="flex flex-col gap-y-8 lg:flex-row lg:items-center lg:gap-x-12">
+        <div className="flex flex-col-reverse gap-y-8 lg:flex-row lg:items-center lg:gap-x-12">
           <div className="flex-1 text-center font-secondary lg:text-left">
             <motion.h1
               variants={fadeIn("up", 0.3)}
@@ -73,7 +73,7 @@ const Banner = () => {
             variants={fadeIn("down", 0.3)}
             initial="hidden"
             whileInView={"show"}
-            className="flex-1 lg:flex lg:max-w-[482px] mix-blend-lighten"
+            className="flex-1 lg:flex mx-auto max-w-[482px] mix-blend-lighten"
           >
             <img src={Tiger} alt="" />
           </motion.div>

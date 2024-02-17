@@ -6,6 +6,7 @@ import NavBar from "./components/NavBar";
 import Resume from "./components/Resume";
 
 const App = () => {
+
   return (
     <div className="bg-site bg-no-repeat bg-cover overflow-hidden">
       <Banner />
