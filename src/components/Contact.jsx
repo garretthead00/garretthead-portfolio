@@ -85,7 +85,7 @@ const Contact = () => {
               placeholder="Your message"
               name="message"
               maxLength="1200"
-              className="bg-transparent border pb-12 align-top outline-none w-full placeholder:text-white focus:border-accent transition-all resize-none"
+              className="bg-transparent border-b pb-12 align-top outline-none w-full placeholder:text-white focus:border-accent transition-all resize-none"
               onChange={(e) => setMessage(e.target.value)}
             ></textarea>
             <button type="submit" className="btn btn-lg">
