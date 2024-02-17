@@ -1,13 +1,13 @@
 import { useRef, useState } from "react";
 import { motion } from "framer-motion";
-import emailjs from '@emailjs/browser';
+import emailjs from "@emailjs/browser";
 import { fadeIn } from "../common/transitions";
 
 const Contact = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
-  const form = useRef()
+  const form = useRef();
 
   const submit = (event) => {
     event.preventDefault();
@@ -16,22 +16,22 @@ const Contact = () => {
         name,
         email,
         message,
-        messageLength: message.length
+        messageLength: message.length,
       };
       console.log("submitting form data: ", contactData);
       emailjs
-      .sendForm('service_zsxrrxc', 'template_y7650e8', form.current, {
-        publicKey: 'HNnAcZTJzTZ1nagHz',
-      })
-      .then(
-        () => {
-          console.log('SUCCESS!');
-        },
-        (error) => {
-          console.log('FAILED...', error.text);
-        },
-      );
-      event.target.reset()
+        .sendForm("service_zsxrrxc", "template_y7650e8", form.current, {
+          publicKey: "HNnAcZTJzTZ1nagHz",
+        })
+        .then(
+          () => {
+            console.log("SUCCESS!");
+          },
+          (error) => {
+            console.log("FAILED...", error.text);
+          }
+        );
+      event.target.reset();
     }
   };
 

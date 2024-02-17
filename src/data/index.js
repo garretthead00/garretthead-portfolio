@@ -7,7 +7,12 @@ import mcneeseIcon from "../assets/images/McNeese.png";
 
 // TECH ICONS
 import { FaCss3Alt, FaReact, FaNodeJs } from "react-icons/fa";
-import { BiLogoGraphql, BiLogoPostgresql, BiLogoTailwindCss, BiLogoVuejs } from "react-icons/bi";
+import {
+  BiLogoGraphql,
+  BiLogoPostgresql,
+  BiLogoTailwindCss,
+  BiLogoVuejs,
+} from "react-icons/bi";
 import { BsBootstrap, BsDatabase } from "react-icons/bs";
 import {
   SiAngularjs,
@@ -244,4 +249,4 @@ export const skills = [
     name: "SQL",
     icon: <BsDatabase className="w-12 h-12 mx-auto text-gray-400" />,
   },
-]
+];

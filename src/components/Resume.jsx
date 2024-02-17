@@ -50,34 +50,38 @@ const Resume = () => {
                   stack &&
                   stack.map((tech, idx) => {
                     return (
-                      <li key={idx + '_techStackItem'}>
+                      <li key={idx + "_techStackItem"}>
                         <figure className="text-center items-center justify-center">
                           {tech.icon}
-                          <figcaption className="text-sm mt-1">{tech.name}</figcaption>
+                          <figcaption className="text-sm mt-1">
+                            {tech.name}
+                          </figcaption>
                         </figure>
                       </li>
-                    )
+                    );
                   });
                 return (
                   <div
-                    key={idx + '_roleItem'}
+                    key={idx + "_roleItem"}
                     className="flex border-b border-white/20 h-fit mb-[12px] pb-4"
                   >
                     <div className="max-w-[476px]">
                       <h4 className="text-[20px] tracking-wider font-primary font-semibold">
                         {title}
                       </h4>
-                      
+
                       <h4 className="text-[12px] tracking-wider font-primary font-semibold">
                         {company} - {duration}
                       </h4>
                       <p className="font-secondary leading-tight">
                         {description}
                       </p>
-                      <br/>
-                      <ul className="flex flex-wrap justify-center md:justify-start gap-4">{techStackList}</ul>
+                      <br />
+                      <ul className="flex flex-wrap justify-center md:justify-start gap-4">
+                        {techStackList}
+                      </ul>
                     </div>
-                    
+
                     <div className="flex flex-col flex-1 items-end">
                       <a
                         href={companyLink}

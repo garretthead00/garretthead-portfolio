@@ -79,13 +79,15 @@ const About = () => {
                 </div>
               </div>
             </div>
-            <hr/>
+            <hr />
             <div className="flex flex-col text-center my-4">
               <h4 className="text-[20px] tracking-wider font-primary font-semibold">
                 Skills
               </h4>
               <br />
-              <ul className="flex flex-wrap gap-4 mx-auto justify-center">{techStackList}</ul>
+              <ul className="flex flex-wrap gap-4 mx-auto justify-center">
+                {techStackList}
+              </ul>
             </div>
           </motion.div>
         </div>
