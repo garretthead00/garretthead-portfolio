@@ -26,7 +26,7 @@ const About = () => {
   return (
     <section id="about" className="section" ref={ref}>
       <div className="container mx-auto">
-        <div className="flex flex-col gap-y-10 lg:flex-row lg:items-center lg:gap-x-20 lg:gap-y-0">
+        <div className="flex flex-col gap-y-10 items-center min-h-[85vh] lg:flex-row lg:items-center lg:gap-x-12 lg:min-h-[78vh]">
           <motion.div
             variants={fadeIn("left", 0.3)}
             initial="hidden"
@@ -35,9 +35,8 @@ const About = () => {
             className="flex-1"
           >
             <h2 className="h2 text-accent">About me</h2>
-            <h3 className="h3 mb-4">Full Stack Software Engineer</h3>
+            <h3 className="h3 mb-4">Senior Software Engineer</h3>
             <p className="mb-6">
-              8 years of industry experience as a Full Stack Software Engineer.
               My career has brought me to many different areas, rarely settling
               down for long. I began building custom applications for Oil & Gas
               and Petrochem facilities until breaking into new areas of the
@@ -46,7 +45,7 @@ const About = () => {
             <div className="flex flex-wrap justify-center gap-8 mb-12 lg:gap-x-10">
               <div>
                 <div className="text-[36px] font-tertiary text-gradient mb-2">
-                  {inView ? <CountUp start={0} end={8} duration={5} /> : null}{" "}
+                  {inView ? <CountUp start={0} end={10} duration={5} /> : null}{" "}
                   yrs
                 </div>
                 <div className="font-primary text-sm tracking-[2px]">
@@ -55,7 +54,7 @@ const About = () => {
               </div>
               <div>
                 <div className="text-[36px] font-tertiary text-gradient mb-2">
-                  {inView ? <CountUp start={0} end={6} duration={5} /> : null}{" "}
+                  {inView ? <CountUp start={0} end={8} duration={3} /> : null}{" "}
                   yrs
                 </div>
                 <div className="font-primary text-sm tracking-[2px]">
@@ -64,14 +63,14 @@ const About = () => {
               </div>
               <div>
                 <div className="text-[36px] font-tertiary text-gradient mb-2">
-                  {inView ? <CountUp start={0} end={4} duration={5} /> : null}{" "}
+                  {inView ? <CountUp start={0} end={5} duration={3} /> : null}{" "}
                   yrs
                 </div>
                 <div className="font-primary text-sm tracking-[2px]">React</div>
               </div>
               <div>
                 <div className="text-[36px] font-tertiary text-gradient mb-2">
-                  {inView ? <CountUp start={0} end={5} duration={5} /> : null}{" "}
+                  {inView ? <CountUp start={0} end={5} duration={3} /> : null}{" "}
                   yrs
                 </div>
                 <div className="font-primary text-sm tracking-[2px]">

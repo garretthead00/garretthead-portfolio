@@ -1,32 +1,21 @@
 import { BsArrowUpRight } from "react-icons/bs";
 import { motion } from "framer-motion";
 import { fadeIn } from "../common/transitions";
-import { education, experience } from "../data";
+import { experience } from "../data";
 
 const Resume = () => {
   return (
-    <section id="resume" className="section">
+    <section id="resume" className="">
       <div className="container mx-auto">
-        <div className="flex flex-col lg:flex-row">
+        <div className="flex flex-col">
           <motion.div
             variants={fadeIn("right", 0.3)}
             initial="hidden"
             whileInView={"show"}
             viewport={{ once: false, amount: 0.3 }}
-            className="flex-1 lg:bg-serrvices lg:bg-bottom bg-no-repeat mix-blend-lighten mb-4"
+            className="flex-1 lg:bg-services lg:bg-bottom bg-no-repeat mix-blend-lighten mb-4 border-b border-white/20"
           >
             <h2 className="h2 text-accent mb-6">Experience</h2>
-            <h3 className="h3 max-w-[455px] lg:mb-16">
-              Full Stack Software Engineer
-            </h3>
-
-            <div className="hidden items-center max-w-[476px] lg:flex lg:flex-col lg:max-w-[482px]">
-              <img src={education.icon} alt="" className="w-[200px]" />
-              <h3 className="text-xl">{education.school}</h3>
-              <h4 className="text-[12px] tracking-wider font-primary font-semibold mb-2">
-                {education.degree} in {education.concentration}
-              </h4>
-            </div>
           </motion.div>
           <motion.div
             variants={fadeIn("left", 0.3)}
@@ -44,6 +33,7 @@ const Resume = () => {
                   companyLink,
                   title,
                   stack,
+                  icon
                 } = role;
 
                 const techStackList =
@@ -63,17 +53,19 @@ const Resume = () => {
                 return (
                   <div
                     key={idx + "_roleItem"}
-                    className="flex border-b border-white/20 h-fit mb-[12px] pb-4"
+                    className="relative flex border-b border-white/20 h-fit mb-[12px] pb-4"
                   >
                     <div className="max-w-[476px]">
+                      <img src={icon} alt="image" className="w-32 h-32 mt-2 mb-8"/>
+
                       <h4 className="text-[20px] tracking-wider font-primary font-semibold">
-                        {title}
+                        {company}
                       </h4>
 
-                      <h4 className="text-[12px] tracking-wider font-primary font-semibold">
-                        {company} - {duration}
+                      <h4 className="text-[14px] tracking-wider font-primary font-semibold text-accent">
+                        {title} - {duration}
                       </h4>
-                      <p className="font-secondary leading-tight">
+                      <p className="font-secondary leading-tight ">
                         {description}
                       </p>
                       <br />
@@ -82,7 +74,7 @@ const Resume = () => {
                       </ul>
                     </div>
 
-                    <div className="flex flex-col flex-1 items-end">
+                    <div className="absolute top-0 right-0">
                       <a
                         href={companyLink}
                         className="btn w-9 h-9 mb-[42px] flex justify-center items-center"

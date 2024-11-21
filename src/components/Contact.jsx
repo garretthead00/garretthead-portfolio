@@ -36,9 +36,9 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="h-screen py-8 mb-8 sm:mb-2 lg:section">
+    <section id="contact" className="section">
       <div className="container mx-auto">
-        <div className="flex flex-col lg:flex-row">
+        <div className="flex flex-col py-8 mb-8 min-h-[85vh] lg:flex-row lg:items-center lg:gap-x-12 lg:min-h-[78vh]sm:mb-2">
           <motion.div
             variants={fadeIn("right", 0.2)}
             initial="hidden"
@@ -61,7 +61,7 @@ const Contact = () => {
             initial="hidden"
             whileInView={"show"}
             viewport={{ once: false, amount: 0.3 }}
-            className="flex-1 border rounded-2xl flex flex-col gap-y-6 p-6 items-start"
+            className="border rounded-2xl flex lg:flex-1 flex-col gap-y-6 p-6 items-start"
             onSubmit={submit}
           >
             <input
