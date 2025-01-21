@@ -3,7 +3,8 @@ import pingIcon from "../assets/images/Ping.png";
 import muralIcon from "../assets/images/Mural.png";
 import incentrikIcon from "../assets/images/InCentrik.png";
 import bridgestoneFirestoneIcon from "../assets/images/Firestone.png";
-import mcneeseIcon from "../assets/images/McNeese.png";
+import copilotIcon from "../assets/images/Copilot.png"
+import lsuIcon from "../assets/images/lsu.png"
 
 // TECH ICONS
 import { FaCss3Alt, FaReact, FaNodeJs } from "react-icons/fa";
@@ -28,6 +29,40 @@ import {
 export const experience = [
   {
     id: 0,
+    title: "Senior Software Engineer",
+    company: "Copilot",
+    location: "Austin, TX (remote)",
+    description: `
+          Core front-end engineer building out the AI driven web and mobile application to assist users in vehicle searches.
+          `,
+    stack: [
+      {
+        name: "React",
+        icon: <FaReact className="w-8 h-8 mx-auto text-blue-500" />,
+      },
+      {
+        name: "Redux",
+        icon: <SiRedux className="w-8 h-8 mx-auto text-purple-500" />,
+      },
+      {
+        name: "CSS3",
+        icon: <FaCss3Alt className="w-8 h-8 mx-auto text-blue-500" />,
+      },
+      {
+        name: "NodeJS",
+        icon: <FaNodeJs className="w-8 h-8 mx-auto text-green-500" />,
+      },
+      {
+        name: "ExpressJS",
+        icon: <SiExpress className="w-8 h-8 mx-auto text-yellow-500" />,
+      }
+    ],
+    companyLink: "https://www.copilotsearch.com/",
+    duration: "1 yr",
+    icon: copilotIcon,
+  },
+  {
+    id: 1,
     title: "Senior Software Engineer",
     company: "Ping Identity",
     location: "Austin, TX (remote)",
@@ -77,7 +112,7 @@ export const experience = [
     icon: pingIcon,
   },
   {
-    id: 1,
+    id: 2,
     title: "Senior Software Engineer",
     company: "MURAL",
     location: "Austin, TX (remote)",
@@ -119,7 +154,7 @@ export const experience = [
     icon: muralIcon,
   },
   {
-    id: 2,
+    id: 3,
     title: "Software Engineer",
     company: "Incentrik",
     location: "Sulphur, LA (remote)",
@@ -162,7 +197,7 @@ export const experience = [
     icon: incentrikIcon,
   },
   {
-    id: 3,
+    id: 4,
     title: "Applications Developer",
     company: "Bridgestone-Firestone",
     location: "Sulphur, LA",
@@ -209,7 +244,7 @@ export const education = {
   school: "McNeese State University",
   concentration: "Computer Science",
   degree: `Bachelor's`,
-  icon: mcneeseIcon,
+  icon: lsuIcon,
 };
 
 export const skills = [

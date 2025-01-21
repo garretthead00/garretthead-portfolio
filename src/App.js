@@ -1,9 +1,16 @@
-import Banner from "./components/Banner";
-import About from "./components/About";
+//import Banner from "./features/Banner/Banner";
+//import About from "./features/About/About";
 import Projects from "./components/Projects";
-import Contact from "./components/Contact";
+//import Contact from "./features/Contact/Contact";
 import NavBar from "./components/NavBar";
-import Resume from "./components/Resume";
+//import Resume from "./features/Resume/Resume";
+
+import {
+  About,
+  Banner,
+  Contact,
+  Resume
+} from './features'
 
 const App = () => {
 
