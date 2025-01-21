@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/garretthead-portfolio/static/css/main.d20179bf.css",
-    "main.js": "/garretthead-portfolio/static/js/main.81373198.js",
-    "static/media/Tiger.png": "/garretthead-portfolio/static/media/Tiger.684e82e642058ac0fc41.png",
+    "main.css": "/garretthead-portfolio/static/css/main.34c746c5.css",
+    "main.js": "/garretthead-portfolio/static/js/main.649035a5.js",
+    "static/media/TigerLogo.png": "/garretthead-portfolio/static/media/TigerLogo.684e82e642058ac0fc41.png",
     "static/media/Background.jpg": "/garretthead-portfolio/static/media/Background.7e71d0a594e42c092829.jpg",
-    "static/media/CoPilot.png": "/garretthead-portfolio/static/media/CoPilot.d11624afc60898e7655f.png",
+    "static/media/Copilot.png": "/garretthead-portfolio/static/media/Copilot.e238b42251b3a7d4fabf.png",
+    "static/media/lsu.png": "/garretthead-portfolio/static/media/lsu.36802512c3bcaf3cc257.png",
     "static/media/InCentrik.png": "/garretthead-portfolio/static/media/InCentrik.3d21d3ff96db3c5f0031.png",
-    "static/media/lsu.png": "/garretthead-portfolio/static/media/lsu.9c440b35fc8bb2e4f0cb.png",
     "index.html": "/garretthead-portfolio/index.html",
-    "main.d20179bf.css.map": "/garretthead-portfolio/static/css/main.d20179bf.css.map",
-    "main.81373198.js.map": "/garretthead-portfolio/static/js/main.81373198.js.map"
+    "main.34c746c5.css.map": "/garretthead-portfolio/static/css/main.34c746c5.css.map",
+    "main.649035a5.js.map": "/garretthead-portfolio/static/js/main.649035a5.js.map"
   },
   "entrypoints": [
-    "static/css/main.d20179bf.css",
-    "static/js/main.81373198.js"
+    "static/css/main.34c746c5.css",
+    "static/js/main.649035a5.js"
   ]
 }
