@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/garretthead-portfolio/static/css/main.34c746c5.css",
-    "main.js": "/garretthead-portfolio/static/js/main.649035a5.js",
+    "main.css": "/garretthead-portfolio/static/css/main.5462ed92.css",
+    "main.js": "/garretthead-portfolio/static/js/main.6dbd62ea.js",
     "static/media/TigerLogo.png": "/garretthead-portfolio/static/media/TigerLogo.684e82e642058ac0fc41.png",
     "static/media/Background.jpg": "/garretthead-portfolio/static/media/Background.7e71d0a594e42c092829.jpg",
     "static/media/Copilot.png": "/garretthead-portfolio/static/media/Copilot.e238b42251b3a7d4fabf.png",
     "static/media/lsu.png": "/garretthead-portfolio/static/media/lsu.36802512c3bcaf3cc257.png",
     "static/media/InCentrik.png": "/garretthead-portfolio/static/media/InCentrik.3d21d3ff96db3c5f0031.png",
     "index.html": "/garretthead-portfolio/index.html",
-    "main.34c746c5.css.map": "/garretthead-portfolio/static/css/main.34c746c5.css.map",
-    "main.649035a5.js.map": "/garretthead-portfolio/static/js/main.649035a5.js.map"
+    "main.5462ed92.css.map": "/garretthead-portfolio/static/css/main.5462ed92.css.map",
+    "main.6dbd62ea.js.map": "/garretthead-portfolio/static/js/main.6dbd62ea.js.map"
   },
   "entrypoints": [
-    "static/css/main.34c746c5.css",
-    "static/js/main.649035a5.js"
+    "static/css/main.5462ed92.css",
+    "static/js/main.6dbd62ea.js"
   ]
 }
