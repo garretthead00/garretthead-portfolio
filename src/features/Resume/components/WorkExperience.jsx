@@ -62,7 +62,7 @@ export const WorkExperience = () => {
       initial="hidden"
       whileInView={"show"}
       viewport={{ once: false, amount: 0.1 }}
-      className="flex flex-1 border-b border-white/20 mb-[12px] pb-4"
+      className="flex flex-1 mb-[12px] pb-4"
     >
       <ul>
         {experience.map((role, idx) => (

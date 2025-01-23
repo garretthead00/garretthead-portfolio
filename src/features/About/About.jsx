@@ -9,13 +9,14 @@ export const About = () => {
   return (
     <section
       id="about"
-      className="section container mx-auto flex flex-col gap-y-10 lg:flex-row lg:items-center lg:gap-x-20 lg:gap-y-0"
+      className="container flex flex-col lg:flex-row gap-8 h-svh mx-auto p-4 justify-center items-center lg:gap-x-20 lg:gap-y-0"
       ref={ref}
     >
-      <Introduction />
-      <ExperienceList inView={inView} />
+      <div className="flex flex-col mb-4">
+        <Introduction />
+        <ExperienceList inView={inView} />
+      </div>
       <SkillsList />
     </section>
   );
 };
-

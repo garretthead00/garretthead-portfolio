@@ -20,9 +20,9 @@ export const SkillsList = () => (
     viewport={{ once: false, amount: 0.3 }}
     className="flex flex-col text-center"
   >
-    <h4 className="text-[20px] tracking-wider font-primary font-semibold mb-2">
+    {/* <h4 className="text-[20px] tracking-wider font-primary font-semibold mb-2">
       Skills
-    </h4>
+    </h4> */}
     <ul className="flex flex-wrap gap-4 mx-auto justify-center">
       {skills &&
         skills.map((tech, idx) => <SkillsListItem index={idx} tech={tech} />)}

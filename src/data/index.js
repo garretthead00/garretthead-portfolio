@@ -195,49 +195,7 @@ export const experience = [
     companyLink: "https://www.incentrik.com",
     duration: "4 yrs",
     icon: incentrikIcon,
-  },
-  {
-    id: 4,
-    title: "Applications Developer",
-    company: "Bridgestone-Firestone",
-    location: "Sulphur, LA",
-    description: `Create a custom suite of business applications for optimizing and automating critical day-to-day business functions.`,
-    stack: [
-      {
-        name: "Angular",
-        icon: <SiAngularjs className="w-8 h-8 mx-auto text-red-500" />,
-      },
-      {
-        name: "CSS 3",
-        icon: <FaCss3Alt className="w-8 h-8 mx-auto text-blue-500" />,
-      },
-      {
-        name: "Bootstrap",
-        icon: <BsBootstrap className="w-8 h-8 mx-auto text-purple-500" />,
-      },
-      {
-        name: "NodeJS",
-        icon: <FaNodeJs className="w-8 h-8 mx-auto text-green-500" />,
-      },
-      {
-        name: "ExpressJS",
-        icon: <SiExpress className="w-8 h-8 mx-auto text-yellow-500" />,
-      },
-      {
-        name: ".NET",
-        icon: <SiDotnet className="w-8 h-8 mx-auto text-gray-300" />,
-      },
-      {
-        name: "MS SQL",
-        icon: (
-          <SiMicrosoftsqlserver className="w-8 h-8 mx-auto text-blue-500" />
-        ),
-      },
-    ],
-    companyLink: "https://www.bridgestoneamericas.com/en/index",
-    duration: "4 yrs",
-    icon: bridgestoneFirestoneIcon,
-  },
+  }
 ];
 
 export const education = {

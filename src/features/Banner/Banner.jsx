@@ -11,9 +11,9 @@ export const Banner = () => {
   return (
     <section
       id="home"
-      className="min-h-[85vh] lg:min-h-[78vh] items-center container m-4 flex flex-col-reverse gap-y-8 lg:flex-row lg:items-center lg:gap-x-12"
+      className="container flex flex-col-reverse lg:flex-row gap-4 h-svh mx-auto p-4 justify-center items-center"
     >
-      <article className="flex-1 text-center font-secondary lg:text-left">
+      <article className="font-secondary text-center lg:text-left">
         <Title />
         <Subtitle />
         <ContactButton />

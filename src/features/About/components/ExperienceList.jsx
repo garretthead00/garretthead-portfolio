@@ -10,7 +10,7 @@ export const ExperienceList = ({ inView }) => {
       initial="hidden"
       whileInView={"show"}
       viewport={{ once: false, amount: 0.3 }}
-      className="flex flex-1  flex-wrap justify-center gap-8 lg:gap-x-10"
+      className="flex flex-1 flex-wrap justify-center gap-8 lg:gap-x-10"
     >
       <div>
         <div className="text-[36px] font-tertiary text-gradient">
