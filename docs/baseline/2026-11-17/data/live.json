@@ -1,0 +1,41 @@
+{
+  "capturedAt": "2026-11-17",
+  "url": "https://garretthead00.github.io/garretthead-portfolio/",
+  "method": "Claude desktop built-in browser (Chromium 156, macOS), viewport 817x1602 @2x, real network (navigator.connection: 4g, ~10 Mbps, ~100 ms RTT). Navigation/Resource/Paint timing APIs read after load; fonts may have been warm in cache.",
+  "timing": {
+    "ttfbMs": 149,
+    "firstContentfulPaintMs": 368,
+    "domContentLoadedMs": 307,
+    "loadEventMs": 307,
+    "largestContentfulPaintMs": 2036,
+    "lcpElement": "img TigerLogo.684e82e642058ac0fc41.png",
+    "cumulativeLayoutShift": 0.003
+  },
+  "transfer": {
+    "totalBytes": 3879547,
+    "resources": [
+      { "name": "fonts.googleapis.com css2 (Aldrich, Orbitron 400-900, Rajdhani 300-700)", "type": "link", "transferBytes": 1026, "decodedBytes": 9069 },
+      { "name": "static/js/main.6dbd62ea.js", "type": "script", "transferBytes": 129470, "decodedBytes": 372825 },
+      { "name": "static/css/main.5462ed92.css", "type": "link", "transferBytes": 3786, "decodedBytes": 12469 },
+      { "name": "static/media/Background.7e71d0a594e42c092829.jpg", "type": "css", "transferBytes": 1634685, "decodedBytes": 1634385 },
+      { "name": "static/media/TigerLogo.684e82e642058ac0fc41.png", "type": "img", "transferBytes": 2063342, "decodedBytes": 2063042 },
+      { "name": "static/media/lsu.36802512c3bcaf3cc257.png", "type": "img", "transferBytes": 46454, "decodedBytes": 46154 }
+    ]
+  },
+  "fontsLoaded": ["Aldrich 400", "Orbitron 400", "Orbitron 500", "Orbitron 600", "Orbitron 700", "Rajdhani 400", "Rajdhani 500", "Rajdhani 600", "Rajdhani 700"],
+  "accessibilityTree": {
+    "source": "browser accessibility tree (read_page)",
+    "findings": [
+      "Navigation landmark contains 4 links with no accessible name and no href (not focusable).",
+      "LinkedIn and GitHub links have no accessible name.",
+      "Company arrow links (Copilot, Ping Identity, MURAL, Incentrik) have no accessible name.",
+      "\"Contact Me\" is exposed as a button, not a link.",
+      "Experience counters are exposed as \"yrs\" with no number (the number is rendered by CountUp only while in view).",
+      "Several tech-stack SVG icons are exposed as unnamed images next to their text label (decorative icons not hidden).",
+      "Heading outline: h1 Garrett Head; h2 About me; h3 Senior Software Engineer; h2 Experience; h3 Senior Software Engineer; h3 Bachelor's in Computer Science; per role two headings (title, \"Company - duration\"); then \"Let's Geaux!\" before h2 \"Contact me\".",
+      "Form fields are named only by their placeholders (Your name, Your email, Your message); email field is type=text.",
+      "Sections are exposed as unnamed regions; no main, header or footer landmarks."
+    ]
+  },
+  "notRun": "Automated axe-core scan of the live page: injecting the third-party axe script into the live site was not permitted in this session. Equivalent DOM checks were run locally (lab.json domA11y) and contrast was sampled from rendered pixels (contrast.json)."
+}

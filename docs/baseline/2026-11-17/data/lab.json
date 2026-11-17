@@ -1,0 +1,956 @@
+{
+  "generatedAt": "2026-11-17T18:26:52.099Z",
+  "baseUrl": "http://localhost:8080/garretthead-portfolio/",
+  "note": "Local replay of the deployed gh-pages build. Third-party requests (Google Fonts) were blocked, so text renders in fallback fonts and font cost is excluded; see live checks.",
+  "performance": {
+    "mobile": {
+      "runs": [
+        {
+          "profile": "mobile",
+          "fcpMs": 1356,
+          "lcpMs": 19388,
+          "lcpElement": "img /garretthead-portfolio/static/media/TigerLogo.684e82e642058a",
+          "cls": 0.1383,
+          "blockingTimeMs": 0,
+          "loadEventMs": 1104,
+          "fullyLoadedMs": 19861,
+          "transferBytes": {
+            "Document": 726,
+            "Stylesheet": 3702,
+            "Script": 128961,
+            "Image": 3744177
+          },
+          "transferTotal": 3877566
+        },
+        {
+          "profile": "mobile",
+          "fcpMs": 1360,
+          "lcpMs": 19412,
+          "lcpElement": "img /garretthead-portfolio/static/media/TigerLogo.684e82e642058a",
+          "cls": 0.1246,
+          "blockingTimeMs": 0,
+          "loadEventMs": 1108,
+          "fullyLoadedMs": 19879,
+          "transferBytes": {
+            "Document": 726,
+            "Stylesheet": 3702,
+            "Script": 128961,
+            "Image": 3744177
+          },
+          "transferTotal": 3877566
+        },
+        {
+          "profile": "mobile",
+          "fcpMs": 1300,
+          "lcpMs": 19332,
+          "lcpElement": "img /garretthead-portfolio/static/media/TigerLogo.684e82e642058a",
+          "cls": 0.1359,
+          "blockingTimeMs": 0,
+          "loadEventMs": 1094,
+          "fullyLoadedMs": 19803,
+          "transferBytes": {
+            "Document": 726,
+            "Stylesheet": 3702,
+            "Script": 128961,
+            "Image": 3744177
+          },
+          "transferTotal": 3877566
+        }
+      ],
+      "median": {
+        "fcpMs": 1356,
+        "lcpMs": 19388,
+        "cls": 0.1359,
+        "blockingTimeMs": 0,
+        "transferTotal": 3877566,
+        "fullyLoadedMs": 19861
+      }
+    },
+    "desktop": {
+      "runs": [
+        {
+          "profile": "desktop",
+          "fcpMs": 344,
+          "lcpMs": 3356,
+          "lcpElement": "img /garretthead-portfolio/static/media/TigerLogo.684e82e642058a",
+          "cls": 0.0539,
+          "blockingTimeMs": 0,
+          "loadEventMs": 272,
+          "fullyLoadedMs": 3813,
+          "transferBytes": {
+            "Document": 726,
+            "Stylesheet": 3702,
+            "Script": 128961,
+            "Image": 3744177
+          },
+          "transferTotal": 3877566
+        },
+        {
+          "profile": "desktop",
+          "fcpMs": 316,
+          "lcpMs": 3308,
+          "lcpElement": "img /garretthead-portfolio/static/media/TigerLogo.684e82e642058a",
+          "cls": 0.0527,
+          "blockingTimeMs": 0,
+          "loadEventMs": 252,
+          "fullyLoadedMs": 3759,
+          "transferBytes": {
+            "Document": 726,
+            "Stylesheet": 3702,
+            "Script": 128961,
+            "Image": 3744177
+          },
+          "transferTotal": 3877566
+        },
+        {
+          "profile": "desktop",
+          "fcpMs": 328,
+          "lcpMs": 3312,
+          "lcpElement": "img /garretthead-portfolio/static/media/TigerLogo.684e82e642058a",
+          "cls": 0.0551,
+          "blockingTimeMs": 0,
+          "loadEventMs": 253,
+          "fullyLoadedMs": 3769,
+          "transferBytes": {
+            "Document": 726,
+            "Stylesheet": 3702,
+            "Script": 128961,
+            "Image": 3744177
+          },
+          "transferTotal": 3877566
+        }
+      ],
+      "median": {
+        "fcpMs": 328,
+        "lcpMs": 3312,
+        "cls": 0.0539,
+        "blockingTimeMs": 0,
+        "transferTotal": 3877566,
+        "fullyLoadedMs": 3769
+      }
+    }
+  },
+  "responsive": {
+    "320x640": {
+      "scrollWidth": 320,
+      "innerWidth": 320,
+      "horizontalOverflowElements": [
+        "article.flex-1",
+        "h2.h2.text-accent",
+        "h3.h3.mb-4",
+        "p.mb-6",
+        "article.flex.flex-1.flex-wrap",
+        "div.",
+        "div.text-[36px].font-tertiary.text-gradient",
+        "div.font-primary.text-sm.tracking-[2px]"
+      ],
+      "sections": [
+        {
+          "id": "home",
+          "height": 640,
+          "contentHeight": 620,
+          "overflowPx": 0
+        },
+        {
+          "id": "about",
+          "height": 640,
+          "contentHeight": 729,
+          "overflowPx": 89
+        },
+        {
+          "id": "resume",
+          "height": 1669,
+          "contentHeight": 1625,
+          "overflowPx": 0
+        },
+        {
+          "id": "contact",
+          "height": 640,
+          "contentHeight": 513,
+          "overflowPx": 0
+        }
+      ],
+      "navOverlapAtBottom": [],
+      "screenshots": [
+        "320x640--home.webp"
+      ]
+    },
+    "360x800": {
+      "scrollWidth": 360,
+      "innerWidth": 360,
+      "horizontalOverflowElements": [
+        "article.flex-1",
+        "h2.h2.text-accent",
+        "h3.h3.mb-4",
+        "p.mb-6",
+        "article.flex.flex-1.flex-wrap",
+        "div.",
+        "div.text-[36px].font-tertiary.text-gradient",
+        "div.font-primary.text-sm.tracking-[2px]"
+      ],
+      "sections": [
+        {
+          "id": "home",
+          "height": 800,
+          "contentHeight": 699,
+          "overflowPx": 0
+        },
+        {
+          "id": "about",
+          "height": 800,
+          "contentHeight": 793,
+          "overflowPx": 0
+        },
+        {
+          "id": "resume",
+          "height": 1507,
+          "contentHeight": 1463,
+          "overflowPx": 0
+        },
+        {
+          "id": "contact",
+          "height": 800,
+          "contentHeight": 513,
+          "overflowPx": 0
+        }
+      ],
+      "navOverlapAtBottom": [],
+      "screenshots": [
+        "360x800--home.webp",
+        "360x800--about.webp",
+        "360x800--resume.webp",
+        "360x800--contact.webp"
+      ]
+    },
+    "375x812": {
+      "scrollWidth": 375,
+      "innerWidth": 375,
+      "horizontalOverflowElements": [
+        "article.flex-1",
+        "h2.h2.text-accent",
+        "h3.h3.mb-4",
+        "p.mb-6",
+        "article.flex.flex-1.flex-wrap",
+        "div.",
+        "div.text-[36px].font-tertiary.text-gradient",
+        "div.font-primary.text-sm.tracking-[2px]"
+      ],
+      "sections": [
+        {
+          "id": "home",
+          "height": 812,
+          "contentHeight": 713,
+          "overflowPx": 0
+        },
+        {
+          "id": "about",
+          "height": 812,
+          "contentHeight": 755,
+          "overflowPx": 0
+        },
+        {
+          "id": "resume",
+          "height": 1507,
+          "contentHeight": 1463,
+          "overflowPx": 0
+        },
+        {
+          "id": "contact",
+          "height": 812,
+          "contentHeight": 513,
+          "overflowPx": 0
+        }
+      ],
+      "navOverlapAtBottom": [],
+      "screenshots": [
+        "375x812--home.webp"
+      ]
+    },
+    "390x844": {
+      "scrollWidth": 390,
+      "innerWidth": 390,
+      "horizontalOverflowElements": [
+        "article.flex-1",
+        "h2.h2.text-accent",
+        "h3.h3.mb-4",
+        "p.mb-6",
+        "article.flex.flex-1.flex-wrap",
+        "div.",
+        "div.text-[36px].font-tertiary.text-gradient",
+        "div.font-primary.text-sm.tracking-[2px]"
+      ],
+      "sections": [
+        {
+          "id": "home",
+          "height": 844,
+          "contentHeight": 736,
+          "overflowPx": 0
+        },
+        {
+          "id": "about",
+          "height": 844,
+          "contentHeight": 771,
+          "overflowPx": 0
+        },
+        {
+          "id": "resume",
+          "height": 1435,
+          "contentHeight": 1391,
+          "overflowPx": 0
+        },
+        {
+          "id": "contact",
+          "height": 844,
+          "contentHeight": 513,
+          "overflowPx": 0
+        }
+      ],
+      "navOverlapAtBottom": [],
+      "screenshots": [
+        "390x844--home.webp",
+        "390x844--about.webp",
+        "390x844--resume.webp",
+        "390x844--contact.webp"
+      ]
+    },
+    "412x915": {
+      "scrollWidth": 412,
+      "innerWidth": 412,
+      "horizontalOverflowElements": [
+        "article.flex-1",
+        "h2.h2.text-accent",
+        "h3.h3.mb-4",
+        "p.mb-6",
+        "article.flex.flex-1.flex-wrap",
+        "div.",
+        "div.text-[36px].font-tertiary.text-gradient",
+        "div.font-primary.text-sm.tracking-[2px]"
+      ],
+      "sections": [
+        {
+          "id": "home",
+          "height": 915,
+          "contentHeight": 783,
+          "overflowPx": 0
+        },
+        {
+          "id": "about",
+          "height": 915,
+          "contentHeight": 765,
+          "overflowPx": 0
+        },
+        {
+          "id": "resume",
+          "height": 1435,
+          "contentHeight": 1391,
+          "overflowPx": 0
+        },
+        {
+          "id": "contact",
+          "height": 915,
+          "contentHeight": 513,
+          "overflowPx": 0
+        }
+      ],
+      "navOverlapAtBottom": [],
+      "screenshots": [
+        "412x915--home.webp"
+      ]
+    },
+    "414x896": {
+      "scrollWidth": 414,
+      "innerWidth": 414,
+      "horizontalOverflowElements": [
+        "article.flex-1",
+        "h2.h2.text-accent",
+        "h3.h3.mb-4",
+        "p.mb-6",
+        "article.flex.flex-1.flex-wrap",
+        "div.",
+        "div.text-[36px].font-tertiary.text-gradient",
+        "div.font-primary.text-sm.tracking-[2px]"
+      ],
+      "sections": [
+        {
+          "id": "home",
+          "height": 896,
+          "contentHeight": 775,
+          "overflowPx": 0
+        },
+        {
+          "id": "about",
+          "height": 896,
+          "contentHeight": 755,
+          "overflowPx": 0
+        },
+        {
+          "id": "resume",
+          "height": 1435,
+          "contentHeight": 1391,
+          "overflowPx": 0
+        },
+        {
+          "id": "contact",
+          "height": 896,
+          "contentHeight": 513,
+          "overflowPx": 0
+        }
+      ],
+      "navOverlapAtBottom": [],
+      "screenshots": [
+        "414x896--home.webp"
+      ]
+    },
+    "430x932": {
+      "scrollWidth": 430,
+      "innerWidth": 430,
+      "horizontalOverflowElements": [
+        "article.flex-1",
+        "h2.h2.text-accent",
+        "h3.h3.mb-4",
+        "p.mb-6",
+        "article.flex.flex-1.flex-wrap",
+        "div.",
+        "div.text-[36px].font-tertiary.text-gradient",
+        "div.font-primary.text-sm.tracking-[2px]"
+      ],
+      "sections": [
+        {
+          "id": "home",
+          "height": 932,
+          "contentHeight": 801,
+          "overflowPx": 0
+        },
+        {
+          "id": "about",
+          "height": 932,
+          "contentHeight": 757,
+          "overflowPx": 0
+        },
+        {
+          "id": "resume",
+          "height": 1412,
+          "contentHeight": 1368,
+          "overflowPx": 0
+        },
+        {
+          "id": "contact",
+          "height": 932,
+          "contentHeight": 513,
+          "overflowPx": 0
+        }
+      ],
+      "navOverlapAtBottom": [],
+      "screenshots": [
+        "430x932--home.webp",
+        "430x932--about.webp",
+        "430x932--resume.webp",
+        "430x932--contact.webp"
+      ]
+    },
+    "844x390-landscape": {
+      "scrollWidth": 844,
+      "innerWidth": 844,
+      "horizontalOverflowElements": [
+        "article.flex-1",
+        "h2.h2.text-accent",
+        "h3.h3.mb-4",
+        "p.mb-6",
+        "article.flex.flex-1.flex-wrap",
+        "div.flex-1.flex.justify-start",
+        "div.",
+        "h4.text-xl.uppercase.font-medium"
+      ],
+      "sections": [
+        {
+          "id": "home",
+          "height": 390,
+          "contentHeight": 574,
+          "overflowPx": 184
+        },
+        {
+          "id": "about",
+          "height": 390,
+          "contentHeight": 410,
+          "overflowPx": 20
+        },
+        {
+          "id": "resume",
+          "height": 1201,
+          "contentHeight": 1157,
+          "overflowPx": 0
+        },
+        {
+          "id": "contact",
+          "height": 390,
+          "contentHeight": 513,
+          "overflowPx": 123
+        }
+      ],
+      "navOverlapAtBottom": [
+        "button \"Send message\""
+      ],
+      "screenshots": [
+        "844x390-landscape--home.webp",
+        "844x390-landscape--about.webp",
+        "844x390-landscape--resume.webp",
+        "844x390-landscape--contact.webp"
+      ]
+    },
+    "768x1024": {
+      "scrollWidth": 768,
+      "innerWidth": 768,
+      "horizontalOverflowElements": [
+        "article.flex-1",
+        "h2.h2.text-accent",
+        "h3.h3.mb-4",
+        "p.mb-6",
+        "article.flex.flex-1.flex-wrap",
+        "article.flex.flex-col.text-center",
+        "ul.flex.flex-wrap.gap-4",
+        "li."
+      ],
+      "sections": [
+        {
+          "id": "home",
+          "height": 1024,
+          "contentHeight": 891,
+          "overflowPx": 0
+        },
+        {
+          "id": "about",
+          "height": 1024,
+          "contentHeight": 727,
+          "overflowPx": 0
+        },
+        {
+          "id": "resume",
+          "height": 1201,
+          "contentHeight": 1157,
+          "overflowPx": 0
+        },
+        {
+          "id": "contact",
+          "height": 1024,
+          "contentHeight": 513,
+          "overflowPx": 0
+        }
+      ],
+      "navOverlapAtBottom": [],
+      "screenshots": [
+        "768x1024--home.webp",
+        "768x1024--about.webp",
+        "768x1024--resume.webp",
+        "768x1024--contact.webp"
+      ]
+    },
+    "820x1180": {
+      "scrollWidth": 820,
+      "innerWidth": 820,
+      "horizontalOverflowElements": [
+        "article.flex-1",
+        "h2.h2.text-accent",
+        "h3.h3.mb-4",
+        "p.mb-6",
+        "article.flex.flex-1.flex-wrap",
+        "div.flex-1.flex.justify-start",
+        "div.",
+        "h4.text-xl.uppercase.font-medium"
+      ],
+      "sections": [
+        {
+          "id": "home",
+          "height": 1180,
+          "contentHeight": 969,
+          "overflowPx": 0
+        },
+        {
+          "id": "about",
+          "height": 1180,
+          "contentHeight": 805,
+          "overflowPx": 0
+        },
+        {
+          "id": "resume",
+          "height": 1201,
+          "contentHeight": 1157,
+          "overflowPx": 0
+        },
+        {
+          "id": "contact",
+          "height": 1180,
+          "contentHeight": 513,
+          "overflowPx": 0
+        }
+      ],
+      "navOverlapAtBottom": [],
+      "screenshots": [
+        "820x1180--home.webp"
+      ]
+    },
+    "1024x768": {
+      "scrollWidth": 1024,
+      "innerWidth": 1024,
+      "horizontalOverflowElements": [
+        "div.flex.text-[32px].gap-x-6",
+        "a.",
+        "svg.",
+        "path.",
+        "article.flex.flex-1.flex-wrap",
+        "article.flex.flex-col.text-center",
+        "ul.flex.flex-wrap.gap-4",
+        "li."
+      ],
+      "sections": [
+        {
+          "id": "home",
+          "height": 768,
+          "contentHeight": 589,
+          "overflowPx": 0
+        },
+        {
+          "id": "about",
+          "height": 768,
+          "contentHeight": 547,
+          "overflowPx": 0
+        },
+        {
+          "id": "resume",
+          "height": 768,
+          "contentHeight": 917,
+          "overflowPx": 149
+        },
+        {
+          "id": "contact",
+          "height": 768,
+          "contentHeight": 587,
+          "overflowPx": 0
+        }
+      ],
+      "navOverlapAtBottom": [],
+      "screenshots": [
+        "1024x768--home.webp",
+        "1024x768--about.webp",
+        "1024x768--resume.webp",
+        "1024x768--contact.webp"
+      ]
+    },
+    "1280x720": {
+      "scrollWidth": 1280,
+      "innerWidth": 1280,
+      "horizontalOverflowElements": [
+        "article.flex.flex-1.flex-wrap",
+        "article.flex.flex-col.text-center",
+        "ul.flex.flex-wrap.gap-4",
+        "li.",
+        "figure.text-center.items-center.justify-center",
+        "svg.w-12.h-12.mx-auto",
+        "path.",
+        "figcaption.text-sm.mt-1"
+      ],
+      "sections": [
+        {
+          "id": "home",
+          "height": 720,
+          "contentHeight": 611,
+          "overflowPx": 0
+        },
+        {
+          "id": "about",
+          "height": 720,
+          "contentHeight": 507,
+          "overflowPx": 0
+        },
+        {
+          "id": "resume",
+          "height": 720,
+          "contentHeight": 845,
+          "overflowPx": 125
+        },
+        {
+          "id": "contact",
+          "height": 720,
+          "contentHeight": 563,
+          "overflowPx": 0
+        }
+      ],
+      "navOverlapAtBottom": [],
+      "screenshots": [
+        "1280x720--home.webp"
+      ]
+    },
+    "1366x768": {
+      "scrollWidth": 1366,
+      "innerWidth": 1366,
+      "horizontalOverflowElements": [],
+      "sections": [
+        {
+          "id": "home",
+          "height": 768,
+          "contentHeight": 635,
+          "overflowPx": 0
+        },
+        {
+          "id": "about",
+          "height": 768,
+          "contentHeight": 531,
+          "overflowPx": 0
+        },
+        {
+          "id": "resume",
+          "height": 768,
+          "contentHeight": 869,
+          "overflowPx": 101
+        },
+        {
+          "id": "contact",
+          "height": 768,
+          "contentHeight": 587,
+          "overflowPx": 0
+        }
+      ],
+      "navOverlapAtBottom": [],
+      "screenshots": [
+        "1366x768--home.webp",
+        "1366x768--about.webp",
+        "1366x768--resume.webp",
+        "1366x768--contact.webp"
+      ]
+    },
+    "1536x864": {
+      "scrollWidth": 1536,
+      "innerWidth": 1536,
+      "horizontalOverflowElements": [],
+      "sections": [
+        {
+          "id": "home",
+          "height": 864,
+          "contentHeight": 683,
+          "overflowPx": 0
+        },
+        {
+          "id": "about",
+          "height": 864,
+          "contentHeight": 579,
+          "overflowPx": 0
+        },
+        {
+          "id": "resume",
+          "height": 864,
+          "contentHeight": 917,
+          "overflowPx": 53
+        },
+        {
+          "id": "contact",
+          "height": 864,
+          "contentHeight": 635,
+          "overflowPx": 0
+        }
+      ],
+      "navOverlapAtBottom": [],
+      "screenshots": [
+        "1536x864--home.webp"
+      ]
+    },
+    "1920x1080": {
+      "scrollWidth": 1920,
+      "innerWidth": 1920,
+      "horizontalOverflowElements": [],
+      "sections": [
+        {
+          "id": "home",
+          "height": 1080,
+          "contentHeight": 791,
+          "overflowPx": 0
+        },
+        {
+          "id": "about",
+          "height": 1080,
+          "contentHeight": 687,
+          "overflowPx": 0
+        },
+        {
+          "id": "resume",
+          "height": 1080,
+          "contentHeight": 1025,
+          "overflowPx": 0
+        },
+        {
+          "id": "contact",
+          "height": 1080,
+          "contentHeight": 743,
+          "overflowPx": 0
+        }
+      ],
+      "navOverlapAtBottom": [],
+      "screenshots": [
+        "1920x1080--home.webp",
+        "1920x1080--about.webp",
+        "1920x1080--resume.webp",
+        "1920x1080--contact.webp"
+      ]
+    },
+    "2560x1440": {
+      "scrollWidth": 2560,
+      "innerWidth": 2560,
+      "horizontalOverflowElements": [],
+      "sections": [
+        {
+          "id": "home",
+          "height": 1440,
+          "contentHeight": 971,
+          "overflowPx": 0
+        },
+        {
+          "id": "about",
+          "height": 1440,
+          "contentHeight": 867,
+          "overflowPx": 0
+        },
+        {
+          "id": "resume",
+          "height": 1440,
+          "contentHeight": 1205,
+          "overflowPx": 0
+        },
+        {
+          "id": "contact",
+          "height": 1440,
+          "contentHeight": 923,
+          "overflowPx": 0
+        }
+      ],
+      "navOverlapAtBottom": [],
+      "screenshots": [
+        "2560x1440--home.webp"
+      ]
+    }
+  },
+  "keyboard": {
+    "tabOrder": [
+      "button \"Contact Me\"",
+      "a[href=https://www.linkedin.com/in/garretthead] \"\"",
+      "a[href=https://www.github.com/garretthead00] \"\"",
+      "a[href=https://www.copilotsearch.com/] \"\"",
+      "a[href=https://www.pingidentity.com/en.html] \"\"",
+      "a[href=https://www.mural.co] \"\"",
+      "a[href=https://www.incentrik.com] \"\"",
+      "input \"Your name\"",
+      "input \"Your email\"",
+      "textarea \"Your message\"",
+      "button \"Send message\"",
+      "(body)",
+      "button \"Contact Me\"",
+      "a[href=https://www.linkedin.com/in/garretthead] \"\"",
+      "a[href=https://www.github.com/garretthead00] \"\"",
+      "a[href=https://www.copilotsearch.com/] \"\"",
+      "a[href=https://www.pingidentity.com/en.html] \"\"",
+      "a[href=https://www.mural.co] \"\"",
+      "a[href=https://www.incentrik.com] \"\"",
+      "input \"Your name\""
+    ],
+    "navLinks": [
+      {
+        "hasHref": false,
+        "tabIndex": 0,
+        "name": ""
+      },
+      {
+        "hasHref": false,
+        "tabIndex": 0,
+        "name": ""
+      },
+      {
+        "hasHref": false,
+        "tabIndex": 0,
+        "name": ""
+      },
+      {
+        "hasHref": false,
+        "tabIndex": 0,
+        "name": ""
+      }
+    ],
+    "inputFocusStyle": {
+      "outlineStyle": "solid",
+      "outlineWidth": "2px",
+      "boxShadow": "none"
+    }
+  },
+  "reducedMotion": {
+    "early": {
+      "h1Opacity": "0",
+      "h1Transform": "matrix(1, 0, 0, 1, 0, 80)",
+      "typedText": "E"
+    },
+    "late": {
+      "h1Opacity": "1",
+      "h1Transform": "none",
+      "typedText": "En"
+    },
+    "later": {
+      "h1Opacity": "1",
+      "h1Transform": "none",
+      "typedText": "I build things"
+    },
+    "entranceAnimationIgnoresPreference": true,
+    "typingLoopIgnoresPreference": true
+  },
+  "domA11y": {
+    "lang": "en",
+    "title": "Garrett Head | Portfolio",
+    "landmarks": {
+      "header": 0,
+      "nav": 1,
+      "main": 0,
+      "footer": 0
+    },
+    "headings": [
+      "h1: Garrett Head",
+      "h2: About me",
+      "h3: Senior Software Engineer",
+      "h2: Experience",
+      "h3: Senior Software Engineer",
+      "h4: Bachelor's in Computer Science",
+      "h4: Senior Software Engineer",
+      "h4: Copilot - 1 yr",
+      "h4: Senior Software Engineer",
+      "h4: Ping Identity - 1.5 yrs",
+      "h4: Senior Software Engineer",
+      "h4: MURAL - 1.5 yrs",
+      "h4: Software Engineer",
+      "h4: Incentrik - 4 yrs",
+      "h4: Let's Geaux!",
+      "h2: Contact me"
+    ],
+    "unnamedLinksOrButtons": [
+      "<a href=\"https://www.linkedin.com/in/garretthead\"><svg stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" viewBo",
+      "<a href=\"https://www.github.com/garretthead00\"><svg stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" viewBox=\"",
+      "<a href=\"https://www.copilotsearch.com/\" class=\"btn w-9 h-9 mb-[42px] flex justify-center items-center\"><svg stroke=\"cur",
+      "<a href=\"https://www.pingidentity.com/en.html\" class=\"btn w-9 h-9 mb-[42px] flex justify-center items-center\"><svg strok",
+      "<a href=\"https://www.mural.co\" class=\"btn w-9 h-9 mb-[42px] flex justify-center items-center\"><svg stroke=\"currentColor\"",
+      "<a href=\"https://www.incentrik.com\" class=\"btn w-9 h-9 mb-[42px] flex justify-center items-center\"><svg stroke=\"currentC",
+      "<a class=\"cursor-pointer w-[60px] h-[60px] flex items-center justify-center\"><svg stroke=\"currentColor\" fill=\"currentCol",
+      "<a class=\"cursor-pointer w-[60px] h-[60px] flex items-center justify-center\"><svg stroke=\"currentColor\" fill=\"currentCol",
+      "<a class=\"cursor-pointer w-[60px] h-[60px] flex items-center justify-center active\"><svg stroke=\"currentColor\" fill=\"cur",
+      "<a class=\"cursor-pointer w-[60px] h-[60px] flex items-center justify-center\"><svg stroke=\"currentColor\" fill=\"currentCol"
+    ],
+    "images": [
+      {
+        "src": "TigerLogo.684e82e642058ac0fc41.png",
+        "alt": "Tiger Logo"
+      },
+      {
+        "src": "lsu.36802512c3bcaf3cc257.png",
+        "alt": ""
+      }
+    ],
+    "formFieldsWithoutLabel": [
+      "input[name=name] placeholder=\"Your name\"",
+      "input[name=email] placeholder=\"Your email\"",
+      "textarea[name=message] placeholder=\"Your message\""
+    ],
+    "skipLink": false
+  },
+  "ariaSnapshot": "- article:\n  - heading \"Garrett Head\" [level=1]\n  - text: Engineer|\n  - button \"Contact Me\"\n  - link:\n    - /url: https://www.linkedin.com/in/garretthead\n    - img\n  - link:\n    - /url: https://www.github.com/garretthead00\n    - img\n- article:\n  - img \"Tiger Logo\"\n- article:\n  - heading \"About me\" [level=2]\n  - heading \"Senior Software Engineer\" [level=3]\n  - paragraph: Senior Software Engineer with 8+ years of experience. My career has brought me to many different areas, rarely settling down for long. I began building custom applications for Oil & Gas and Petrochem facilities until breaking into new areas of the field.\n- article: yrs Industry Experience yrs Javascript yrs React yrs NodeJS\n- article:\n  - list:\n    - listitem:\n      - figure \"React\":\n        - img\n        - text: React\n    - listitem:\n      - figure \"VueJS\":\n        - img\n        - text: VueJS\n    - listitem:\n      - figure \"CSS3\":\n        - img\n        - text: CSS3\n    - listitem:\n      - figure \"TailwindCSS\":\n        - img\n        - text: TailwindCSS\n    - listitem:\n      - figure \"NodeJS\":\n        - img\n        - text: NodeJS\n    - listitem:\n      - figure \"ExpressJS\":\n        - img\n        - text: ExpressJS\n    - listitem:\n      - figure \"GraphQL\":\n        - img\n        - text: GraphQL\n    - listitem:\n      - figure \"MongoDB\":\n        - img\n        - text: MongoDB\n    - listitem:\n      - figure \"SQL\":\n        - img\n        - text: SQL\n- article:\n  - heading \"Experience\" [level=2]\n  - heading \"Senior Software Engineer\" [level=3]\n  - heading \"Bachelor's in Computer Science\" [level=4]\n- article:\n  - list:\n    - listitem:\n      - heading \"Senior Software Engineer\" [level=4]\n      - heading \"Copilot - 1 yr\" [level=4]\n      - paragraph: Core front-end engineer building out the AI driven web and mobile application to assist users in vehicle searches.\n      - list:\n        - listitem:\n          - figure \"React\":\n            - img\n            - text: React\n        - listitem:\n          - figure \"Redux\":\n            - img\n            - text: Redux\n        - listitem:\n          - figure \"CSS3\":\n            - img\n            - text: CSS3\n        - listitem:\n          - figure \"NodeJS\":\n            - img\n            - text: NodeJS\n        - listitem:\n          - figure \"ExpressJS\":\n            - img\n            - text: ExpressJS\n      - link:\n        - /url: https://www.copilotsearch.com/\n        - img\n    - listitem:\n      - heading \"Senior Software Engineer\" [level=4]\n      - heading \"Ping Identity - 1.5 yrs\" [level=4]\n      - paragraph: Team DaVinci. Focused on delivering product enhancements to our B2B security and authentication platform.\n      - list:\n        - listitem:\n          - figure \"React\":\n            - img\n            - text: React\n        - listitem:\n          - figure \"Redux\":\n            - img\n            - text: Redux\n        - listitem:\n          - figure \"CSS3\":\n            - img\n            - text: CSS3\n        - listitem:\n          - figure \"Redis\":\n            - img\n            - text: Redis\n        - listitem:\n          - figure \"NodeJS\":\n            - img\n            - text: NodeJS\n        - listitem:\n          - figure \"ExpressJS\":\n            - img\n            - text: ExpressJS\n        - listitem:\n          - figure \"PostgreSQL\":\n            - img\n            - text: PostgreSQL\n        - listitem:\n          - figure \"MongoDB\":\n            - img\n            - text: MongoDB\n        - listitem:\n          - figure \"CassandraDB\":\n            - img\n            - text: CassandraDB\n      - link:\n        - /url: https://www.pingidentity.com/en.html\n        - img\n    - listitem:\n      - heading \"Senior Software Engineer\" [level=4]\n      - heading \"MURAL - 1.5 yrs\" [level=4]\n      - paragraph: Team Integrations. Bring our productivity and team collaboration tools to the Microsoft Teams platform.\n      - list:\n        - listitem:\n          - figure \"React\":\n            - img\n            - text: React\n        - listitem:\n          - figure \"Redux\":\n            - img\n            - text: Redux\n        - listitem:\n          - figure \"CSS 3\":\n            - img\n            - text: CSS 3\n        - listitem:\n          - figure \"Redis\":\n            - img\n            - text: Redis\n        - listitem:\n          - figure \"NodeJS\":\n            - img\n            - text: NodeJS\n        - listitem:\n          - figure \"ExpressJS\":\n            - img\n            - text: ExpressJS\n        - listitem:\n          - figure \"MongoDB\":\n            - img\n            - text: MongoDB\n      - link:\n        - /url: https://www.mural.co\n        - img\n    - listitem:\n      - heading \"Software Engineer\" [level=4]\n      - heading \"Incentrik - 4 yrs\" [level=4]\n      - paragraph: Build a centralized data historian for all process and operations data. Integrate custom SaaS applications to deliver high-end graphic frontends.\n      - list:\n        - listitem:\n          - figure \"Angular\":\n            - img\n            - text: Angular\n        - listitem:\n          - figure \"CSS 3\":\n            - img\n            - text: CSS 3\n        - listitem:\n          - figure \"Bootstrap\":\n            - img\n            - text: Bootstrap\n        - listitem:\n          - figure \"NodeJS\":\n            - img\n            - text: NodeJS\n        - listitem:\n          - figure \"ExpressJS\":\n            - img\n            - text: ExpressJS\n        - listitem:\n          - figure \"MongoDB\":\n            - img\n            - text: MongoDB\n        - listitem:\n          - figure \"MS SQL\":\n            - img\n            - text: MS SQL\n      - link:\n        - /url: https://www.incentrik.com\n        - img\n- heading \"Let's Geaux!\" [level=4]\n- heading \"Contact me\" [level=2]\n- textbox \"Your name\"\n- textbox \"Your email\"\n- textbox \"Your message\"\n- button \"Send message\"\n- navigation:\n  - img\n  - img\n  - img\n  - img"
+}

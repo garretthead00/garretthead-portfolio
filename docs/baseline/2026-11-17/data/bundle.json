@@ -1,0 +1,195 @@
+{
+  "generatedAt": "2026-11-17T18:15:55.015Z",
+  "buildDir": "/tmp/phase0/site/garretthead-portfolio",
+  "totals": {
+    "js": {
+      "raw": 372825,
+      "gzip": 128506
+    },
+    "css": {
+      "raw": 12469,
+      "gzip": 3464
+    },
+    "images": {
+      "raw": 4559059,
+      "gzip": 3922283
+    }
+  },
+  "files": [
+    {
+      "file": "static/media/TigerLogo.684e82e642058ac0fc41.png",
+      "raw": 2063042,
+      "gzip": 2062503,
+      "brotli": 2063050
+    },
+    {
+      "file": "static/media/Background.7e71d0a594e42c092829.jpg",
+      "raw": 1634385,
+      "gzip": 1007617,
+      "brotli": 883127
+    },
+    {
+      "file": "logo512.png",
+      "raw": 527361,
+      "gzip": 527151,
+      "brotli": 527366
+    },
+    {
+      "file": "static/js/main.6dbd62ea.js",
+      "raw": 372825,
+      "gzip": 128506,
+      "brotli": 111222
+    },
+    {
+      "file": "static/media/Copilot.e238b42251b3a7d4fabf.png",
+      "raw": 147428,
+      "gzip": 144586,
+      "brotli": 142807
+    },
+    {
+      "file": "logo192.png",
+      "raw": 93712,
+      "gzip": 93391,
+      "brotli": 93717
+    },
+    {
+      "file": "static/media/lsu.36802512c3bcaf3cc257.png",
+      "raw": 46154,
+      "gzip": 45146,
+      "brotli": 45110
+    },
+    {
+      "file": "static/media/InCentrik.3d21d3ff96db3c5f0031.png",
+      "raw": 27506,
+      "gzip": 27428,
+      "brotli": 27305
+    },
+    {
+      "file": "favicon.ico",
+      "raw": 15406,
+      "gzip": 10350,
+      "brotli": 9086
+    },
+    {
+      "file": "static/css/main.5462ed92.css",
+      "raw": 12469,
+      "gzip": 3464,
+      "brotli": 2984
+    },
+    {
+      "file": "favicon-32x32.png",
+      "raw": 3081,
+      "gzip": 3104,
+      "brotli": 3085
+    },
+    {
+      "file": "asset-manifest.json",
+      "raw": 1005,
+      "gzip": 337,
+      "brotli": 298
+    },
+    {
+      "file": "favicon-16x16.png",
+      "raw": 984,
+      "gzip": 1007,
+      "brotli": 988
+    },
+    {
+      "file": "index.html",
+      "raw": 935,
+      "gzip": 491,
+      "brotli": 331
+    },
+    {
+      "file": "manifest.json",
+      "raw": 492,
+      "gzip": 254,
+      "brotli": 201
+    },
+    {
+      "file": "robots.txt",
+      "raw": 67,
+      "gzip": 78,
+      "brotli": 55
+    }
+  ],
+  "jsComposition": {
+    "static/js/main.6dbd62ea.js": [
+      {
+        "pkg": "react-dom",
+        "bytes": 129947,
+        "share": 0.3487
+      },
+      {
+        "pkg": "framer-motion",
+        "bytes": 105047,
+        "share": 0.2819
+      },
+      {
+        "pkg": "react-icons",
+        "bytes": 35956,
+        "share": 0.0965
+      },
+      {
+        "pkg": "(app source)",
+        "bytes": 34654,
+        "share": 0.093
+      },
+      {
+        "pkg": "react-scroll",
+        "bytes": 27662,
+        "share": 0.0742
+      },
+      {
+        "pkg": "react-type-animation",
+        "bytes": 8136,
+        "share": 0.0218
+      },
+      {
+        "pkg": "react",
+        "bytes": 7112,
+        "share": 0.0191
+      },
+      {
+        "pkg": "react-countup",
+        "bytes": 6533,
+        "share": 0.0175
+      },
+      {
+        "pkg": "countup.js",
+        "bytes": 5677,
+        "share": 0.0152
+      },
+      {
+        "pkg": "scheduler",
+        "bytes": 3852,
+        "share": 0.0103
+      },
+      {
+        "pkg": "@emailjs/browser",
+        "bytes": 2619,
+        "share": 0.007
+      },
+      {
+        "pkg": "react-intersection-observer",
+        "bytes": 2123,
+        "share": 0.0057
+      },
+      {
+        "pkg": "lodash.throttle",
+        "bytes": 1862,
+        "share": 0.005
+      },
+      {
+        "pkg": "prop-types",
+        "bytes": 772,
+        "share": 0.0021
+      },
+      {
+        "pkg": "(webpack runtime)",
+        "bytes": 690,
+        "share": 0.0019
+      }
+    ]
+  }
+}
