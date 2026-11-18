@@ -1,2 +1,2 @@
-export { JobTitle } from './JobTitle'
-export { WorkExperience } from './WorkExperience'
+export { JobTitle } from "./JobTitle";
+export { WorkExperience } from "./WorkExperience";

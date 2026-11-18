@@ -1,4 +1,4 @@
-import React from 'react'
+import React from "react";
 import {
   Title,
   Subtitle,
@@ -11,9 +11,9 @@ export const Banner = () => {
   return (
     <section
       id="home"
-      className="container flex flex-col-reverse lg:flex-row gap-4 h-svh mx-auto p-4 justify-center items-center"
+      className="container mx-auto flex h-svh flex-col-reverse items-center justify-center gap-4 p-4 lg:flex-row"
     >
-      <article className="font-secondary text-center lg:text-left">
+      <article className="text-center font-secondary lg:text-left">
         <Title />
         <Subtitle />
         <ContactButton />

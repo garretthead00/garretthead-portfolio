@@ -25,7 +25,7 @@ export const ExperienceList = ({ inView }: ExperienceListProps) => {
       className="flex flex-1 flex-wrap justify-center gap-8 lg:gap-x-10"
     >
       <div>
-        <div className="text-[36px] font-tertiary text-gradient">
+        <div className="text-gradient font-tertiary text-[36px]">
           {inView ? <CountUp start={0} end={8} duration={5} /> : null} yrs
         </div>
         <div className="font-primary text-sm tracking-[2px]">
@@ -33,19 +33,19 @@ export const ExperienceList = ({ inView }: ExperienceListProps) => {
         </div>
       </div>
       <div>
-        <div className="text-[36px] font-tertiary text-gradient">
+        <div className="text-gradient font-tertiary text-[36px]">
           {inView ? <CountUp start={0} end={6} duration={5} /> : null} yrs
         </div>
         <div className="font-primary text-sm tracking-[2px]">Javascript</div>
       </div>
       <div>
-        <div className="text-[36px] font-tertiary text-gradient">
+        <div className="text-gradient font-tertiary text-[36px]">
           {inView ? <CountUp start={0} end={4} duration={5} /> : null} yrs
         </div>
         <div className="font-primary text-sm tracking-[2px]">React</div>
       </div>
       <div>
-        <div className="text-[36px] font-tertiary text-gradient">
+        <div className="text-gradient font-tertiary text-[36px]">
           {inView ? <CountUp start={0} end={5} duration={5} /> : null} yrs
         </div>
         <div className="font-primary text-sm tracking-[2px]">NodeJS</div>

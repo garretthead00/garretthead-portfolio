@@ -9,7 +9,7 @@ export const Tiger = () => {
       variants={fadeIn("down", 0.3)}
       initial="hidden"
       whileInView={"show"}
-      className="flex-1 lg:flex mx-auto max-w-[482px] mix-blend-lighten"
+      className="mx-auto max-w-[482px] flex-1 mix-blend-lighten lg:flex"
     >
       <img src={TigerLogo} alt="Tiger Logo" />
     </motion.div>

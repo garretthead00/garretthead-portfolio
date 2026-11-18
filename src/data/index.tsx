@@ -4,8 +4,8 @@ import type { ReactNode } from "react";
 import pingIcon from "../assets/images/Ping.png";
 import muralIcon from "../assets/images/Mural.png";
 import incentrikIcon from "../assets/images/InCentrik.png";
-import copilotIcon from "../assets/images/Copilot.png"
-import lsuIcon from "../assets/images/lsu.png"
+import copilotIcon from "../assets/images/Copilot.png";
+import lsuIcon from "../assets/images/lsu.png";
 
 // TECH ICONS
 import { FaCss3Alt, FaReact, FaNodeJs } from "react-icons/fa";
@@ -62,24 +62,24 @@ export const experience: Role[] = [
     stack: [
       {
         name: "React",
-        icon: <FaReact className="w-8 h-8 mx-auto text-blue-500" />,
+        icon: <FaReact className="mx-auto h-8 w-8 text-blue-500" />,
       },
       {
         name: "Redux",
-        icon: <SiRedux className="w-8 h-8 mx-auto text-purple-500" />,
+        icon: <SiRedux className="mx-auto h-8 w-8 text-purple-500" />,
       },
       {
         name: "CSS3",
-        icon: <FaCss3Alt className="w-8 h-8 mx-auto text-blue-500" />,
+        icon: <FaCss3Alt className="mx-auto h-8 w-8 text-blue-500" />,
       },
       {
         name: "NodeJS",
-        icon: <FaNodeJs className="w-8 h-8 mx-auto text-green-500" />,
+        icon: <FaNodeJs className="mx-auto h-8 w-8 text-green-500" />,
       },
       {
         name: "ExpressJS",
-        icon: <SiExpress className="w-8 h-8 mx-auto text-yellow-500" />,
-      }
+        icon: <SiExpress className="mx-auto h-8 w-8 text-yellow-500" />,
+      },
     ],
     companyLink: "https://www.copilotsearch.com/",
     duration: "1 yr",
@@ -96,39 +96,39 @@ export const experience: Role[] = [
     stack: [
       {
         name: "React",
-        icon: <FaReact className="w-8 h-8 mx-auto text-blue-500" />,
+        icon: <FaReact className="mx-auto h-8 w-8 text-blue-500" />,
       },
       {
         name: "Redux",
-        icon: <SiRedux className="w-8 h-8 mx-auto text-purple-500" />,
+        icon: <SiRedux className="mx-auto h-8 w-8 text-purple-500" />,
       },
       {
         name: "CSS3",
-        icon: <FaCss3Alt className="w-8 h-8 mx-auto text-blue-500" />,
+        icon: <FaCss3Alt className="mx-auto h-8 w-8 text-blue-500" />,
       },
       {
         name: "Redis",
-        icon: <SiRedis className="w-8 h-8 mx-auto text-red-500" />,
+        icon: <SiRedis className="mx-auto h-8 w-8 text-red-500" />,
       },
       {
         name: "NodeJS",
-        icon: <FaNodeJs className="w-8 h-8 mx-auto text-green-500" />,
+        icon: <FaNodeJs className="mx-auto h-8 w-8 text-green-500" />,
       },
       {
         name: "ExpressJS",
-        icon: <SiExpress className="w-8 h-8 mx-auto text-yellow-500" />,
+        icon: <SiExpress className="mx-auto h-8 w-8 text-yellow-500" />,
       },
       {
         name: "PostgreSQL",
-        icon: <BiLogoPostgresql className="w-8 h-8 mx-auto text-blue-500" />,
+        icon: <BiLogoPostgresql className="mx-auto h-8 w-8 text-blue-500" />,
       },
       {
         name: "MongoDB",
-        icon: <SiMongodb className="w-8 h-8 mx-auto text-green-500" />,
+        icon: <SiMongodb className="mx-auto h-8 w-8 text-green-500" />,
       },
       {
         name: "CassandraDB",
-        icon: <SiApachecassandra className="w-8 h-8 mx-auto" />,
+        icon: <SiApachecassandra className="mx-auto h-8 w-8" />,
       },
     ],
     companyLink: "https://www.pingidentity.com/en.html",
@@ -146,31 +146,31 @@ export const experience: Role[] = [
     stack: [
       {
         name: "React",
-        icon: <FaReact className="w-8 h-8 mx-auto text-blue-500" />,
+        icon: <FaReact className="mx-auto h-8 w-8 text-blue-500" />,
       },
       {
         name: "Redux",
-        icon: <SiRedux className="w-8 h-8 mx-auto text-purple-500" />,
+        icon: <SiRedux className="mx-auto h-8 w-8 text-purple-500" />,
       },
       {
         name: "CSS 3",
-        icon: <FaCss3Alt className="w-8 h-8 mx-auto text-blue-500" />,
+        icon: <FaCss3Alt className="mx-auto h-8 w-8 text-blue-500" />,
       },
       {
         name: "Redis",
-        icon: <SiRedis className="w-8 h-8 mx-auto text-red-500" />,
+        icon: <SiRedis className="mx-auto h-8 w-8 text-red-500" />,
       },
       {
         name: "NodeJS",
-        icon: <FaNodeJs className="w-8 h-8 mx-auto text-green-500" />,
+        icon: <FaNodeJs className="mx-auto h-8 w-8 text-green-500" />,
       },
       {
         name: "ExpressJS",
-        icon: <SiExpress className="w-8 h-8 mx-auto text-yellow-500" />,
+        icon: <SiExpress className="mx-auto h-8 w-8 text-yellow-500" />,
       },
       {
         name: "MongoDB",
-        icon: <SiMongodb className="w-8 h-8 mx-auto text-green-500" />,
+        icon: <SiMongodb className="mx-auto h-8 w-8 text-green-500" />,
       },
     ],
     companyLink: "https://www.mural.co",
@@ -187,39 +187,39 @@ export const experience: Role[] = [
     stack: [
       {
         name: "Angular",
-        icon: <SiAngularjs className="w-8 h-8 mx-auto text-red-500" />,
+        icon: <SiAngularjs className="mx-auto h-8 w-8 text-red-500" />,
       },
       {
         name: "CSS 3",
-        icon: <FaCss3Alt className="w-8 h-8 mx-auto text-blue-500" />,
+        icon: <FaCss3Alt className="mx-auto h-8 w-8 text-blue-500" />,
       },
       {
         name: "Bootstrap",
-        icon: <BsBootstrap className="w-8 h-8 mx-auto text-purple-500" />,
+        icon: <BsBootstrap className="mx-auto h-8 w-8 text-purple-500" />,
       },
       {
         name: "NodeJS",
-        icon: <FaNodeJs className="w-8 h-8 mx-auto text-green-500" />,
+        icon: <FaNodeJs className="mx-auto h-8 w-8 text-green-500" />,
       },
       {
         name: "ExpressJS",
-        icon: <SiExpress className="w-8 h-8 mx-auto text-yellow-500" />,
+        icon: <SiExpress className="mx-auto h-8 w-8 text-yellow-500" />,
       },
       {
         name: "MongoDB",
-        icon: <SiMongodb className="w-8 h-8 mx-auto text-green-500" />,
+        icon: <SiMongodb className="mx-auto h-8 w-8 text-green-500" />,
       },
       {
         name: "MS SQL",
         icon: (
-          <SiMicrosoftsqlserver className="w-8 h-8 mx-auto text-blue-500" />
+          <SiMicrosoftsqlserver className="mx-auto h-8 w-8 text-blue-500" />
         ),
       },
     ],
     companyLink: "https://www.incentrik.com",
     duration: "4 yrs",
     icon: incentrikIcon,
-  }
+  },
 ];
 
 export const education: Education = {
@@ -232,38 +232,38 @@ export const education: Education = {
 export const skills: TechItem[] = [
   {
     name: "React",
-    icon: <FaReact className="w-12 h-12 mx-auto text-blue-500" />,
+    icon: <FaReact className="mx-auto h-12 w-12 text-blue-500" />,
   },
   {
     name: "VueJS",
-    icon: <BiLogoVuejs className="w-12 h-12 mx-auto text-green-500" />,
+    icon: <BiLogoVuejs className="mx-auto h-12 w-12 text-green-500" />,
   },
   {
     name: "CSS3",
-    icon: <FaCss3Alt className="w-12 h-12 mx-auto text-blue-500" />,
+    icon: <FaCss3Alt className="mx-auto h-12 w-12 text-blue-500" />,
   },
   {
     name: "TailwindCSS",
-    icon: <BiLogoTailwindCss className="w-12 h-12 mx-auto text-blue-400" />,
+    icon: <BiLogoTailwindCss className="mx-auto h-12 w-12 text-blue-400" />,
   },
   {
     name: "NodeJS",
-    icon: <FaNodeJs className="w-12 h-12 mx-auto text-green-500" />,
+    icon: <FaNodeJs className="mx-auto h-12 w-12 text-green-500" />,
   },
   {
     name: "ExpressJS",
-    icon: <SiExpress className="w-12 h-12 mx-auto text-yellow-500" />,
+    icon: <SiExpress className="mx-auto h-12 w-12 text-yellow-500" />,
   },
   {
     name: "GraphQL",
-    icon: <BiLogoGraphql className="w-12 h-12 mx-auto text-pink-500" />,
+    icon: <BiLogoGraphql className="mx-auto h-12 w-12 text-pink-500" />,
   },
   {
     name: "MongoDB",
-    icon: <SiMongodb className="w-12 h-12 mx-auto text-green-500" />,
+    icon: <SiMongodb className="mx-auto h-12 w-12 text-green-500" />,
   },
   {
     name: "SQL",
-    icon: <BsDatabase className="w-12 h-12 mx-auto text-gray-400" />,
+    icon: <BsDatabase className="mx-auto h-12 w-12 text-gray-400" />,
   },
 ];

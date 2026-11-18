@@ -8,9 +8,9 @@ interface TechStackListItemProps {
 
 const TechStackListItem = ({ tech, index }: TechStackListItemProps) => (
   <li key={index + "_techStackItem"}>
-    <figure className="text-center items-center justify-center">
+    <figure className="items-center justify-center text-center">
       {tech.icon}
-      <figcaption className="text-sm mt-1">{tech.name}</figcaption>
+      <figcaption className="mt-1 text-sm">{tech.name}</figcaption>
     </figure>
   </li>
 );
@@ -20,7 +20,7 @@ interface TechStackListProps {
 }
 
 export const TechStackList = ({ stack }: TechStackListProps) => (
-  <ul className="flex flex-wrap justify-center md:justify-start gap-4">
+  <ul className="flex flex-wrap justify-center gap-4 md:justify-start">
     {stack &&
       stack.map((tech, idx) => <TechStackListItem index={idx} tech={tech} />)}
   </ul>

@@ -15,6 +15,8 @@
       "Bash(npm run preview)",
       "Bash(npm run typecheck)",
       "Bash(npm run lint)",
+      "Bash(npm run format)",
+      "Bash(npm run format:check)",
       "Bash(git status)",
       "Bash(git diff *)",
       "Bash(git log *)",

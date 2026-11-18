@@ -10,9 +10,9 @@ interface SkillsListItemProps {
 
 const SkillsListItem = ({ index, tech }: SkillsListItemProps) => (
   <li key={index + "_techStackItem"}>
-    <figure className="text-center items-center justify-center">
+    <figure className="items-center justify-center text-center">
       {tech.icon}
-      <figcaption className="text-sm mt-1">{tech.name}</figcaption>
+      <figcaption className="mt-1 text-sm">{tech.name}</figcaption>
     </figure>
   </li>
 );
@@ -28,7 +28,7 @@ export const SkillsList = () => (
     {/* <h4 className="text-[20px] tracking-wider font-primary font-semibold mb-2">
       Skills
     </h4> */}
-    <ul className="flex flex-wrap gap-4 mx-auto justify-center">
+    <ul className="mx-auto flex flex-wrap justify-center gap-4">
       {skills &&
         skills.map((tech, idx) => <SkillsListItem index={idx} tech={tech} />)}
     </ul>

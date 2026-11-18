@@ -4,16 +4,16 @@ import { Link } from "react-scroll";
 
 const NavBar = () => {
   return (
-    <nav className="fixed bottom-2 lg:bottom-8 w-full overflow-hidden z-50">
+    <nav className="fixed bottom-2 z-50 w-full overflow-hidden lg:bottom-8">
       <div className="container mx-auto">
-        <div className="w-full bg-black/20 h-[96px] backdrop-blur-2xl rounded-full max-w-[460px] mx-auto px-5 flex justify-between items-center text-2xl text-white/50">
+        <div className="mx-auto flex h-[96px] w-full max-w-[460px] items-center justify-between rounded-full bg-black/20 px-5 text-2xl text-white/50 backdrop-blur-2xl">
           <Link
             to="home"
             activeClass="active"
             smooth={true}
             spy={true}
             offset={-200}
-            className="cursor-pointer w-[60px] h-[60px] flex items-center justify-center"
+            className="flex h-[60px] w-[60px] cursor-pointer items-center justify-center"
           >
             <BiHomeAlt />
           </Link>
@@ -22,7 +22,7 @@ const NavBar = () => {
             activeClass="active"
             smooth={true}
             spy={true}
-            className="cursor-pointer w-[60px] h-[60px] flex items-center justify-center"
+            className="flex h-[60px] w-[60px] cursor-pointer items-center justify-center"
           >
             <BiUser />
           </Link>
@@ -31,7 +31,7 @@ const NavBar = () => {
             activeClass="active"
             smooth={true}
             spy={true}
-            className="cursor-pointer w-[60px] h-[60px] flex items-center justify-center"
+            className="flex h-[60px] w-[60px] cursor-pointer items-center justify-center"
           >
             <BsBriefcase />
           </Link>
@@ -49,7 +49,7 @@ const NavBar = () => {
             activeClass="active"
             smooth={true}
             spy={true}
-            className="cursor-pointer w-[60px] h-[60px] flex items-center justify-center"
+            className="flex h-[60px] w-[60px] cursor-pointer items-center justify-center"
           >
             <BsChatSquareText />
           </Link>

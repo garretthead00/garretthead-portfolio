@@ -4,17 +4,11 @@
 import NavBar from "./components/NavBar";
 //import Resume from "./features/Resume/Resume";
 
-import {
-  About,
-  Banner,
-  Contact,
-  Resume
-} from './features'
+import { About, Banner, Contact, Resume } from "./features";
 
 const App = () => {
-
   return (
-    <div className="bg-site bg-no-repeat bg-cover overflow-hidden">
+    <div className="overflow-hidden bg-site bg-cover bg-no-repeat">
       <Banner />
       <About />
       <Resume />

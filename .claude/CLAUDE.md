@@ -6,22 +6,25 @@ Garrett Head's personal portfolio: a React single-page site served from GitHub P
 
 - Vite 8, React 19.3, TypeScript 7 (strict, `noUncheckedIndexedAccess`), Node 26 (`.nvmrc`; `engines` allows 24+).
 - Tailwind CSS 3.4 via PostCSS (moves to 4.x in Phase 2), framer-motion 11 (moves to `motion/react` 14 in Phase 2).
-- ESLint 9 flat config (`eslint.config.js`): typescript-eslint type-checked rules, react-hooks, react-refresh, jsx-a11y.
+- ESLint 9 flat config (`eslint.config.js`): typescript-eslint type-checked rules, react-hooks, react-refresh, jsx-a11y; `eslint-config-prettier` turns off rules Prettier owns.
+- Prettier 3 (`prettier.config.js`) with `prettier-plugin-tailwindcss` for class order. `docs/` is not formatted.
 - Vite `base` is `/garretthead-portfolio/`. Keep it: the live URL must not change.
 
 ## Commands
 
-| Command | Use |
-| --- | --- |
-| `npm run dev` | Dev server at http://localhost:5173/garretthead-portfolio/ |
-| `npm run typecheck` | Type-check with TypeScript 7 |
-| `npm run lint` | ESLint |
-| `npm run build` | Type-check, then build to `dist/` |
-| `npm run preview` | Serve the production build |
+| Command                | Use                                                        |
+| ---------------------- | ---------------------------------------------------------- |
+| `npm run dev`          | Dev server at http://localhost:5173/garretthead-portfolio/ |
+| `npm run typecheck`    | Type-check with TypeScript 7                               |
+| `npm run lint`         | ESLint                                                     |
+| `npm run format`       | Prettier, with Tailwind class sorting                      |
+| `npm run format:check` | Check formatting                                           |
+| `npm run build`        | Type-check, then build to `dist/`                          |
+| `npm run preview`      | Serve the production build                                 |
 
 Two TypeScript versions are installed on purpose. `typescript-7` (an npm alias of TypeScript 7) does the type-checking; `typescript` stays on 6.0 because typescript-eslint and editors need its JavaScript API, which TypeScript 7 no longer ships. Use `npm run typecheck`, never `npx tsc` (that runs 6.0).
 
-Run `npm run lint`, `npm run typecheck` and `npm run build` before every commit. All three must pass.
+Run `npm run format`, then `npm run lint`, `npm run typecheck` and `npm run build` before every commit. All must pass.
 
 ## Project layout
 

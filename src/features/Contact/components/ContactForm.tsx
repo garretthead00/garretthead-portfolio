@@ -4,10 +4,10 @@ import { motion } from "framer-motion";
 import { fadeIn } from "../../../common/transitions";
 
 export const ContactForm = () => {
-    const [name, setName] = useState("");
-    const [email, setEmail] = useState("");
-    const [message, setMessage] = useState("");
-    const form = useRef<HTMLFormElement>(null);
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
+  const form = useRef<HTMLFormElement>(null);
 
   const submit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -29,7 +29,7 @@ export const ContactForm = () => {
           },
           (error: { text?: string }) => {
             console.log("FAILED...", error.text);
-          }
+          },
         );
       event.currentTarget.reset();
     }
@@ -41,7 +41,7 @@ export const ContactForm = () => {
       initial="hidden"
       whileInView={"show"}
       viewport={{ once: false, amount: 0.3 }}
-      className="flex-1 border rounded-2xl flex flex-col gap-y-6 p-6 items-start"
+      className="flex flex-1 flex-col items-start gap-y-6 rounded-2xl border p-6"
       onSubmit={submit}
     >
       <input
@@ -49,7 +49,7 @@ export const ContactForm = () => {
         placeholder="Your name"
         required={true}
         name="name"
-        className="bg-transparent border-b py-3 outline-none w-full placeholder:text-white focus:border-accent transition-all"
+        className="w-full border-b bg-transparent py-3 outline-none transition-all placeholder:text-white focus:border-accent"
         onChange={(e) => setName(e.target.value)}
       />
       <input
@@ -57,7 +57,7 @@ export const ContactForm = () => {
         placeholder="Your email"
         required={true}
         name="email"
-        className="bg-transparent border-b py-3 outline-none w-full placeholder:text-white focus:border-accent transition-all"
+        className="w-full border-b bg-transparent py-3 outline-none transition-all placeholder:text-white focus:border-accent"
         onChange={(e) => setEmail(e.target.value)}
       />
       <textarea
@@ -65,7 +65,7 @@ export const ContactForm = () => {
         placeholder="Your message"
         name="message"
         maxLength={1200}
-        className="bg-transparent border-b pb-12 align-top outline-none w-full placeholder:text-white focus:border-accent transition-all resize-none"
+        className="w-full resize-none border-b bg-transparent pb-12 align-top outline-none transition-all placeholder:text-white focus:border-accent"
         onChange={(e) => setMessage(e.target.value)}
       ></textarea>
       <button type="submit" className="btn btn-lg">

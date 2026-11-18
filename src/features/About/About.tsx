@@ -9,10 +9,10 @@ export const About = () => {
   return (
     <section
       id="about"
-      className="container flex flex-col lg:flex-row gap-8 h-svh mx-auto p-4 justify-center items-center lg:gap-x-20 lg:gap-y-0"
+      className="container mx-auto flex h-svh flex-col items-center justify-center gap-8 p-4 lg:flex-row lg:gap-x-20 lg:gap-y-0"
       ref={ref}
     >
-      <div className="flex flex-col mb-4">
+      <div className="mb-4 flex flex-col">
         <Introduction />
         <ExperienceList inView={inView} />
       </div>
