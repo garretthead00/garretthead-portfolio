@@ -9,7 +9,7 @@ Garrett Head's personal portfolio: a React single-page site served from GitHub P
 - ESLint 9 flat config (`eslint.config.js`): typescript-eslint type-checked rules, react-hooks, react-refresh, jsx-a11y; `eslint-config-prettier` turns off rules Prettier owns.
 - Prettier 3 (`prettier.config.js`) with `prettier-plugin-tailwindcss` for class order. `docs/` is not formatted.
 - Vite `base` is `/garretthead-portfolio/`. Keep it: the live URL must not change.
-- Deploys run from GitHub Actions (`.github/workflows/deploy.yml`) on every push to `main`; pull requests run format, lint, type-check and build. There is no manual deploy script.
+- Deploys: GitHub Actions (`.github/workflows/deploy.yml`) runs format, lint, type-check and build on every pull request and push. On pushes to `main` it commits `dist/` to the `gh-pages` branch, which GitHub Pages serves ("Deploy from a branch"). Never edit `gh-pages` by hand; there is no manual deploy script.
 
 ## Commands
 
@@ -52,7 +52,7 @@ Claude may create and edit files in this project without asking, so every change
 
 ## Upgrade plan
 
-The site is being upgraded in phases (full plan: the "Portfolio Architecture & Technical Review" doc). Phase 0 (baseline) is done; Phase 1 (toolchain) is in progress. Later phases: 2 Tailwind 4 + Motion 14, 3 redesign and content refresh, 4 motion and UX, 5 accessibility, 6 performance, 7 QA and launch.
+The site is being upgraded in phases (full plan: the "Portfolio Architecture & Technical Review" doc). Phases 0 (baseline) and 1 (toolchain) are done; Phase 2 is next. Later phases: 2 Tailwind 4 + Motion 14, 3 redesign and content refresh, 4 motion and UX, 5 accessibility, 6 performance, 7 QA and launch.
 
 Until Phase 3, changes must not alter how the site looks. Compare full-page screenshots against the live build at 390, 768 and 1440 px wide.
 
