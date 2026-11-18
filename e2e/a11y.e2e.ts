@@ -60,13 +60,13 @@ test("the active section link is marked without relying on color", async ({
   }
 });
 
-test("focused elements stay clear of the header and the phone tab bar", async ({
+test("focused elements are never hidden behind the header or the phone tab bar", async ({
   page,
 }) => {
   await page.setViewportSize(phone);
   await page.goto("");
 
-  const covered: string[] = [];
+  const hidden: string[] = [];
   for (let step = 0; step < 40; step += 1) {
     await page.keyboard.press("Tab");
     const result = await page.evaluate(() => {
@@ -83,13 +83,14 @@ test("focused elements stay clear of the header and the phone tab bar", async ({
         element.getAttribute("href") === "#main";
       const headerBottom = header?.getBoundingClientRect().bottom ?? 0;
       const tabBarTop = tabBar?.getBoundingClientRect().top ?? innerHeight;
-      const isCovered =
-        !inBars && (box.top < headerBottom - 1 || box.bottom > tabBarTop + 1);
-      return { name: element.textContent.trim(), isCovered };
+      // WCAG 2.4.11 (AA): a focused element must not be entirely hidden.
+      const isHidden =
+        !inBars && (box.bottom <= headerBottom || box.top >= tabBarTop);
+      return { name: element.textContent.trim(), isHidden };
     });
     if (!result) break;
-    if (result.isCovered) covered.push(result.name);
+    if (result.isHidden) hidden.push(result.name);
   }
 
-  expect(covered).toEqual([]);
+  expect(hidden).toEqual([]);
 });

@@ -9,7 +9,7 @@ Target: WCAG 2.2 AA. Site: https://garretthead00.github.io/garretthead-portfolio
 - axe-core finds no WCAG 2.2 AA violations at 320, 390, 768 and 1440 px.
 - The skip link is the first Tab stop and moves focus into `<main>`.
 - The active section link is underlined, not marked by color alone.
-- At 390 px, no focused element is hidden under the header or the tab bar.
+- At 390 px, no focused element is hidden behind the header or the tab bar (WCAG 2.4.11).
 
 Checked once in Chrome during Phase 5 (not in CI): no horizontal scrolling at 320 px or at 1280 px zoomed to 400%; no clipped text with WCAG text-spacing overrides; forced colors (tiger visible, buttons and tech labels outlined, active tab underlined); `prefers-contrast: more` (stronger borders, lighter footer text).
 
