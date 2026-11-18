@@ -8,7 +8,7 @@ interface SiteHeaderProps {
 
 /** Sticky top bar: name, section links (from md up) and social links. */
 export const SiteHeader = ({ activeId }: SiteHeaderProps) => (
-  <header className="sticky top-0 z-20 h-(--header-height) border-b border-light-purple/30 bg-corporate-purple">
+  <header className="sticky top-0 z-20 h-(--header-height) border-b border-light-purple/30 bg-corporate-purple contrast-more:border-light-purple">
     <div className="container-page flex h-full items-center justify-between gap-4">
       <a
         href="#home"
@@ -37,7 +37,7 @@ export const SiteHeader = ({ activeId }: SiteHeaderProps) => (
                   aria-current={isActive ? "location" : undefined}
                   className={
                     isActive
-                      ? "flex min-h-11 items-center rounded-full bg-lsu-purple px-4 text-[15px] font-semibold text-lsu-gold"
+                      ? "flex min-h-11 items-center rounded-full bg-lsu-purple px-4 text-[15px] font-semibold text-lsu-gold underline decoration-2 underline-offset-4"
                       : "flex min-h-11 items-center rounded-full px-4 text-[15px] font-medium text-light-gray hover:text-lsu-gold"
                   }
                 >

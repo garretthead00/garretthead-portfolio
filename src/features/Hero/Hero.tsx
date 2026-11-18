@@ -10,7 +10,7 @@ export const Hero = () => {
     <section
       id="home"
       aria-labelledby="home-title"
-      className="relative overflow-hidden border-b border-light-purple/30"
+      className="relative overflow-hidden border-b border-light-purple/30 contrast-more:border-light-purple"
     >
       <div
         aria-hidden="true"
@@ -32,7 +32,7 @@ export const Hero = () => {
             {linkedin && (
               <a
                 href={linkedin.href}
-                className="flex min-h-13 items-center justify-center gap-2.5 rounded-full bg-lsu-gold px-6 font-semibold text-corporate-purple hover:bg-corporate-gold hover:text-corporate-purple"
+                className="flex min-h-13 items-center justify-center gap-2.5 rounded-full bg-lsu-gold px-6 font-semibold text-corporate-purple hover:bg-corporate-gold hover:text-corporate-purple forced-colors:border"
               >
                 <Icon name="linkedin" size={20} />
                 Connect on {linkedin.label}
@@ -56,7 +56,7 @@ export const Hero = () => {
             width={1200}
             height={1250}
             fetchPriority="high"
-            className="h-auto w-[min(100%,460px)] mix-blend-lighten max-md:w-[260px]"
+            className="h-auto w-[min(100%,460px)] mix-blend-lighten max-md:w-[260px] forced-colors:mix-blend-normal"
           />
         </div>
       </div>
