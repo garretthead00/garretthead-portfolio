@@ -1,0 +1,55 @@
+# garretthead-portfolio
+
+Garrett Head's personal portfolio: a React single-page site served from GitHub Pages at https://garretthead00.github.io/garretthead-portfolio/.
+
+## Stack
+
+- Vite 8, React 19.3, TypeScript 7 (strict, `noUncheckedIndexedAccess`), Node 26 (`.nvmrc`; `engines` allows 24+).
+- Tailwind CSS 3.4 via PostCSS (moves to 4.x in Phase 2), framer-motion 11 (moves to `motion/react` 14 in Phase 2).
+- ESLint 9 flat config (`eslint.config.js`): typescript-eslint type-checked rules, react-hooks, react-refresh, jsx-a11y.
+- Vite `base` is `/garretthead-portfolio/`. Keep it: the live URL must not change.
+
+## Commands
+
+| Command | Use |
+| --- | --- |
+| `npm run dev` | Dev server at http://localhost:5173/garretthead-portfolio/ |
+| `npm run typecheck` | Type-check with TypeScript 7 |
+| `npm run lint` | ESLint |
+| `npm run build` | Type-check, then build to `dist/` |
+| `npm run preview` | Serve the production build |
+
+Two TypeScript versions are installed on purpose. `typescript-7` (an npm alias of TypeScript 7) does the type-checking; `typescript` stays on 6.0 because typescript-eslint and editors need its JavaScript API, which TypeScript 7 no longer ships. Use `npm run typecheck`, never `npx tsc` (that runs 6.0).
+
+Run `npm run lint`, `npm run typecheck` and `npm run build` before every commit. All three must pass.
+
+## Project layout
+
+- `src/main.tsx`: entry point. `src/App.tsx`: page composition.
+- `src/features/<Section>/`: page sections (Banner, About, Resume, Contact) and their components.
+- `src/components/`: shared components (NavBar).
+- `src/data/index.tsx`: site content and its types (`Role`, `TechItem`, `Education`).
+- `src/common/transitions.ts`: shared animation variants.
+- `docs/baseline/`: Phase 0 measurements of the original site. Don't edit except to correct facts.
+
+## Upgrade plan
+
+The site is being upgraded in phases (full plan: the "Portfolio Architecture & Technical Review" doc). Phase 0 (baseline) is done; Phase 1 (toolchain) is in progress. Later phases: 2 Tailwind 4 + Motion 14, 3 redesign and content refresh, 4 motion and UX, 5 accessibility, 6 performance, 7 QA and launch.
+
+Until Phase 3, changes must not alter how the site looks. Compare full-page screenshots against the live build at 390, 768 and 1440 px wide.
+
+## Git and pull requests
+
+- Commits are authored and committed as `Garrett Head <garretthead@Garretts-MacBook-Pro.local>`.
+- All credit goes to Garrett. Never mention Claude, AI or any assistant in commit messages, PR titles or descriptions, PR comments, code comments or docs. No co-author trailers, no "Generated with" lines, no session links.
+- One branch and one PR per phase or fix, branched from the latest `main`. Never commit or push to `main` directly.
+- Garrett approves the finished code before anything is pushed. After approval: push, open the PR, keep its title and description current. **Garrett merges; never merge a PR.**
+- Before pushing, check `main` with `git ls-remote origin main`; Garrett may have merged in the meantime.
+- After opening or editing a PR, re-read its description from GitHub and make sure it contains only the text you wrote.
+
+## Content rules
+
+- Employment facts come from Garrett's résumé; don't invent roles, dates, metrics or technologies.
+- From Phase 3: exactly five roles, March 2021 to present (FloorFound, Engine, CoPilot, Ping Identity, MURAL), with official titles. No earlier employers, education block, Projects section, contact form or résumé download.
+- Social links are LinkedIn (https://www.linkedin.com/in/garretthead) and GitHub (https://github.com/garretthead00) only.
+- Keep the tiger brand: tiger mark, purple and gold.
