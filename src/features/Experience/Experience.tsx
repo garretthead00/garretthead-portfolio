@@ -10,11 +10,9 @@ export const Experience = () => (
     </p>
     <ol className="mt-14 flex flex-col gap-5">
       {roles.map((role) => (
-        <li key={role.id}>
-          <Reveal direction="up" delay={0} amount={0.2}>
-            <RoleCard role={role} />
-          </Reveal>
-        </li>
+        <Reveal as="li" key={role.id}>
+          <RoleCard role={role} />
+        </Reveal>
       ))}
     </ol>
   </Section>

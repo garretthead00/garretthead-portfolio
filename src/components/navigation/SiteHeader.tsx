@@ -8,7 +8,7 @@ interface SiteHeaderProps {
 
 /** Sticky top bar: name, section links (from md up) and social links. */
 export const SiteHeader = ({ activeId }: SiteHeaderProps) => (
-  <header className="sticky top-0 z-20 h-(--header-height) border-b border-light-purple/30 bg-corporate-purple/95 backdrop-blur-sm">
+  <header className="sticky top-0 z-20 h-(--header-height) border-b border-light-purple/30 bg-corporate-purple">
     <div className="container-page flex h-full items-center justify-between gap-4">
       <a
         href="#home"

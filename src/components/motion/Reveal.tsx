@@ -1,34 +1,32 @@
 import type { ComponentType } from "react";
 import { m, type HTMLMotionProps } from "motion/react";
-import { fadeIn, type FadeDirection } from "./variants";
+import { revealVariants } from "./variants";
 
 const revealElements = {
   article: m.article,
   div: m.div,
-  form: m.form,
-  h1: m.h1,
+  li: m.li,
 } as const;
 
 type RevealElement = keyof typeof revealElements;
 
 type RevealProps<T extends RevealElement> = Omit<
   HTMLMotionProps<T>,
-  "variants" | "initial" | "whileInView" | "viewport"
+  "variants" | "initial" | "whileInView" | "viewport" | "custom"
 > & {
   /** Element to render. Defaults to `div`. */
   as?: T;
-  direction: FadeDirection;
-  delay: number;
-  /** Share of the element that must be visible to play; omit for Motion's default. */
+  /** Seconds to wait before playing, for staggering siblings. */
+  delay?: number;
+  /** Share of the element that must be visible to play. */
   amount?: number;
 };
 
-/** Fades and slides an element in each time it scrolls into view. */
+/** Fades and lifts an element in the first time it scrolls into view. */
 export const Reveal = <T extends RevealElement = "div">({
   as,
-  direction,
-  delay,
-  amount,
+  delay = 0,
+  amount = 0.2,
   ...props
 }: RevealProps<T>) => {
   const Element = revealElements[as ?? "div"] as ComponentType<
@@ -38,10 +36,11 @@ export const Reveal = <T extends RevealElement = "div">({
   return (
     <Element
       {...(props as HTMLMotionProps<T>)}
-      variants={fadeIn(direction, delay)}
+      variants={revealVariants}
+      custom={delay}
       initial="hidden"
       whileInView="show"
-      viewport={amount === undefined ? undefined : { once: false, amount }}
+      viewport={{ once: true, amount }}
     />
   );
 };

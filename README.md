@@ -13,7 +13,7 @@ Built with React 19, TypeScript, Vite, Tailwind CSS 4 and Motion. Requires Node.
 | `npm run build`        | Type-check, then build the site into `dist/`                         |
 | `npm run preview`      | Serve the production build locally                                   |
 | `npm run typecheck`    | Type-check only (TypeScript 7)                                       |
-| `npm test`             | Run the content-contract tests (Vitest)                              |
+| `npm test`             | Run the content-contract and motion-rule tests (Vitest)              |
 | `npm run lint`         | Lint with ESLint (TypeScript, React Hooks, React Refresh, jsx-a11y)  |
 | `npm run format`       | Format with Prettier (sorts Tailwind classes)                        |
 | `npm run format:check` | Check formatting without writing                                     |

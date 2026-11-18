@@ -32,10 +32,9 @@
     background-color: var(--color-corporate-purple);
   }
 
-  @media (prefers-reduced-motion: no-preference) {
-    html {
-      scroll-behavior: smooth;
-    }
+  /* Set by MotionProvider from the visitor's motion preference. */
+  html[data-motion="full"] {
+    scroll-behavior: smooth;
   }
 
   body {

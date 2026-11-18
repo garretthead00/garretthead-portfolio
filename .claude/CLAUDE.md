@@ -6,12 +6,12 @@ Garrett Head's personal portfolio: a React single-page site served from GitHub P
 
 - Vite 8, React 19.3, TypeScript 7 (strict, `noUncheckedIndexedAccess`), Node 26 (`.nvmrc`; `engines` allows 24+).
 - Tailwind CSS 4 via `@tailwindcss/vite`. Theme tokens live in `@theme` in `src/index.css`; there is no `tailwind.config.js`. Colors are the official LSU palette only (`corporate-purple`, `lsu-purple`, `light-purple`, `lsu-gold`, `corporate-gold`, `light-gold`, `light-gray`, `white`); fonts are `font-display` (Orbitron: name, section titles, company names), `font-sans` (Inter) and `font-mono` (JetBrains Mono: labels, dates, tech). Shared classes (`.eyebrow`, `.section-title`, `.tech-label`, `.card`, `.container-page`) are in `@layer components` and can't take variants, so use plain utilities for responsive changes.
-- Vitest (`npm test`) runs the résumé content contract in `src/content/content.test.ts`.
-- Motion 14 (`motion/react`). `MotionProvider` (in `main.tsx`) loads `domAnimation` through `LazyMotion` in strict mode and sets `MotionConfig reducedMotion="user"`.
+- Vitest (`npm test`) runs the résumé content contract in `src/content/content.test.ts` and the motion rules in `src/components/motion/motionPreference.test.ts`.
+- Motion 14 (`motion/react`). `MotionProvider` (in `main.tsx`) loads `domAnimation` through `LazyMotion` in strict mode. Reduced motion follows the system setting until the footer's `ReduceMotionToggle` overrides it (saved in `localStorage` as `motion-preference`); the result goes to `MotionConfig reducedMotion` and to `<html data-motion>`, which gates smooth scrolling.
 - ESLint 9 flat config (`eslint.config.js`): typescript-eslint type-checked rules, react-hooks, react-refresh, jsx-a11y; `eslint-config-prettier` turns off rules Prettier owns.
 - Prettier 3 (`prettier.config.js`) with `prettier-plugin-tailwindcss` for class order. `docs/` is not formatted.
 - Vite `base` is `/garretthead-portfolio/`. Keep it: the live URL must not change.
-- Deploys: GitHub Actions (`.github/workflows/deploy.yml`) runs format, lint, type-check and build on every pull request and push. On pushes to `main` it commits `dist/` to the `gh-pages` branch, which GitHub Pages serves ("Deploy from a branch"). Never edit `gh-pages` by hand; there is no manual deploy script.
+- Deploys: GitHub Actions (`.github/workflows/deploy.yml`) runs format, lint, tests and build (which type-checks) on every pull request and push. On pushes to `main` it commits `dist/` to the `gh-pages` branch, which GitHub Pages serves ("Deploy from a branch"). Never edit `gh-pages` by hand; there is no manual deploy script.
 
 ## Commands
 
@@ -19,7 +19,7 @@ Garrett Head's personal portfolio: a React single-page site served from GitHub P
 | ---------------------- | ---------------------------------------------------------- |
 | `npm run dev`          | Dev server at http://localhost:5173/garretthead-portfolio/ |
 | `npm run typecheck`    | Type-check with TypeScript 7                               |
-| `npm test`             | Content-contract tests (Vitest)                            |
+| `npm test`             | Content-contract and motion-rule tests (Vitest)            |
 | `npm run lint`         | ESLint                                                     |
 | `npm run format`       | Prettier, with Tailwind class sorting                      |
 | `npm run format:check` | Check formatting                                           |
@@ -35,7 +35,7 @@ Run `npm run format`, then `npm run lint`, `npm run typecheck`, `npm test` and `
 - `src/main.tsx`: entry point. `src/App.tsx`: skip link, header, `<main>` (Hero, About, Experience), footer, phone tab bar.
 - `src/content/`: all copy and résumé data as typed data (no JSX, no classes): `profile.ts`, `skills.ts`, `experience.ts`, `sections.ts` (feeds the nav and active-section tracking), `types.ts`, `resume.snapshot.json` (company, title, start, end per role) and `content.test.ts`.
 - `src/features/<Section>/`: Hero, About, Experience (with `RoleCard`).
-- `src/components/`: `Icon` (inline stroke icons), `SocialLinks`, `TechLabels`, `layout/` (`Section`, `SiteFooter`), `navigation/` (`SiteHeader` from `md` up, `MobileNav` below `md`), `motion/` (`MotionProvider`, `Reveal`, `fadeIn` variants).
+- `src/components/`: `Icon` (inline stroke icons), `SocialLinks`, `TechLabels`, `layout/` (`Section`, `SiteFooter`), `navigation/` (`SiteHeader` from `md` up, `MobileNav` below `md`), `motion/` (`MotionProvider`, `Reveal`, `ReduceMotionToggle`, `motionPreference`, `variants` with `motionRules`).
 - `src/hooks/useActiveSection.ts`: one IntersectionObserver that marks the nav link for the section in view with `aria-current="location"`.
 - `docs/baseline/`: Phase 0 measurements of the original site. Don't edit except to correct facts.
 
@@ -43,11 +43,11 @@ Run `npm run format`, then `npm run lint`, `npm run typecheck`, `npm test` and `
 
 Claude may create and edit files in this project without asking, so every change has to meet this bar on its own:
 
-- **Types:** strict TypeScript. No `any`, no `@ts-ignore` or `@ts-expect-error`, no non-null `!` assertions; narrow with type guards instead. Props get a named `interface` or `type`. Content types live with the content in `src/data/`.
-- **Components:** function components, one job each, named exports for feature components. Keep data out of JSX: content belongs in `src/data/`, not inline strings.
+- **Types:** strict TypeScript. No `any`, no `@ts-ignore` or `@ts-expect-error`, no non-null `!` assertions; narrow with type guards instead. Props get a named `interface` or `type`. Content types live with the content in `src/content/`.
+- **Components:** function components, one job each, named exports for feature components. Keep data out of JSX: content belongs in `src/content/`, not inline strings.
 - **Lists:** `key` goes on the element returned by `map()` and uses a stable id from the data, never the array index.
 - **Accessibility:** semantic, native elements first (`button`, `a`, `nav`, `ul`), meaningful `alt` text, accessible names on icon-only links and buttons. jsx-a11y warnings are errors.
-- **Animation:** wrap entrance animations in `Reveal` (`as`, `direction`, `delay`, `amount`). Use `m.*` from `motion/react`, never `motion.*` (strict `LazyMotion` throws).
+- **Animation:** wrap entrance animations in `Reveal` (`as`, `delay`, `amount`); it plays once. Keep to `motionRules`: 150–400 ms, ease-out, at most 24 px of travel, at most 60 ms between staggered items, and hover effects only for devices that can hover (Tailwind 4's `hover:` already does this). Use `m.*` from `motion/react`, never `motion.*` (strict `LazyMotion` throws).
 - **Styling:** Tailwind utilities; reuse the `@theme` colors and fonts in `src/index.css` rather than new arbitrary values.
 - **No leftovers:** no dead code, commented-out code, unused imports or files, `console.log` or debugging output.
 - **Comments:** only for what the code can't say (a workaround, a constraint, a link to the reason). Keep them current.
@@ -56,7 +56,7 @@ Claude may create and edit files in this project without asking, so every change
 
 ## Upgrade plan
 
-The site is being upgraded in phases (full plan: the "Portfolio Architecture & Technical Review" doc). Phases 0 (baseline), 1 (toolchain), 2 (Tailwind 4 + Motion 14) and 3 (redesign and content refresh) are done; Phase 4 is next. Later phases: 4 motion and UX, 5 accessibility, 6 performance, 7 QA and launch.
+The site is being upgraded in phases (full plan: the "Portfolio Architecture & Technical Review" doc). Phases 0 (baseline), 1 (toolchain), 2 (Tailwind 4 + Motion 14), 3 (redesign and content refresh) and 4 (motion and UX) are done; Phase 5 is next. Later phases: 5 accessibility, 6 performance, 7 QA and launch.
 
 The approved design is the "Portfolio Redesign — Phase 3" canvas. Changes should match it at 390, 768 and 1440 px wide unless Garrett asks for something different.
 
