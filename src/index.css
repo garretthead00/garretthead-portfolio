@@ -1,5 +1,9 @@
 @import "tailwindcss";
 
+/* Only the app uses utility classes; keep docs and tests out of the scan. */
+@source not "../docs";
+@source not "../e2e";
+
 /*
   Colors are the official LSU palette
   (https://www.lsu.edu/communications/files/brand-guide.pdf).
