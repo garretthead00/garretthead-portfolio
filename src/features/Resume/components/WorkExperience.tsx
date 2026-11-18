@@ -1,9 +1,8 @@
 import { BsArrowUpRight } from "react-icons/bs";
-import { motion } from "framer-motion";
-import { fadeIn } from "../../../common/transitions";
 import { experience, type Role } from "../../../data";
 
 import { TechStackList } from "./TechStack";
+import { Reveal } from "../../../components/motion";
 
 interface CompanyLinkProps {
   url: string;
@@ -71,11 +70,11 @@ const ExperienceListItem = ({ role }: ExperienceListItemProps) => {
 
 export const WorkExperience = () => {
   return (
-    <motion.article
-      variants={fadeIn("left", 0.3)}
-      initial="hidden"
-      whileInView={"show"}
-      viewport={{ once: false, amount: 0.1 }}
+    <Reveal
+      as="article"
+      direction="left"
+      delay={0.3}
+      amount={0.1}
       className="mb-[12px] flex flex-1 pb-4"
     >
       <ul>
@@ -83,6 +82,6 @@ export const WorkExperience = () => {
           <ExperienceListItem key={role.id} role={role} />
         ))}
       </ul>
-    </motion.article>
+    </Reveal>
   );
 };

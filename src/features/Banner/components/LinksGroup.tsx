@@ -1,14 +1,12 @@
 import { FaGithub, FaLinkedin } from "react-icons/fa";
-import { motion } from "framer-motion";
-import { fadeIn } from "../../../common/transitions";
+import { Reveal } from "../../../components/motion";
 
 export const LinksGroup = () => {
   return (
-    <motion.div
-      variants={fadeIn("right", 0.3)}
-      initial="hidden"
-      whileInView={"show"}
-      viewport={{ once: false, amount: 0.7 }}
+    <Reveal
+      direction="right"
+      delay={0.3}
+      amount={0.7}
       className="mx-auto flex max-w-max gap-x-6 text-[32px] lg:mx-0"
     >
       <a href="https://www.linkedin.com/in/garretthead">
@@ -17,6 +15,6 @@ export const LinksGroup = () => {
       <a href="https://www.github.com/garretthead00">
         <FaGithub />
       </a>
-    </motion.div>
+    </Reveal>
   );
 };

@@ -1,16 +1,14 @@
-import { motion } from "framer-motion";
-import { fadeIn } from "../../../common/transitions";
 import TigerLogo from "../../../assets/images/TigerLogo.png";
+import { Reveal } from "../../../components/motion";
 
 export const Tiger = () => {
   return (
-    <motion.div
-      variants={fadeIn("down", 0.3)}
-      initial="hidden"
-      whileInView={"show"}
+    <Reveal
+      direction="down"
+      delay={0.3}
       className="mx-auto max-w-[482px] flex-1 mix-blend-lighten lg:flex"
     >
       <img src={TigerLogo} alt="Tiger Logo" />
-    </motion.div>
+    </Reveal>
   );
 };

@@ -1,70 +1,138 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
-.btn {
-  background: linear-gradient(
-    92.23deg,
-    #fdd023 21.43%,
-    #d29f13 50.63%,
-    #6b2fba 100%,
-    #7e3dd4 117.04%
-  );
-  box-shadow: 0px 4.42184px 107.23px rgba(156, 88, 245, 0.51);
+@theme {
+  --font-*: initial;
+  --font-primary: Orbitron;
+  --font-secondary: Rajdhani;
+  --font-tertiary: Aldrich;
+
+  --breakpoint-*: initial;
+  --breakpoint-sm: 640px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 960px;
+  --breakpoint-xl: 1200px;
+
+  --color-primary: #7e3dd4;
+  --color-accent: #fdd023;
+  --color-appPurple: #461d7c;
+  --color-appDarkPurple: #3c1053;
+  --color-appLightPurple: #a39aac;
+  --color-appGold: #fdd023;
+  --color-appDarkGold: #d29f13;
+  --color-appLightGold: #f1eedb;
+  --color-appLightGray: #d0d0ce;
+  --color-appGray: #999999;
+  --color-appBlack: #333333;
+
+  --background-image-site: url("./assets/images/Background.jpg");
+
+  /* Tailwind v3 palette values for the colors the site uses (v4's defaults
+     differ slightly). Kept for visual parity until the Phase 3 redesign. */
+  --color-blue-400: #60a5fa;
+  --color-blue-500: #3b82f6;
+  --color-gray-200: #e5e7eb;
+  --color-gray-400: #9ca3af;
+  --color-green-500: #22c55e;
+  --color-pink-500: #ec4899;
+  --color-purple-500: #a855f7;
+  --color-red-500: #ef4444;
+  --color-yellow-500: #eab308;
 }
 
-.btn:hover {
-  background: linear-gradient(
-    92.23deg,
-    #9c58f5 21.43%,
-    #7e3dd4 50.63%,
-    #d29f13 100%,
-    #fdd023 117.04%
-  );
-}
-
-.gradient,
-.active {
-  background: linear-gradient(
-    92.23deg,
-    #9c58f5 21.43%,
-    #7e3dd4 50.63%,
-    #fdd023 100%,
-    #f5d247 117.04%
-  );
-}
-
-.active {
-  color: #fff;
-  padding: 1rem;
-  border-radius: 100%;
-}
-
+/*
+  Tailwind CSS v3 defaults that v4 changed. Kept so the site looks and
+  behaves the same until the Phase 3 redesign:
+  - borders default to gray-200, not currentcolor;
+  - buttons show the pointer cursor.
+*/
 @layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentcolor);
+  }
+
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+
   body {
     @apply font-secondary text-lg leading-8 text-white;
   }
+}
+
+@layer components {
+  /* Default container padding; utilities such as p-4 override it, as in v3. */
+  .container {
+    padding-inline: 15px;
+  }
+
   .h2 {
-    @apply mb-6 font-primary text-[32px] uppercase tracking-[10%];
+    @apply mb-6 font-primary text-[32px] tracking-[10%] uppercase;
   }
+
   .h3 {
-    @apply mb-6 font-primary text-[26px] font-semibold leading-[46px];
+    @apply mb-6 font-primary text-[26px] leading-[46px] font-semibold;
   }
+
   .btn {
     @apply rounded-full font-primary font-medium text-white;
+    background: linear-gradient(
+      92.23deg,
+      #fdd023 21.43%,
+      #d29f13 50.63%,
+      #6b2fba 100%,
+      #7e3dd4 117.04%
+    );
+    box-shadow: 0px 4.42184px 107.23px rgba(156, 88, 245, 0.51);
   }
+
+  .btn:hover {
+    background: linear-gradient(
+      92.23deg,
+      #9c58f5 21.43%,
+      #7e3dd4 50.63%,
+      #d29f13 100%,
+      #fdd023 117.04%
+    );
+  }
+
   .btn-sm {
     @apply h-[48px] px-6 text-sm;
   }
+
   .btn-lg {
     @apply h-[56px] px-10 text-base;
   }
+
   .btn-link {
     @apply text-base;
   }
+
   .text-gradient {
-    @apply bg-gradient-to-r from-[#FDD023] to-[#9C58F5] bg-clip-text font-primary font-bold text-transparent hover:from-[#9C58F5] hover:to-[#FDD023];
+    @apply bg-linear-to-r/srgb from-[#FDD023] to-[#9C58F5] bg-clip-text font-primary font-bold text-transparent hover:from-[#9C58F5] hover:to-[#FDD023];
   }
+
+  .gradient,
+  .active {
+    background: linear-gradient(
+      92.23deg,
+      #9c58f5 21.43%,
+      #7e3dd4 50.63%,
+      #fdd023 100%,
+      #f5d247 117.04%
+    );
+  }
+
+  .active {
+    color: #fff;
+    padding: 1rem;
+    border-radius: 100%;
+  }
+
   .section {
     @apply flex items-center py-8 lg:h-screen lg:py-24;
   }

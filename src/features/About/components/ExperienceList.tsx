@@ -1,6 +1,5 @@
 import CountUpImport from "react-countup";
-import { motion } from "framer-motion";
-import { fadeIn } from "../../../common/transitions";
+import { Reveal } from "../../../components/motion";
 
 // react-countup ships CommonJS only. In an ESM ("type": "module") package,
 // Vite imports CommonJS with Node semantics, so the component sits on
@@ -16,11 +15,11 @@ interface ExperienceListProps {
 
 export const ExperienceList = ({ inView }: ExperienceListProps) => {
   return (
-    <motion.article
-      variants={fadeIn("right", 0.3)}
-      initial="hidden"
-      whileInView={"show"}
-      viewport={{ once: false, amount: 0.3 }}
+    <Reveal
+      as="article"
+      direction="right"
+      delay={0.3}
+      amount={0.3}
       className="flex flex-1 flex-wrap justify-center gap-8 lg:gap-x-10"
     >
       <div>
@@ -49,6 +48,6 @@ export const ExperienceList = ({ inView }: ExperienceListProps) => {
         </div>
         <div className="font-primary text-sm tracking-[2px]">NodeJS</div>
       </div>
-    </motion.article>
+    </Reveal>
   );
 };
