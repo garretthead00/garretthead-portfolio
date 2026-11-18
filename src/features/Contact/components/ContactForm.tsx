@@ -49,7 +49,7 @@ export const ContactForm = () => {
         placeholder="Your name"
         required={true}
         name="name"
-        className="w-full border-b bg-transparent py-3 outline-none transition-all placeholder:text-white focus:border-accent"
+        className="w-full border-b bg-transparent py-3 outline-hidden transition-all placeholder:text-white focus:border-accent"
         onChange={(e) => setName(e.target.value)}
       />
       <input
@@ -57,7 +57,7 @@ export const ContactForm = () => {
         placeholder="Your email"
         required={true}
         name="email"
-        className="w-full border-b bg-transparent py-3 outline-none transition-all placeholder:text-white focus:border-accent"
+        className="w-full border-b bg-transparent py-3 outline-hidden transition-all placeholder:text-white focus:border-accent"
         onChange={(e) => setEmail(e.target.value)}
       />
       <textarea
@@ -65,7 +65,7 @@ export const ContactForm = () => {
         placeholder="Your message"
         name="message"
         maxLength={1200}
-        className="w-full resize-none border-b bg-transparent pb-12 align-top outline-none transition-all placeholder:text-white focus:border-accent"
+        className="w-full resize-none border-b bg-transparent pb-12 align-top outline-hidden transition-all placeholder:text-white focus:border-accent"
         onChange={(e) => setMessage(e.target.value)}
       ></textarea>
       <button type="submit" className="btn btn-lg">

@@ -11,7 +11,7 @@ export const ContactHeader = () => {
       className="flex flex-1 items-center justify-start"
     >
       <div>
-        <h4 className="text-xl font-medium uppercase tracking-wide lg:mb-2">
+        <h4 className="text-xl font-medium tracking-wide uppercase lg:mb-2">
           Let's Geaux!
         </h4>
         <h2 className="h2 text-gradient mb-4 uppercase lg:text-[45px]">

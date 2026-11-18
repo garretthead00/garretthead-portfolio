@@ -5,7 +5,8 @@ Garrett Head's personal portfolio: a React single-page site served from GitHub P
 ## Stack
 
 - Vite 8, React 19.3, TypeScript 7 (strict, `noUncheckedIndexedAccess`), Node 26 (`.nvmrc`; `engines` allows 24+).
-- Tailwind CSS 3.4 via PostCSS (moves to 4.x in Phase 2), framer-motion 11 (moves to `motion/react` 14 in Phase 2).
+- Tailwind CSS 4 via `@tailwindcss/vite`. Theme tokens (fonts, breakpoints, colors) live in `@theme` in `src/index.css`; there is no `tailwind.config.js`. Shared component classes (`.btn`, `.h2`, `.section`, …) are in `@layer components` there. Classes in that layer can't take variants (`lg:section` doesn't work), so use plain utilities for responsive changes.
+- framer-motion 11 (moves to `motion/react` 14 in Phase 2).
 - ESLint 9 flat config (`eslint.config.js`): typescript-eslint type-checked rules, react-hooks, react-refresh, jsx-a11y; `eslint-config-prettier` turns off rules Prettier owns.
 - Prettier 3 (`prettier.config.js`) with `prettier-plugin-tailwindcss` for class order. `docs/` is not formatted.
 - Vite `base` is `/garretthead-portfolio/`. Keep it: the live URL must not change.
@@ -44,7 +45,7 @@ Claude may create and edit files in this project without asking, so every change
 - **Components:** function components, one job each, named exports for feature components. Keep data out of JSX: content belongs in `src/data/`, not inline strings.
 - **Lists:** `key` goes on the element returned by `map()` and uses a stable id from the data, never the array index.
 - **Accessibility:** semantic, native elements first (`button`, `a`, `nav`, `ul`), meaningful `alt` text, accessible names on icon-only links and buttons. jsx-a11y warnings are errors.
-- **Styling:** Tailwind utilities; reuse the theme colors and fonts in `tailwind.config.js` rather than new arbitrary values.
+- **Styling:** Tailwind utilities; reuse the `@theme` colors and fonts in `src/index.css` rather than new arbitrary values.
 - **No leftovers:** no dead code, commented-out code, unused imports or files, `console.log` or debugging output.
 - **Comments:** only for what the code can't say (a workaround, a constraint, a link to the reason). Keep them current.
 - **Scope:** change only what the task needs, follow the existing patterns, and keep commits small, focused and described in the imperative.
