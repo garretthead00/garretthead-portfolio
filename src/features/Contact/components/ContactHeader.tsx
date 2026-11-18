@@ -1,13 +1,11 @@
-import { motion } from "framer-motion";
-import { fadeIn } from "../../../common/transitions";
+import { Reveal } from "../../../components/motion";
 
 export const ContactHeader = () => {
   return (
-    <motion.div
-      variants={fadeIn("right", 0.2)}
-      initial="hidden"
-      whileInView={"show"}
-      viewport={{ once: false, amount: 0.3 }}
+    <Reveal
+      direction="right"
+      delay={0.2}
+      amount={0.3}
       className="flex flex-1 items-center justify-start"
     >
       <div>
@@ -18,6 +16,6 @@ export const ContactHeader = () => {
           Contact me
         </h2>
       </div>
-    </motion.div>
+    </Reveal>
   );
 };

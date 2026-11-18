@@ -1,6 +1,5 @@
 import { skills, type TechItem } from "../../../data";
-import { motion } from "framer-motion";
-import { fadeIn } from "../../../common/transitions";
+import { Reveal } from "../../../components/motion";
 
 interface SkillsListItemProps {
   tech: TechItem;
@@ -16,11 +15,11 @@ const SkillsListItem = ({ tech }: SkillsListItemProps) => (
 );
 
 export const SkillsList = () => (
-  <motion.article
-    variants={fadeIn("left", 0.3)}
-    initial="hidden"
-    whileInView={"show"}
-    viewport={{ once: false, amount: 0.3 }}
+  <Reveal
+    as="article"
+    direction="left"
+    delay={0.3}
+    amount={0.3}
     className="flex flex-col text-center"
   >
     <ul className="mx-auto flex flex-wrap justify-center gap-4">
@@ -28,5 +27,5 @@ export const SkillsList = () => (
         <SkillsListItem key={tech.name} tech={tech} />
       ))}
     </ul>
-  </motion.article>
+  </Reveal>
 );

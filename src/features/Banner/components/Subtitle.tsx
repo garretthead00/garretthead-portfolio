@@ -1,14 +1,12 @@
 import { TypeAnimation } from "react-type-animation";
-import { motion } from "framer-motion";
-import { fadeIn } from "../../../common/transitions";
+import { Reveal } from "../../../components/motion";
 
 export const Subtitle = () => {
   return (
-    <motion.div
-      variants={fadeIn("up", 0.4)}
-      initial="hidden"
-      whileInView={"show"}
-      viewport={{ once: false, amount: 0.7 }}
+    <Reveal
+      direction="up"
+      delay={0.4}
+      amount={0.7}
       className="mb-6 font-secondary text-[36px] leading-none font-semibold uppercase lg:text-[60px]"
     >
       <TypeAnimation
@@ -18,6 +16,6 @@ export const Subtitle = () => {
         wrapper="span"
         repeat={Infinity}
       />
-    </motion.div>
+    </Reveal>
   );
 };

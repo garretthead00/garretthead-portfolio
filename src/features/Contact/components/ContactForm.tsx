@@ -1,7 +1,6 @@
 import { useRef, useState, type FormEvent } from "react";
 import emailjs from "@emailjs/browser";
-import { motion } from "framer-motion";
-import { fadeIn } from "../../../common/transitions";
+import { Reveal } from "../../../components/motion";
 
 export const ContactForm = () => {
   const [name, setName] = useState("");
@@ -35,12 +34,12 @@ export const ContactForm = () => {
     }
   };
   return (
-    <motion.form
+    <Reveal
+      as="form"
       ref={form}
-      variants={fadeIn("left", 0.2)}
-      initial="hidden"
-      whileInView={"show"}
-      viewport={{ once: false, amount: 0.3 }}
+      direction="left"
+      delay={0.2}
+      amount={0.3}
       className="flex flex-1 flex-col items-start gap-y-6 rounded-2xl border p-6"
       onSubmit={submit}
     >
@@ -71,6 +70,6 @@ export const ContactForm = () => {
       <button type="submit" className="btn btn-lg">
         Send message
       </button>
-    </motion.form>
+    </Reveal>
   );
 };

@@ -1,13 +1,12 @@
-import { motion } from "framer-motion";
-import { fadeIn } from "../../../common/transitions";
 import { education } from "../../../data";
+import { Reveal } from "../../../components/motion";
 
 export const JobTitle = () => (
-  <motion.article
-    variants={fadeIn("right", 0.3)}
-    initial="hidden"
-    whileInView={"show"}
-    viewport={{ once: false, amount: 0.3 }}
+  <Reveal
+    as="article"
+    direction="right"
+    delay={0.3}
+    amount={0.3}
     className="mb-4 flex-1 bg-no-repeat mix-blend-lighten lg:bg-bottom"
   >
     <div className="flex flex-col items-center justify-center">
@@ -21,5 +20,5 @@ export const JobTitle = () => (
         {education.degree} in {education.concentration}
       </h4>
     </div>
-  </motion.article>
+  </Reveal>
 );
