@@ -23,4 +23,4 @@ Type-checking uses TypeScript 7 (installed as `typescript-7`). `typescript-eslin
 
 ## Deploy
 
-GitHub Actions (`.github/workflows/deploy.yml`) checks formatting, lints, type-checks and builds every pull request. Every push to `main` also deploys `dist/` to GitHub Pages. The repository's Pages source must be set to **GitHub Actions**.
+GitHub Actions (`.github/workflows/deploy.yml`) checks formatting, lints, type-checks and builds every pull request. On every push to `main` it also commits the new `dist/` to the `gh-pages` branch, so `gh-pages` always matches `main`. GitHub Pages serves the site from that branch (Settings → Pages → **Deploy from a branch**, `gh-pages`, `/ (root)`).
