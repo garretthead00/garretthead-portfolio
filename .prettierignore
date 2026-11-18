@@ -1,3 +1,4 @@
 dist
+dist-ssr
 docs
 package-lock.json
