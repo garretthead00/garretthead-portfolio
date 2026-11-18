@@ -4,7 +4,6 @@ import type { ReactNode } from "react";
 import pingIcon from "../assets/images/Ping.png";
 import muralIcon from "../assets/images/Mural.png";
 import incentrikIcon from "../assets/images/InCentrik.png";
-import bridgestoneFirestoneIcon from "../assets/images/Firestone.png";
 import copilotIcon from "../assets/images/Copilot.png"
 import lsuIcon from "../assets/images/lsu.png"
 
@@ -20,7 +19,6 @@ import { BsBootstrap, BsDatabase } from "react-icons/bs";
 import {
   SiAngularjs,
   SiApachecassandra,
-  SiDotnet,
   SiExpress,
   SiMicrosoftsqlserver,
   SiMongodb,

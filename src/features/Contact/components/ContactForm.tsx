@@ -27,7 +27,7 @@ export const ContactForm = () => {
           () => {
             console.log("SUCCESS!");
           },
-          (error) => {
+          (error: { text?: string }) => {
             console.log("FAILED...", error.text);
           }
         );
