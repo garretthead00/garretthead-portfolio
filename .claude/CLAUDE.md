@@ -9,6 +9,7 @@ Garrett Head's personal portfolio: a React single-page site served from GitHub P
 - ESLint 9 flat config (`eslint.config.js`): typescript-eslint type-checked rules, react-hooks, react-refresh, jsx-a11y; `eslint-config-prettier` turns off rules Prettier owns.
 - Prettier 3 (`prettier.config.js`) with `prettier-plugin-tailwindcss` for class order. `docs/` is not formatted.
 - Vite `base` is `/garretthead-portfolio/`. Keep it: the live URL must not change.
+- Deploys run from GitHub Actions (`.github/workflows/deploy.yml`) on every push to `main`; pull requests run format, lint, type-check and build. There is no manual deploy script.
 
 ## Commands
 

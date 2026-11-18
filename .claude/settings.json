@@ -24,8 +24,6 @@
       "Bash(git branch *)"
     ],
     "deny": [
-      "Bash(npm run deploy)",
-      "Bash(npx gh-pages *)",
       "Bash(gh pr merge *)",
       "Bash(git push --force *)",
       "Bash(git push -f *)",
