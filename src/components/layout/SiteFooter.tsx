@@ -1,4 +1,5 @@
 import { profile } from "../../content";
+import { ReduceMotionToggle } from "../motion";
 import { SocialLinks } from "../SocialLinks";
 
 export const SiteFooter = () => (
@@ -7,7 +8,10 @@ export const SiteFooter = () => (
       <p className="text-sm text-light-purple">
         © {new Date().getFullYear()} {profile.name}
       </p>
-      <SocialLinks />
+      <div className="flex flex-wrap items-center gap-3">
+        <ReduceMotionToggle />
+        <SocialLinks />
+      </div>
     </div>
   </footer>
 );
