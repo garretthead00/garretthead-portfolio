@@ -1,3 +1,5 @@
+import type { ReactNode } from "react";
+
 // COMPANY & SCHOOL ICONS
 import pingIcon from "../assets/images/Ping.png";
 import muralIcon from "../assets/images/Mural.png";
@@ -26,7 +28,31 @@ import {
   SiRedux,
 } from "react-icons/si";
 
-export const experience = [
+export interface TechItem {
+  name: string;
+  icon: ReactNode;
+}
+
+export interface Role {
+  id: number;
+  title: string;
+  company: string;
+  location: string;
+  description: string;
+  stack: TechItem[];
+  companyLink: string;
+  duration: string;
+  icon: string;
+}
+
+export interface Education {
+  school: string;
+  concentration: string;
+  degree: string;
+  icon: string;
+}
+
+export const experience: Role[] = [
   {
     id: 0,
     title: "Senior Software Engineer",
@@ -198,14 +224,14 @@ export const experience = [
   }
 ];
 
-export const education = {
+export const education: Education = {
   school: "McNeese State University",
   concentration: "Computer Science",
   degree: `Bachelor's`,
   icon: lsuIcon,
 };
 
-export const skills = [
+export const skills: TechItem[] = [
   {
     name: "React",
     icon: <FaReact className="w-12 h-12 mx-auto text-blue-500" />,
