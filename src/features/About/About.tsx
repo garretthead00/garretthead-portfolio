@@ -1,22 +1,28 @@
-import { useInView } from "react-intersection-observer";
-import { Introduction, SkillsList, ExperienceList } from "./components";
+import { Section } from "../../components/layout/Section";
+import { Reveal } from "../../components/motion";
+import { TechLabels } from "../../components/TechLabels";
+import { profile, skillGroups } from "../../content";
 
-export const About = () => {
-  const [ref, inView] = useInView({
-    threshold: 0.5,
-  });
-
-  return (
-    <section
-      id="about"
-      className="container mx-auto flex h-svh flex-col items-center justify-center gap-8 p-4 lg:flex-row lg:gap-x-20 lg:gap-y-0"
-      ref={ref}
-    >
-      <div className="mb-4 flex flex-col">
-        <Introduction />
-        <ExperienceList inView={inView} />
-      </div>
-      <SkillsList />
-    </section>
-  );
-};
+export const About = () => (
+  <Section id="about" eyebrow="About" title={profile.about.heading}>
+    <div className="mt-6 grid items-start gap-14 lg:grid-cols-2">
+      <Reveal direction="up" delay={0.1} amount={0.3}>
+        <div className="flex flex-col gap-6 text-pretty text-light-gray">
+          {profile.about.paragraphs.map((paragraph) => (
+            <p key={paragraph}>{paragraph}</p>
+          ))}
+        </div>
+      </Reveal>
+      <Reveal direction="up" delay={0.2} amount={0.2}>
+        <ul aria-label="Skills" className="grid gap-4 sm:grid-cols-2">
+          {skillGroups.map((group) => (
+            <li key={group.id} className="card flex flex-col gap-3.5 p-6">
+              <h3 className="text-base font-semibold">{group.name}</h3>
+              <TechLabels items={group.skills} label={group.name} />
+            </li>
+          ))}
+        </ul>
+      </Reveal>
+    </div>
+  </Section>
+);

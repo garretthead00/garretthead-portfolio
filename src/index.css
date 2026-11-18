@@ -1,139 +1,74 @@
 @import "tailwindcss";
 
+/*
+  Colors are the official LSU palette
+  (https://www.lsu.edu/communications/files/brand-guide.pdf).
+  Text pairs, contrast on corporate purple / lsu purple:
+  white 15.1 / 12.2, light gray 9.8 / 7.9, lsu gold 10.2 / 8.2,
+  light purple 5.6 / 4.5 (not for text on lsu purple).
+*/
 @theme {
-  --font-*: initial;
-  --font-primary: Orbitron;
-  --font-secondary: Rajdhani;
-  --font-tertiary: Aldrich;
+  --color-*: initial;
+  --color-white: #ffffff;
+  --color-corporate-purple: #3c1053;
+  --color-lsu-purple: #461d7c;
+  --color-light-purple: #a39aac;
+  --color-lsu-gold: #fdd023;
+  --color-corporate-gold: #d29f13;
+  --color-light-gold: #f1eedb;
+  --color-light-gray: #d0d0ce;
 
-  --breakpoint-*: initial;
-  --breakpoint-sm: 640px;
-  --breakpoint-md: 768px;
-  --breakpoint-lg: 960px;
-  --breakpoint-xl: 1200px;
+  --font-sans:
+    Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-display: Orbitron, "Arial Black", ui-sans-serif, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
 
-  --color-primary: #7e3dd4;
-  --color-accent: #fdd023;
-  --color-appPurple: #461d7c;
-  --color-appDarkPurple: #3c1053;
-  --color-appLightPurple: #a39aac;
-  --color-appGold: #fdd023;
-  --color-appDarkGold: #d29f13;
-  --color-appLightGold: #f1eedb;
-  --color-appLightGray: #d0d0ce;
-  --color-appGray: #999999;
-  --color-appBlack: #333333;
-
-  --background-image-site: url("./assets/images/Background.jpg");
-
-  /* Tailwind v3 palette values for the colors the site uses (v4's defaults
-     differ slightly). Kept for visual parity until the Phase 3 redesign. */
-  --color-blue-400: #60a5fa;
-  --color-blue-500: #3b82f6;
-  --color-gray-200: #e5e7eb;
-  --color-gray-400: #9ca3af;
-  --color-green-500: #22c55e;
-  --color-pink-500: #ec4899;
-  --color-purple-500: #a855f7;
-  --color-red-500: #ef4444;
-  --color-yellow-500: #eab308;
+  --header-height: 4.5rem;
 }
 
-/*
-  Tailwind CSS v3 defaults that v4 changed. Kept so the site looks and
-  behaves the same until the Phase 3 redesign:
-  - borders default to gray-200, not currentcolor;
-  - buttons show the pointer cursor.
-*/
 @layer base {
-  *,
-  ::after,
-  ::before,
-  ::backdrop,
-  ::file-selector-button {
-    border-color: var(--color-gray-200, currentcolor);
+  html {
+    scroll-padding-top: var(--header-height);
+    background-color: var(--color-corporate-purple);
   }
 
-  button:not(:disabled),
-  [role="button"]:not(:disabled) {
-    cursor: pointer;
+  @media (prefers-reduced-motion: no-preference) {
+    html {
+      scroll-behavior: smooth;
+    }
   }
 
   body {
-    @apply font-secondary text-lg leading-8 text-white;
+    @apply bg-corporate-purple font-sans text-[17px] leading-relaxed text-white antialiased;
+  }
+
+  a {
+    @apply text-lsu-gold transition-colors hover:text-light-gold;
+  }
+
+  :focus-visible {
+    @apply rounded-lg outline-2 outline-offset-3 outline-lsu-gold;
   }
 }
 
 @layer components {
-  /* Default container padding; utilities such as p-4 override it, as in v3. */
-  .container {
-    padding-inline: 15px;
+  .eyebrow {
+    @apply font-mono text-[13px] font-medium tracking-[0.14em] text-lsu-gold uppercase;
   }
 
-  .h2 {
-    @apply mb-6 font-primary text-[32px] tracking-[10%] uppercase;
+  .section-title {
+    @apply font-display text-[clamp(2rem,3.4vw,2.75rem)] leading-tight font-bold;
   }
 
-  .h3 {
-    @apply mb-6 font-primary text-[26px] leading-[46px] font-semibold;
+  .tech-label {
+    @apply rounded-full bg-lsu-gold px-2.5 py-1 font-mono text-xs font-medium text-corporate-purple;
   }
 
-  .btn {
-    @apply rounded-full font-primary font-medium text-white;
-    background: linear-gradient(
-      92.23deg,
-      #fdd023 21.43%,
-      #d29f13 50.63%,
-      #6b2fba 100%,
-      #7e3dd4 117.04%
-    );
-    box-shadow: 0px 4.42184px 107.23px rgba(156, 88, 245, 0.51);
+  .card {
+    @apply rounded-2xl border border-light-purple/30 bg-lsu-purple;
   }
 
-  .btn:hover {
-    background: linear-gradient(
-      92.23deg,
-      #9c58f5 21.43%,
-      #7e3dd4 50.63%,
-      #d29f13 100%,
-      #fdd023 117.04%
-    );
-  }
-
-  .btn-sm {
-    @apply h-[48px] px-6 text-sm;
-  }
-
-  .btn-lg {
-    @apply h-[56px] px-10 text-base;
-  }
-
-  .btn-link {
-    @apply text-base;
-  }
-
-  .text-gradient {
-    @apply bg-linear-to-r/srgb from-[#FDD023] to-[#9C58F5] bg-clip-text font-primary font-bold text-transparent hover:from-[#9C58F5] hover:to-[#FDD023];
-  }
-
-  .gradient,
-  .active {
-    background: linear-gradient(
-      92.23deg,
-      #9c58f5 21.43%,
-      #7e3dd4 50.63%,
-      #fdd023 100%,
-      #f5d247 117.04%
-    );
-  }
-
-  .active {
-    color: #fff;
-    padding: 1rem;
-    border-radius: 100%;
-  }
-
-  .section {
-    @apply flex items-center py-8 lg:h-screen lg:py-24;
+  .container-page {
+    @apply mx-auto w-full max-w-[1200px] px-[clamp(1.25rem,4vw,2.5rem)];
   }
 }

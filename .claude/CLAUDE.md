@@ -5,7 +5,8 @@ Garrett Head's personal portfolio: a React single-page site served from GitHub P
 ## Stack
 
 - Vite 8, React 19.3, TypeScript 7 (strict, `noUncheckedIndexedAccess`), Node 26 (`.nvmrc`; `engines` allows 24+).
-- Tailwind CSS 4 via `@tailwindcss/vite`. Theme tokens (fonts, breakpoints, colors) live in `@theme` in `src/index.css`; there is no `tailwind.config.js`. Shared component classes (`.btn`, `.h2`, `.section`, …) are in `@layer components` there. Classes in that layer can't take variants (`lg:section` doesn't work), so use plain utilities for responsive changes.
+- Tailwind CSS 4 via `@tailwindcss/vite`. Theme tokens live in `@theme` in `src/index.css`; there is no `tailwind.config.js`. Colors are the official LSU palette only (`corporate-purple`, `lsu-purple`, `light-purple`, `lsu-gold`, `corporate-gold`, `light-gold`, `light-gray`, `white`); fonts are `font-display` (Orbitron: name, section titles, company names), `font-sans` (Inter) and `font-mono` (JetBrains Mono: labels, dates, tech). Shared classes (`.eyebrow`, `.section-title`, `.tech-label`, `.card`, `.container-page`) are in `@layer components` and can't take variants, so use plain utilities for responsive changes.
+- Vitest (`npm test`) runs the résumé content contract in `src/content/content.test.ts`.
 - Motion 14 (`motion/react`). `MotionProvider` (in `main.tsx`) loads `domAnimation` through `LazyMotion` in strict mode and sets `MotionConfig reducedMotion="user"`.
 - ESLint 9 flat config (`eslint.config.js`): typescript-eslint type-checked rules, react-hooks, react-refresh, jsx-a11y; `eslint-config-prettier` turns off rules Prettier owns.
 - Prettier 3 (`prettier.config.js`) with `prettier-plugin-tailwindcss` for class order. `docs/` is not formatted.
@@ -18,6 +19,7 @@ Garrett Head's personal portfolio: a React single-page site served from GitHub P
 | ---------------------- | ---------------------------------------------------------- |
 | `npm run dev`          | Dev server at http://localhost:5173/garretthead-portfolio/ |
 | `npm run typecheck`    | Type-check with TypeScript 7                               |
+| `npm test`             | Content-contract tests (Vitest)                            |
 | `npm run lint`         | ESLint                                                     |
 | `npm run format`       | Prettier, with Tailwind class sorting                      |
 | `npm run format:check` | Check formatting                                           |
@@ -26,15 +28,15 @@ Garrett Head's personal portfolio: a React single-page site served from GitHub P
 
 Two TypeScript versions are installed on purpose. `typescript-7` (an npm alias of TypeScript 7) does the type-checking; `typescript` stays on 6.0 because typescript-eslint and editors need its JavaScript API, which TypeScript 7 no longer ships. Use `npm run typecheck`, never `npx tsc` (that runs 6.0).
 
-Run `npm run format`, then `npm run lint`, `npm run typecheck` and `npm run build` before every commit. All must pass.
+Run `npm run format`, then `npm run lint`, `npm run typecheck`, `npm test` and `npm run build` before every commit. All must pass.
 
 ## Project layout
 
-- `src/main.tsx`: entry point. `src/App.tsx`: page composition.
-- `src/features/<Section>/`: page sections (Banner, About, Resume, Contact) and their components.
-- `src/components/`: shared components (NavBar).
-- `src/data/index.tsx`: site content and its types (`Role`, `TechItem`, `Education`).
-- `src/components/motion/`: `MotionProvider`, `Reveal` (the one entrance animation) and the `fadeIn` variants.
+- `src/main.tsx`: entry point. `src/App.tsx`: skip link, header, `<main>` (Hero, About, Experience), footer, phone tab bar.
+- `src/content/`: all copy and résumé data as typed data (no JSX, no classes): `profile.ts`, `skills.ts`, `experience.ts`, `sections.ts` (feeds the nav and active-section tracking), `types.ts`, `resume.snapshot.json` (company, title, start, end per role) and `content.test.ts`.
+- `src/features/<Section>/`: Hero, About, Experience (with `RoleCard`).
+- `src/components/`: `Icon` (inline stroke icons), `SocialLinks`, `TechLabels`, `layout/` (`Section`, `SiteFooter`), `navigation/` (`SiteHeader` from `md` up, `MobileNav` below `md`), `motion/` (`MotionProvider`, `Reveal`, `fadeIn` variants).
+- `src/hooks/useActiveSection.ts`: one IntersectionObserver that marks the nav link for the section in view with `aria-current="location"`.
 - `docs/baseline/`: Phase 0 measurements of the original site. Don't edit except to correct facts.
 
 ## Code quality
@@ -50,13 +52,13 @@ Claude may create and edit files in this project without asking, so every change
 - **No leftovers:** no dead code, commented-out code, unused imports or files, `console.log` or debugging output.
 - **Comments:** only for what the code can't say (a workaround, a constraint, a link to the reason). Keep them current.
 - **Scope:** change only what the task needs, follow the existing patterns, and keep commits small, focused and described in the imperative.
-- **Checks:** `npm run format`, `npm run lint`, `npm run typecheck` and `npm run build` pass before every commit, and the site looks identical until Phase 3.
+- **Checks:** `npm run format`, `npm run lint`, `npm run typecheck`, `npm test` and `npm run build` pass before every commit.
 
 ## Upgrade plan
 
-The site is being upgraded in phases (full plan: the "Portfolio Architecture & Technical Review" doc). Phases 0 (baseline), 1 (toolchain) and 2 (Tailwind 4 + Motion 14) are done; Phase 3 is next. Later phases: 3 redesign and content refresh, 4 motion and UX, 5 accessibility, 6 performance, 7 QA and launch.
+The site is being upgraded in phases (full plan: the "Portfolio Architecture & Technical Review" doc). Phases 0 (baseline), 1 (toolchain), 2 (Tailwind 4 + Motion 14) and 3 (redesign and content refresh) are done; Phase 4 is next. Later phases: 4 motion and UX, 5 accessibility, 6 performance, 7 QA and launch.
 
-Until Phase 3, changes must not alter how the site looks. Compare full-page screenshots against the live build at 390, 768 and 1440 px wide.
+The approved design is the "Portfolio Redesign — Phase 3" canvas. Changes should match it at 390, 768 and 1440 px wide unless Garrett asks for something different.
 
 ## Git and pull requests
 
@@ -69,7 +71,9 @@ Until Phase 3, changes must not alter how the site looks. Compare full-page scre
 
 ## Content rules
 
-- Employment facts come from Garrett's résumé; don't invent roles, dates, metrics or technologies.
-- From Phase 3: exactly five roles, March 2021 to present (FloorFound, Engine, CoPilot, Ping Identity, MURAL), with official titles. No earlier employers, education block, Projects section, contact form or résumé download.
+- Employment facts come from Garrett's résumé; don't invent roles, dates, metrics or technologies. Keep the résumé's qualified wording ("reported") for metrics.
+- Exactly five roles, March 2021 to present (FloorFound, Engine, CoPilot, Ping Identity, MURAL). Current title: Senior Software Engineer. Each role links to the company's LinkedIn page. Update `resume.snapshot.json` together with any role change; the content test fails otherwise.
+- No earlier employers, education block, Projects section, contact form or résumé download.
 - Social links are LinkedIn (https://www.linkedin.com/in/garretthead) and GitHub (https://github.com/garretthead00) only.
-- Keep the tiger brand: tiger mark, purple and gold.
+- About is written in first person. Technologies are text labels, not icons.
+- Keep the tiger brand: tiger mark, LSU purple and gold.

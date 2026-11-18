@@ -1,15 +1,34 @@
-import NavBar from "./components/NavBar";
-import { About, Banner, Contact, Resume } from "./features";
+import { SiteFooter } from "./components/layout/SiteFooter";
+import { MobileNav } from "./components/navigation/MobileNav";
+import { SiteHeader } from "./components/navigation/SiteHeader";
+import { sections } from "./content";
+import { About } from "./features/About/About";
+import { Experience } from "./features/Experience/Experience";
+import { Hero } from "./features/Hero/Hero";
+import { useActiveSection } from "./hooks/useActiveSection";
+
+const sectionIds = sections.map((section) => section.id);
 
 const App = () => {
+  const activeId = useActiveSection(sectionIds);
+
   return (
-    <div className="overflow-hidden bg-site bg-cover bg-no-repeat">
-      <Banner />
-      <About />
-      <Resume />
-      <Contact />
-      <NavBar />
-    </div>
+    <>
+      <a
+        href="#main"
+        className="sr-only z-30 rounded-full bg-lsu-gold px-4 py-2 font-semibold text-corporate-purple focus:not-sr-only focus:fixed focus:top-3 focus:left-3"
+      >
+        Skip to content
+      </a>
+      <SiteHeader activeId={activeId} />
+      <main id="main">
+        <Hero />
+        <About />
+        <Experience />
+      </main>
+      <SiteFooter />
+      <MobileNav activeId={activeId} />
+    </>
   );
 };
 
