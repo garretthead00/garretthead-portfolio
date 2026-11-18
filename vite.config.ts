@@ -1,9 +1,39 @@
-import { defineConfig } from "vite";
+import { defineConfig, type Plugin } from "vite";
 import tailwindcss from "@tailwindcss/vite";
 import react from "@vitejs/plugin-react";
+import { imagetools } from "vite-imagetools";
+
+const base = "/garretthead-portfolio/";
+
+/**
+ * Preloads the display face used for the hero name. Inter and JetBrains Mono
+ * swap in over size-matched fallbacks, so preloading them would only compete
+ * with the hero image for bandwidth.
+ */
+const preloadDisplayFont = (): Plugin => ({
+  name: "preload-display-font",
+  apply: "build",
+  transformIndexHtml: {
+    order: "post",
+    handler: (_html, { bundle }) =>
+      Object.keys(bundle ?? {})
+        .filter((fileName) => /orbitron-.*\.woff2$/.test(fileName))
+        .map((fileName) => ({
+          tag: "link",
+          attrs: {
+            rel: "preload",
+            href: `${base}${fileName}`,
+            as: "font",
+            type: "font/woff2",
+            crossorigin: "",
+          },
+          injectTo: "head",
+        })),
+  },
+});
 
 // Served from https://garretthead00.github.io/garretthead-portfolio/
 export default defineConfig({
-  base: "/garretthead-portfolio/",
-  plugins: [react(), tailwindcss()],
+  base,
+  plugins: [react(), tailwindcss(), imagetools(), preloadDisplayFont()],
 });
