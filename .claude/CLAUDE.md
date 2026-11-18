@@ -36,6 +36,20 @@ Run `npm run format`, then `npm run lint`, `npm run typecheck` and `npm run buil
 - `src/common/transitions.ts`: shared animation variants.
 - `docs/baseline/`: Phase 0 measurements of the original site. Don't edit except to correct facts.
 
+## Code quality
+
+Claude may create and edit files in this project without asking, so every change has to meet this bar on its own:
+
+- **Types:** strict TypeScript. No `any`, no `@ts-ignore` or `@ts-expect-error`, no non-null `!` assertions; narrow with type guards instead. Props get a named `interface` or `type`. Content types live with the content in `src/data/`.
+- **Components:** function components, one job each, named exports for feature components. Keep data out of JSX: content belongs in `src/data/`, not inline strings.
+- **Lists:** `key` goes on the element returned by `map()` and uses a stable id from the data, never the array index.
+- **Accessibility:** semantic, native elements first (`button`, `a`, `nav`, `ul`), meaningful `alt` text, accessible names on icon-only links and buttons. jsx-a11y warnings are errors.
+- **Styling:** Tailwind utilities; reuse the theme colors and fonts in `tailwind.config.js` rather than new arbitrary values.
+- **No leftovers:** no dead code, commented-out code, unused imports or files, `console.log` or debugging output.
+- **Comments:** only for what the code can't say (a workaround, a constraint, a link to the reason). Keep them current.
+- **Scope:** change only what the task needs, follow the existing patterns, and keep commits small, focused and described in the imperative.
+- **Checks:** `npm run format`, `npm run lint`, `npm run typecheck` and `npm run build` pass before every commit, and the site looks identical until Phase 3.
+
 ## Upgrade plan
 
 The site is being upgraded in phases (full plan: the "Portfolio Architecture & Technical Review" doc). Phase 0 (baseline) is done; Phase 1 (toolchain) is in progress. Later phases: 2 Tailwind 4 + Motion 14, 3 redesign and content refresh, 4 motion and UX, 5 accessibility, 6 performance, 7 QA and launch.

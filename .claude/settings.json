@@ -8,6 +8,7 @@
   "permissions": {
     "allow": [
       "Write(./**)",
+      "Edit(./**)",
       "Bash(npm ci)",
       "Bash(npm install)",
       "Bash(npm run dev)",
@@ -31,7 +32,9 @@
       "Read(./.env)",
       "Read(./.env.*)",
       "Write(./.env)",
-      "Write(./.env.*)"
+      "Write(./.env.*)",
+      "Edit(./.env)",
+      "Edit(./.env.*)"
     ]
   }
 }
