@@ -1,7 +1,7 @@
 {
   "capturedAt": "2026-11-17",
   "url": "https://garretthead00.github.io/garretthead-portfolio/",
-  "method": "Claude desktop built-in browser (Chromium 156, macOS), viewport 817x1602 @2x, real network (navigator.connection: 4g, ~10 Mbps, ~100 ms RTT). Navigation/Resource/Paint timing APIs read after load; fonts may have been warm in cache.",
+  "method": "Chromium 156 (macOS), viewport 817x1602 @2x, real network (navigator.connection: 4g, ~10 Mbps, ~100 ms RTT). Navigation/Resource/Paint timing APIs read after load; fonts may have been warm in cache.",
   "timing": {
     "ttfbMs": 149,
     "firstContentfulPaintMs": 368,
