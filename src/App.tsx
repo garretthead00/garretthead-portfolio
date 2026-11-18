@@ -1,9 +1,4 @@
-//import Banner from "./features/Banner/Banner";
-//import About from "./features/About/About";
-//import Contact from "./features/Contact/Contact";
 import NavBar from "./components/NavBar";
-//import Resume from "./features/Resume/Resume";
-
 import { About, Banner, Contact, Resume } from "./features";
 
 const App = () => {
@@ -12,7 +7,6 @@ const App = () => {
       <Banner />
       <About />
       <Resume />
-      {/* <Projects /> */}
       <Contact />
       <NavBar />
     </div>

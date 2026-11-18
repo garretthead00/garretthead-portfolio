@@ -1,4 +1,4 @@
-import React, { useRef, useState, type FormEvent } from "react";
+import { useRef, useState, type FormEvent } from "react";
 import emailjs from "@emailjs/browser";
 import { motion } from "framer-motion";
 import { fadeIn } from "../../../common/transitions";

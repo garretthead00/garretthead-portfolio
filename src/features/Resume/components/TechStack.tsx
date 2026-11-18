@@ -1,4 +1,3 @@
-import React from "react";
 import type { TechItem } from "../../../data";
 
 interface TechStackListItemProps {
@@ -20,7 +19,8 @@ interface TechStackListProps {
 
 export const TechStackList = ({ stack }: TechStackListProps) => (
   <ul className="flex flex-wrap justify-center gap-4 md:justify-start">
-    {stack &&
-      stack.map((tech) => <TechStackListItem key={tech.name} tech={tech} />)}
+    {stack.map((tech) => (
+      <TechStackListItem key={tech.name} tech={tech} />
+    ))}
   </ul>
 );

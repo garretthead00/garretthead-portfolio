@@ -1,4 +1,3 @@
-import React from "react";
 import CountUpImport from "react-countup";
 import { motion } from "framer-motion";
 import { fadeIn } from "../../../common/transitions";

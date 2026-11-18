@@ -1,4 +1,3 @@
-import React from "react";
 import { motion } from "framer-motion";
 import { fadeIn } from "../../../common/transitions";
 import TigerLogo from "../../../assets/images/TigerLogo.png";

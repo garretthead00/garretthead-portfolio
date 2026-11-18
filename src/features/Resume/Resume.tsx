@@ -1,4 +1,3 @@
-import React from "react";
 import { JobTitle, WorkExperience } from "./components";
 
 export const Resume = () => {
