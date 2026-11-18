@@ -48,17 +48,13 @@ const ExperienceSummary = ({
 
 interface ExperienceListItemProps {
   role: Role;
-  index: number;
 }
 
-const ExperienceListItem = ({ role, index }: ExperienceListItemProps) => {
+const ExperienceListItem = ({ role }: ExperienceListItemProps) => {
   const { company, description, duration, companyLink, title, stack } = role;
 
   return (
-    <li
-      key={index + "_roleItem"}
-      className="mb-[12px] flex h-fit border-b border-white/20 pb-2"
-    >
+    <li className="mb-[12px] flex h-fit border-b border-white/20 pb-2">
       <div className="max-w-[476px]">
         <ExperienceSummary
           title={title}
@@ -84,8 +80,8 @@ export const WorkExperience = () => {
       className="mb-[12px] flex flex-1 pb-4"
     >
       <ul>
-        {experience.map((role, idx) => (
-          <ExperienceListItem index={idx} role={role} />
+        {experience.map((role) => (
+          <ExperienceListItem key={role.id} role={role} />
         ))}
       </ul>
     </motion.article>

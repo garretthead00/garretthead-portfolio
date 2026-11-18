@@ -4,12 +4,11 @@ import { motion } from "framer-motion";
 import { fadeIn } from "../../../common/transitions";
 
 interface SkillsListItemProps {
-  index: number;
   tech: TechItem;
 }
 
-const SkillsListItem = ({ index, tech }: SkillsListItemProps) => (
-  <li key={index + "_techStackItem"}>
+const SkillsListItem = ({ tech }: SkillsListItemProps) => (
+  <li>
     <figure className="items-center justify-center text-center">
       {tech.icon}
       <figcaption className="mt-1 text-sm">{tech.name}</figcaption>
@@ -30,7 +29,7 @@ export const SkillsList = () => (
     </h4> */}
     <ul className="mx-auto flex flex-wrap justify-center gap-4">
       {skills &&
-        skills.map((tech, idx) => <SkillsListItem index={idx} tech={tech} />)}
+        skills.map((tech) => <SkillsListItem key={tech.name} tech={tech} />)}
     </ul>
   </motion.article>
 );

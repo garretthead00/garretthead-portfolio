@@ -3,11 +3,10 @@ import type { TechItem } from "../../../data";
 
 interface TechStackListItemProps {
   tech: TechItem;
-  index: number;
 }
 
-const TechStackListItem = ({ tech, index }: TechStackListItemProps) => (
-  <li key={index + "_techStackItem"}>
+const TechStackListItem = ({ tech }: TechStackListItemProps) => (
+  <li>
     <figure className="items-center justify-center text-center">
       {tech.icon}
       <figcaption className="mt-1 text-sm">{tech.name}</figcaption>
@@ -22,6 +21,6 @@ interface TechStackListProps {
 export const TechStackList = ({ stack }: TechStackListProps) => (
   <ul className="flex flex-wrap justify-center gap-4 md:justify-start">
     {stack &&
-      stack.map((tech, idx) => <TechStackListItem index={idx} tech={tech} />)}
+      stack.map((tech) => <TechStackListItem key={tech.name} tech={tech} />)}
   </ul>
 );
