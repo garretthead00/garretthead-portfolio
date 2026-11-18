@@ -21,7 +21,7 @@ const App = () => {
         Skip to content
       </a>
       <SiteHeader activeId={activeId} />
-      <main id="main">
+      <main id="main" tabIndex={-1} className="outline-none">
         <Hero />
         <About />
         <Experience />

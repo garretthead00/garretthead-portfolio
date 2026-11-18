@@ -9,7 +9,7 @@ export const ReduceMotionToggle = () => {
       type="button"
       aria-pressed={reduceMotion}
       onClick={toggle}
-      className="flex min-h-11 items-center gap-2 rounded-full border border-light-purple/60 px-4 text-sm font-medium text-light-gray transition-colors hover:border-lsu-gold hover:text-lsu-gold"
+      className="flex min-h-11 items-center gap-2 rounded-full border border-light-purple px-4 text-sm font-medium text-light-gray transition-colors hover:border-lsu-gold hover:text-lsu-gold"
     >
       Reduce motion
       <span

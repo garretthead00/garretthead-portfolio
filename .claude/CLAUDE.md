@@ -7,11 +7,12 @@ Garrett Head's personal portfolio: a React single-page site served from GitHub P
 - Vite 8, React 19.3, TypeScript 7 (strict, `noUncheckedIndexedAccess`), Node 26 (`.nvmrc`; `engines` allows 24+).
 - Tailwind CSS 4 via `@tailwindcss/vite`. Theme tokens live in `@theme` in `src/index.css`; there is no `tailwind.config.js`. Colors are the official LSU palette only (`corporate-purple`, `lsu-purple`, `light-purple`, `lsu-gold`, `corporate-gold`, `light-gold`, `light-gray`, `white`); fonts are `font-display` (Orbitron: name, section titles, company names), `font-sans` (Inter) and `font-mono` (JetBrains Mono: labels, dates, tech). Shared classes (`.eyebrow`, `.section-title`, `.tech-label`, `.card`, `.container-page`) are in `@layer components` and can't take variants, so use plain utilities for responsive changes.
 - Vitest (`npm test`) runs the résumé content contract in `src/content/content.test.ts` and the motion rules in `src/components/motion/motionPreference.test.ts`.
+- Playwright + axe (`npm run test:a11y`, `e2e/a11y.e2e.ts`) checks the production build: no WCAG 2.2 AA violations at 320, 390, 768 and 1440 px, skip link focus, a non-color active-nav marker, and focused elements never hidden behind the header or phone tab bar (2.4.11). It uses installed Google Chrome (`channel: "chrome"`) and starts `npm run preview` itself, so build first.
 - Motion 14 (`motion/react`). `MotionProvider` (in `main.tsx`) loads `domAnimation` through `LazyMotion` in strict mode. Reduced motion follows the system setting until the footer's `ReduceMotionToggle` overrides it (saved in `localStorage` as `motion-preference`); the result goes to `MotionConfig reducedMotion` and to `<html data-motion>`, which gates smooth scrolling.
 - ESLint 9 flat config (`eslint.config.js`): typescript-eslint type-checked rules, react-hooks, react-refresh, jsx-a11y; `eslint-config-prettier` turns off rules Prettier owns.
 - Prettier 3 (`prettier.config.js`) with `prettier-plugin-tailwindcss` for class order. `docs/` is not formatted.
 - Vite `base` is `/garretthead-portfolio/`. Keep it: the live URL must not change.
-- Deploys: GitHub Actions (`.github/workflows/deploy.yml`) runs format, lint, tests and build (which type-checks) on every pull request and push. On pushes to `main` it commits `dist/` to the `gh-pages` branch, which GitHub Pages serves ("Deploy from a branch"). Never edit `gh-pages` by hand; there is no manual deploy script.
+- Deploys: GitHub Actions (`.github/workflows/deploy.yml`) runs format, lint, tests, build (which type-checks) and the accessibility checks on every pull request and push. On pushes to `main` it commits `dist/` to the `gh-pages` branch, which GitHub Pages serves ("Deploy from a branch"). Never edit `gh-pages` by hand; there is no manual deploy script.
 
 ## Commands
 
@@ -20,6 +21,7 @@ Garrett Head's personal portfolio: a React single-page site served from GitHub P
 | `npm run dev`          | Dev server at http://localhost:5173/garretthead-portfolio/ |
 | `npm run typecheck`    | Type-check with TypeScript 7                               |
 | `npm test`             | Content-contract and motion-rule tests (Vitest)            |
+| `npm run test:a11y`    | Accessibility checks on the build (Playwright + axe)       |
 | `npm run lint`         | ESLint                                                     |
 | `npm run format`       | Prettier, with Tailwind class sorting                      |
 | `npm run format:check` | Check formatting                                           |
@@ -28,7 +30,7 @@ Garrett Head's personal portfolio: a React single-page site served from GitHub P
 
 Two TypeScript versions are installed on purpose. `typescript-7` (an npm alias of TypeScript 7) does the type-checking; `typescript` stays on 6.0 because typescript-eslint and editors need its JavaScript API, which TypeScript 7 no longer ships. Use `npm run typecheck`, never `npx tsc` (that runs 6.0).
 
-Run `npm run format`, then `npm run lint`, `npm run typecheck`, `npm test` and `npm run build` before every commit. All must pass.
+Run `npm run format`, then `npm run lint`, `npm run typecheck`, `npm test`, `npm run build` and `npm run test:a11y` before every commit. All must pass.
 
 ## Project layout
 
@@ -37,6 +39,8 @@ Run `npm run format`, then `npm run lint`, `npm run typecheck`, `npm test` and `
 - `src/features/<Section>/`: Hero, About, Experience (with `RoleCard`).
 - `src/components/`: `Icon` (inline stroke icons), `SocialLinks`, `TechLabels`, `layout/` (`Section`, `SiteFooter`), `navigation/` (`SiteHeader` from `md` up, `MobileNav` below `md`), `motion/` (`MotionProvider`, `Reveal`, `ReduceMotionToggle`, `motionPreference`, `variants` with `motionRules`).
 - `src/hooks/useActiveSection.ts`: one IntersectionObserver that marks the nav link for the section in view with `aria-current="location"`.
+- `e2e/`: Playwright accessibility checks (`*.e2e.ts`; Vitest only runs `*.test.ts`).
+- `docs/accessibility/checklist.md`: Phase 5 manual screen-reader, keyboard and display-settings passes, signed off by Garrett.
 - `docs/baseline/`: Phase 0 measurements of the original site. Don't edit except to correct facts.
 
 ## Code quality
@@ -46,17 +50,17 @@ Claude may create and edit files in this project without asking, so every change
 - **Types:** strict TypeScript. No `any`, no `@ts-ignore` or `@ts-expect-error`, no non-null `!` assertions; narrow with type guards instead. Props get a named `interface` or `type`. Content types live with the content in `src/content/`.
 - **Components:** function components, one job each, named exports for feature components. Keep data out of JSX: content belongs in `src/content/`, not inline strings.
 - **Lists:** `key` goes on the element returned by `map()` and uses a stable id from the data, never the array index.
-- **Accessibility:** semantic, native elements first (`button`, `a`, `nav`, `ul`), meaningful `alt` text, accessible names on icon-only links and buttons. jsx-a11y warnings are errors.
+- **Accessibility:** WCAG 2.2 AA. Semantic, native elements first (`button`, `a`, `nav`, `ul`), meaningful `alt` text, accessible names on icon-only links and buttons. Don't signal state with color alone (the active nav link is underlined). Text and UI pairs need 4.5:1 and 3:1; borders that identify a control use full `light-purple`, not a faded one. Support `forced-colors` (outline gold pills, no blend modes that hide images) and `prefers-contrast: more` (`contrast-more:` raises faint borders and footer text). jsx-a11y warnings are errors.
 - **Animation:** wrap entrance animations in `Reveal` (`as`, `delay`, `amount`); it plays once. Keep to `motionRules`: 150–400 ms, ease-out, at most 24 px of travel, at most 60 ms between staggered items, and hover effects only for devices that can hover (Tailwind 4's `hover:` already does this). Use `m.*` from `motion/react`, never `motion.*` (strict `LazyMotion` throws).
 - **Styling:** Tailwind utilities; reuse the `@theme` colors and fonts in `src/index.css` rather than new arbitrary values.
 - **No leftovers:** no dead code, commented-out code, unused imports or files, `console.log` or debugging output.
 - **Comments:** only for what the code can't say (a workaround, a constraint, a link to the reason). Keep them current.
 - **Scope:** change only what the task needs, follow the existing patterns, and keep commits small, focused and described in the imperative.
-- **Checks:** `npm run format`, `npm run lint`, `npm run typecheck`, `npm test` and `npm run build` pass before every commit.
+- **Checks:** `npm run format`, `npm run lint`, `npm run typecheck`, `npm test`, `npm run build` and `npm run test:a11y` pass before every commit.
 
 ## Upgrade plan
 
-The site is being upgraded in phases (full plan: the "Portfolio Architecture & Technical Review" doc). Phases 0 (baseline), 1 (toolchain), 2 (Tailwind 4 + Motion 14), 3 (redesign and content refresh) and 4 (motion and UX) are done; Phase 5 is next. Later phases: 5 accessibility, 6 performance, 7 QA and launch.
+The site is being upgraded in phases (full plan: the "Portfolio Architecture & Technical Review" doc). Phases 0 (baseline), 1 (toolchain), 2 (Tailwind 4 + Motion 14), 3 (redesign and content refresh), 4 (motion and UX) and 5 (accessibility) are done; Phase 6 is next. Later phases: 6 performance, 7 QA and launch.
 
 The approved design is the "Portfolio Redesign — Phase 3" canvas. Changes should match it at 390, 768 and 1440 px wide unless Garrett asks for something different.
 

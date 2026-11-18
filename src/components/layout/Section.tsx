@@ -15,7 +15,7 @@ export const Section = ({ id, eyebrow, title, children }: SectionProps) => {
     <section
       id={id}
       aria-labelledby={titleId}
-      className="border-b border-light-purple/30 last:border-b-0"
+      className="border-b border-light-purple/30 last:border-b-0 contrast-more:border-light-purple"
     >
       <div className="container-page py-20 md:py-28">
         <p className="eyebrow">{eyebrow}</p>

@@ -12,6 +12,7 @@
     "preview": "vite preview",
     "typecheck": "node node_modules/typescript-7/bin/tsc",
     "test": "vitest run",
+    "test:a11y": "playwright test",
     "lint": "eslint .",
     "format": "prettier --write .",
     "format:check": "prettier --check ."
@@ -22,8 +23,11 @@
     "react-dom": "^19.3.1"
   },
   "devDependencies": {
+    "@axe-core/playwright": "^4.14.0",
     "@eslint/js": "^9.39.5",
+    "@playwright/test": "^1.65.1",
     "@tailwindcss/vite": "^4.3.5",
+    "@types/node": "^26.6.6",
     "@types/react": "^19.3.0",
     "@types/react-dom": "^19.3.0",
     "@vitejs/plugin-react": "^6.3.0",

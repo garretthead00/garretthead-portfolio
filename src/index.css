@@ -1,5 +1,9 @@
 @import "tailwindcss";
 
+/* Only the app uses utility classes; keep docs and tests out of the scan. */
+@source not "../docs";
+@source not "../e2e";
+
 /*
   Colors are the official LSU palette
   (https://www.lsu.edu/communications/files/brand-guide.pdf).
@@ -24,12 +28,21 @@
   --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
 
   --header-height: 4.5rem;
+  --tab-bar-height: calc(4.5rem + env(safe-area-inset-bottom));
 }
 
 @layer base {
   html {
+    color-scheme: dark;
     scroll-padding-top: var(--header-height);
     background-color: var(--color-corporate-purple);
+  }
+
+  /* Keep focused and scrolled-to content clear of the phone tab bar (WCAG 2.4.11). */
+  @media (width < 48rem) {
+    html {
+      scroll-padding-bottom: var(--tab-bar-height);
+    }
   }
 
   /* Set by MotionProvider from the visitor's motion preference. */
@@ -63,8 +76,21 @@
     @apply rounded-full bg-lsu-gold px-2.5 py-1 font-mono text-xs font-medium text-corporate-purple;
   }
 
+  /* Forced colors drop the gold fill, so outline the pill to keep its shape. */
+  @media (forced-colors: active) {
+    .tech-label {
+      border: 1px solid CanvasText;
+    }
+  }
+
   .card {
     @apply rounded-2xl border border-light-purple/30 bg-lsu-purple;
+  }
+
+  @media (prefers-contrast: more) {
+    .card {
+      border-color: var(--color-light-purple);
+    }
   }
 
   .container-page {

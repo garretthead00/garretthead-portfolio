@@ -14,6 +14,7 @@ Built with React 19, TypeScript, Vite, Tailwind CSS 4 and Motion. Requires Node.
 | `npm run preview`      | Serve the production build locally                                   |
 | `npm run typecheck`    | Type-check only (TypeScript 7)                                       |
 | `npm test`             | Run the content-contract and motion-rule tests (Vitest)              |
+| `npm run test:a11y`    | Run the accessibility checks on the build (Playwright + axe; Chrome) |
 | `npm run lint`         | Lint with ESLint (TypeScript, React Hooks, React Refresh, jsx-a11y)  |
 | `npm run format`       | Format with Prettier (sorts Tailwind classes)                        |
 | `npm run format:check` | Check formatting without writing                                     |
@@ -24,4 +25,4 @@ Type-checking uses TypeScript 7 (installed as `typescript-7`). `typescript-eslin
 
 ## Deploy
 
-GitHub Actions (`.github/workflows/deploy.yml`) checks formatting, lints, type-checks and builds every pull request. On every push to `main` it also commits the new `dist/` to the `gh-pages` branch, so `gh-pages` always matches `main`. GitHub Pages serves the site from that branch (Settings → Pages → **Deploy from a branch**, `gh-pages`, `/ (root)`).
+GitHub Actions (`.github/workflows/deploy.yml`) checks formatting, lints, runs the tests, type-checks, builds and runs the accessibility checks on every pull request. On every push to `main` it also commits the new `dist/` to the `gh-pages` branch, so `gh-pages` always matches `main`. GitHub Pages serves the site from that branch (Settings → Pages → **Deploy from a branch**, `gh-pages`, `/ (root)`).
