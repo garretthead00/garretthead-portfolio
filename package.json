@@ -12,8 +12,8 @@
     "preview": "vite preview",
     "typecheck": "node node_modules/typescript-7/bin/tsc",
     "lint": "eslint .",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist"
+    "format": "prettier --write .",
+    "format:check": "prettier --check ."
   },
   "dependencies": {
     "@emailjs/browser": "^4.1.0",
@@ -34,12 +34,14 @@
     "@vitejs/plugin-react": "^6.3.0",
     "autoprefixer": "^10.6.2",
     "eslint": "^9.39.5",
+    "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-jsx-a11y": "^6.10.2",
     "eslint-plugin-react-hooks": "^7.1.1",
     "eslint-plugin-react-refresh": "^0.5.8",
-    "gh-pages": "^6.1.1",
     "globals": "^17.14.0",
     "postcss": "^8.5.33",
+    "prettier": "^3.10.1",
+    "prettier-plugin-tailwindcss": "^0.8.1",
     "tailwindcss": "^3.4.19",
     "typescript": "~6.0.3",
     "typescript-7": "npm:typescript@^7.0.2",

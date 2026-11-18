@@ -1,4 +1,3 @@
-import React from "react";
 import { BsArrowUpRight } from "react-icons/bs";
 import { motion } from "framer-motion";
 import { fadeIn } from "../../../common/transitions";
@@ -11,17 +10,20 @@ interface CompanyLinkProps {
 }
 
 const CompanyLink = ({ url }: CompanyLinkProps) => (
-  <div className="flex flex-col flex-1 items-end">
+  <div className="flex flex-1 flex-col items-end">
     <a
       href={url}
-      className="btn w-9 h-9 mb-[42px] flex justify-center items-center"
+      className="btn mb-[42px] flex h-9 w-9 items-center justify-center"
     >
       <BsArrowUpRight />
     </a>
   </div>
 );
 
-type ExperienceSummaryProps = Pick<Role, "title" | "company" | "duration" | "description">;
+type ExperienceSummaryProps = Pick<
+  Role,
+  "title" | "company" | "duration" | "description"
+>;
 
 const ExperienceSummary = ({
   title,
@@ -31,11 +33,11 @@ const ExperienceSummary = ({
 }: ExperienceSummaryProps) => {
   return (
     <>
-      <h4 className="text-[20px] tracking-wider font-primary font-semibold">
+      <h4 className="font-primary text-[20px] font-semibold tracking-wider">
         {title}
       </h4>
 
-      <h4 className="text-[12px] tracking-wider font-primary font-semibold">
+      <h4 className="font-primary text-[12px] font-semibold tracking-wider">
         {company} - {duration}
       </h4>
       <p className="font-secondary leading-tight">{description}</p>
@@ -45,17 +47,13 @@ const ExperienceSummary = ({
 
 interface ExperienceListItemProps {
   role: Role;
-  index: number;
 }
 
-const ExperienceListItem = ({ role, index }: ExperienceListItemProps) => {
+const ExperienceListItem = ({ role }: ExperienceListItemProps) => {
   const { company, description, duration, companyLink, title, stack } = role;
 
   return (
-    <li
-      key={index + "_roleItem"}
-      className="flex border-b border-white/20 h-fit mb-[12px] pb-2"
-    >
+    <li className="mb-[12px] flex h-fit border-b border-white/20 pb-2">
       <div className="max-w-[476px]">
         <ExperienceSummary
           title={title}
@@ -78,11 +76,11 @@ export const WorkExperience = () => {
       initial="hidden"
       whileInView={"show"}
       viewport={{ once: false, amount: 0.1 }}
-      className="flex flex-1 mb-[12px] pb-4"
+      className="mb-[12px] flex flex-1 pb-4"
     >
       <ul>
-        {experience.map((role, idx) => (
-          <ExperienceListItem index={idx} role={role}/>
+        {experience.map((role) => (
+          <ExperienceListItem key={role.id} role={role} />
         ))}
       </ul>
     </motion.article>

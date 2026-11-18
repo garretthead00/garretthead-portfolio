@@ -1,18 +1,16 @@
-import React from "react";
 import { skills, type TechItem } from "../../../data";
 import { motion } from "framer-motion";
 import { fadeIn } from "../../../common/transitions";
 
 interface SkillsListItemProps {
-  index: number;
   tech: TechItem;
 }
 
-const SkillsListItem = ({ index, tech }: SkillsListItemProps) => (
-  <li key={index + "_techStackItem"}>
-    <figure className="text-center items-center justify-center">
+const SkillsListItem = ({ tech }: SkillsListItemProps) => (
+  <li>
+    <figure className="items-center justify-center text-center">
       {tech.icon}
-      <figcaption className="text-sm mt-1">{tech.name}</figcaption>
+      <figcaption className="mt-1 text-sm">{tech.name}</figcaption>
     </figure>
   </li>
 );
@@ -25,12 +23,10 @@ export const SkillsList = () => (
     viewport={{ once: false, amount: 0.3 }}
     className="flex flex-col text-center"
   >
-    {/* <h4 className="text-[20px] tracking-wider font-primary font-semibold mb-2">
-      Skills
-    </h4> */}
-    <ul className="flex flex-wrap gap-4 mx-auto justify-center">
-      {skills &&
-        skills.map((tech, idx) => <SkillsListItem index={idx} tech={tech} />)}
+    <ul className="mx-auto flex flex-wrap justify-center gap-4">
+      {skills.map((tech) => (
+        <SkillsListItem key={tech.name} tech={tech} />
+      ))}
     </ul>
   </motion.article>
 );

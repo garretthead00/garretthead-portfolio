@@ -1,5 +1,5 @@
-export { Title } from './Title'
-export { Subtitle } from './Subtitle'
-export { ContactButton } from './ContactButton'
-export { LinksGroup } from './LinksGroup'
-export { Tiger } from './Tiger'
+export { Title } from "./Title";
+export { Subtitle } from "./Subtitle";
+export { ContactButton } from "./ContactButton";
+export { LinksGroup } from "./LinksGroup";
+export { Tiger } from "./Tiger";
