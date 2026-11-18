@@ -1,5 +1,6 @@
-import TigerLogo from "../../assets/images/TigerLogo.png";
+import tiger from "../../assets/images/TigerLogo.png?w=260;460;520;780;920&format=avif;webp&as=picture";
 import { Icon } from "../../components/Icon";
+import { Picture } from "../../components/Picture";
 import { profile } from "../../content";
 
 /** Name, title and the two calls to action. Visible at first paint: no entrance animation. */
@@ -50,11 +51,10 @@ export const Hero = () => {
           </div>
         </div>
         <div className="flex justify-center max-md:order-1">
-          <img
-            src={TigerLogo}
+          <Picture
+            picture={tiger}
+            sizes="(min-width: 48rem) min(460px, 50vw), 260px"
             alt="Tiger illustration in purple and gold"
-            width={1200}
-            height={1250}
             fetchPriority="high"
             className="h-auto w-[min(100%,460px)] mix-blend-lighten max-md:w-[260px] forced-colors:mix-blend-normal"
           />

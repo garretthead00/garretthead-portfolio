@@ -1,16 +1,14 @@
-import { StrictMode } from "react";
-import { createRoot } from "react-dom/client";
+import { createRoot, hydrateRoot } from "react-dom/client";
 import "./index.css";
-import App from "./App";
-import { MotionProvider } from "./components/motion";
+import { Root } from "./Root";
 
 const container = document.getElementById("root");
 if (!container) throw new Error("Root element #root not found");
 
-createRoot(container).render(
-  <StrictMode>
-    <MotionProvider>
-      <App />
-    </MotionProvider>
-  </StrictMode>,
-);
+// The production build prerenders the page (see scripts/prerender.ts); the
+// dev server serves an empty root.
+if (container.hasChildNodes()) {
+  hydrateRoot(container, <Root />);
+} else {
+  createRoot(container).render(<Root />);
+}

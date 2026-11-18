@@ -1,35 +1,31 @@
-import {
-  useCallback,
-  useEffect,
-  useMemo,
-  useState,
-  type ReactNode,
-} from "react";
-import { LazyMotion, MotionConfig, domAnimation } from "motion/react";
+import { useCallback, useEffect, useMemo, type ReactNode } from "react";
+import { LazyMotion, MotionConfig } from "motion/react";
 import {
   MotionPreferenceContext,
-  readStoredPreference,
   resolveReducedMotion,
   toMotionConfig,
+  useStoredPreference,
   useSystemReducedMotion,
   writeStoredPreference,
-  type StoredMotionPreference,
 } from "./motionPreference";
+
+/** Animation features load in their own chunk, after first paint. */
+const loadFeatures = () =>
+  import("./features").then((module) => module.default);
 
 interface MotionProviderProps {
   children: ReactNode;
 }
 
 /**
- * Loads only the DOM animation features up front (`strict` makes any full
+ * Loads only the DOM animation features, on demand (`strict` makes any full
  * `motion.*` component throw, so every animated element uses `m.*`) and
  * applies the motion preference: the visitor's on-page choice, otherwise
  * their system setting. It also turns smooth scrolling on or off through
  * `data-motion` on the root element.
  */
 export const MotionProvider = ({ children }: MotionProviderProps) => {
-  const [stored, setStored] =
-    useState<StoredMotionPreference>(readStoredPreference);
+  const stored = useStoredPreference();
   const systemPrefersReduced = useSystemReducedMotion();
   const reduceMotion = resolveReducedMotion(stored, systemPrefersReduced);
 
@@ -38,9 +34,7 @@ export const MotionProvider = ({ children }: MotionProviderProps) => {
   }, [reduceMotion]);
 
   const toggle = useCallback(() => {
-    const next = reduceMotion ? "full" : "reduce";
-    writeStoredPreference(next);
-    setStored(next);
+    writeStoredPreference(reduceMotion ? "full" : "reduce");
   }, [reduceMotion]);
 
   const value = useMemo(
@@ -50,7 +44,7 @@ export const MotionProvider = ({ children }: MotionProviderProps) => {
 
   return (
     <MotionPreferenceContext value={value}>
-      <LazyMotion features={domAnimation} strict>
+      <LazyMotion features={loadFeatures} strict>
         <MotionConfig reducedMotion={toMotionConfig(stored)}>
           {children}
         </MotionConfig>

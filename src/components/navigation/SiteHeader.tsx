@@ -1,5 +1,6 @@
-import TigerLogo from "../../assets/images/TigerLogo.png";
+import tigerMark from "../../assets/images/TigerLogo.png?w=36;72;108&format=avif;webp&as=picture";
 import { profile, sections, type SectionId } from "../../content";
+import { Picture } from "../Picture";
 import { SocialLinks } from "../SocialLinks";
 
 interface SiteHeaderProps {
@@ -14,11 +15,10 @@ export const SiteHeader = ({ activeId }: SiteHeaderProps) => (
         href="#home"
         className="flex items-center gap-3 text-white hover:text-white"
       >
-        <img
-          src={TigerLogo}
+        <Picture
+          picture={tigerMark}
+          sizes="36px"
           alt=""
-          width={36}
-          height={36}
           className="size-9 object-contain"
         />
         <span className="font-display text-sm font-bold tracking-[0.06em] uppercase sm:text-base">

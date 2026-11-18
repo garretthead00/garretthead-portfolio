@@ -10,25 +10,47 @@ const REDUCE_QUERY = "(prefers-reduced-motion: reduce)";
 const isStoredPreference = (value: string | null): value is "reduce" | "full" =>
   value === "reduce" || value === "full";
 
-/** Reads the saved choice; storage can be unavailable (private mode, blocked). */
-export const readStoredPreference = (): StoredMotionPreference => {
+/** This visit's choice, used when storage is unavailable (private mode, blocked). */
+let unsavedPreference: StoredMotionPreference = null;
+const storedListeners = new Set<() => void>();
+
+const readStoredPreference = (): StoredMotionPreference => {
   try {
     const value = window.localStorage.getItem(MOTION_STORAGE_KEY);
-    return isStoredPreference(value) ? value : null;
+    if (isStoredPreference(value)) return value;
   } catch {
-    return null;
+    // Storage is unavailable; fall back to this visit's choice.
   }
+  return unsavedPreference;
 };
 
 export const writeStoredPreference = (
   preference: Exclude<StoredMotionPreference, null>,
 ): void => {
+  unsavedPreference = preference;
   try {
     window.localStorage.setItem(MOTION_STORAGE_KEY, preference);
   } catch {
     // Not saved; the choice still applies for this visit.
   }
+  storedListeners.forEach((listener) => listener());
 };
+
+const subscribeToStored = (onChange: () => void) => {
+  storedListeners.add(onChange);
+  window.addEventListener("storage", onChange);
+  return () => {
+    storedListeners.delete(onChange);
+    window.removeEventListener("storage", onChange);
+  };
+};
+
+/**
+ * The saved choice. The prerendered HTML has no choice (`null`), so hydration
+ * starts from that and then switches to the saved value.
+ */
+export const useStoredPreference = (): StoredMotionPreference =>
+  useSyncExternalStore(subscribeToStored, readStoredPreference, () => null);
 
 /** An on-page choice wins; otherwise follow the system setting. */
 export const resolveReducedMotion = (
