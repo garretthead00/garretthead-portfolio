@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useRef, useState, type FormEvent } from "react";
 import emailjs from "@emailjs/browser";
 import { motion } from "framer-motion";
 import { fadeIn } from "../../../common/transitions";
@@ -7,11 +7,11 @@ export const ContactForm = () => {
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
     const [message, setMessage] = useState("");
-    const form = useRef();
+    const form = useRef<HTMLFormElement>(null);
 
-  const submit = (event) => {
+  const submit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    if (name && email && message) {
+    if (name && email && message && form.current) {
       const contactData = {
         name,
         email,
@@ -31,7 +31,7 @@ export const ContactForm = () => {
             console.log("FAILED...", error.text);
           }
         );
-      event.target.reset();
+      event.currentTarget.reset();
     }
   };
   return (
@@ -64,7 +64,7 @@ export const ContactForm = () => {
         required={true}
         placeholder="Your message"
         name="message"
-        maxLength="1200"
+        maxLength={1200}
         className="bg-transparent border-b pb-12 align-top outline-none w-full placeholder:text-white focus:border-accent transition-all resize-none"
         onChange={(e) => setMessage(e.target.value)}
       ></textarea>

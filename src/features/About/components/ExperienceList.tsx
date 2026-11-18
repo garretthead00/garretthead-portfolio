@@ -1,14 +1,21 @@
 import React from "react";
-import CountUpModule from "react-countup";
+import CountUpImport from "react-countup";
 import { motion } from "framer-motion";
 import { fadeIn } from "../../../common/transitions";
 
 // react-countup ships CommonJS only. In an ESM ("type": "module") package,
 // Vite imports CommonJS with Node semantics, so the component sits on
 // `.default`. react-countup is removed in Phase 4 of the upgrade.
-const CountUp = CountUpModule.default ?? CountUpModule;
+type CountUpComponent = typeof CountUpImport;
+const CountUp: CountUpComponent =
+  (CountUpImport as unknown as { default?: CountUpComponent }).default ??
+  CountUpImport;
 
-export const ExperienceList = ({ inView }) => {
+interface ExperienceListProps {
+  inView: boolean;
+}
+
+export const ExperienceList = ({ inView }: ExperienceListProps) => {
   return (
     <motion.article
       variants={fadeIn("right", 0.3)}
