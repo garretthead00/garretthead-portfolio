@@ -1,9 +1,14 @@
 import React from "react";
-import { skills } from "../../../data";
+import { skills, type TechItem } from "../../../data";
 import { motion } from "framer-motion";
 import { fadeIn } from "../../../common/transitions";
 
-const SkillsListItem = ({ index, tech }) => (
+interface SkillsListItemProps {
+  index: number;
+  tech: TechItem;
+}
+
+const SkillsListItem = ({ index, tech }: SkillsListItemProps) => (
   <li key={index + "_techStackItem"}>
     <figure className="text-center items-center justify-center">
       {tech.icon}

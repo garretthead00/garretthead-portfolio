@@ -2,11 +2,15 @@ import React from "react";
 import { BsArrowUpRight } from "react-icons/bs";
 import { motion } from "framer-motion";
 import { fadeIn } from "../../../common/transitions";
-import { experience } from "../../../data";
+import { experience, type Role } from "../../../data";
 
 import { TechStackList } from "./TechStack";
 
-const CompanyLink = ({ url }) => (
+interface CompanyLinkProps {
+  url: string;
+}
+
+const CompanyLink = ({ url }: CompanyLinkProps) => (
   <div className="flex flex-col flex-1 items-end">
     <a
       href={url}
@@ -17,7 +21,14 @@ const CompanyLink = ({ url }) => (
   </div>
 );
 
-const ExperienceSummary = ({ title, company, duration, description }) => {
+type ExperienceSummaryProps = Pick<Role, "title" | "company" | "duration" | "description">;
+
+const ExperienceSummary = ({
+  title,
+  company,
+  duration,
+  description,
+}: ExperienceSummaryProps) => {
   return (
     <>
       <h4 className="text-[20px] tracking-wider font-primary font-semibold">
@@ -32,7 +43,12 @@ const ExperienceSummary = ({ title, company, duration, description }) => {
   );
 };
 
-const ExperienceListItem = ({ role, index }) => {
+interface ExperienceListItemProps {
+  role: Role;
+  index: number;
+}
+
+const ExperienceListItem = ({ role, index }: ExperienceListItemProps) => {
   const { company, description, duration, companyLink, title, stack } = role;
 
   return (

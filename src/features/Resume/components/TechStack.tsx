@@ -1,6 +1,12 @@
 import React from "react";
+import type { TechItem } from "../../../data";
 
-const TechStackListItem = ({ tech, index }) => (
+interface TechStackListItemProps {
+  tech: TechItem;
+  index: number;
+}
+
+const TechStackListItem = ({ tech, index }: TechStackListItemProps) => (
   <li key={index + "_techStackItem"}>
     <figure className="text-center items-center justify-center">
       {tech.icon}
@@ -9,7 +15,11 @@ const TechStackListItem = ({ tech, index }) => (
   </li>
 );
 
-export const TechStackList = ({ stack }) => (
+interface TechStackListProps {
+  stack: TechItem[];
+}
+
+export const TechStackList = ({ stack }: TechStackListProps) => (
   <ul className="flex flex-wrap justify-center md:justify-start gap-4">
     {stack &&
       stack.map((tech, idx) => <TechStackListItem index={idx} tech={tech} />)}
