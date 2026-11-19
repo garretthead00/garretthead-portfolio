@@ -4,7 +4,7 @@ Target: WCAG 2.2 AA. Site: https://garretthead00.github.io/garretthead-portfolio
 
 ## Automated (runs on every pull request)
 
-`npm run test:a11y` (`e2e/a11y.e2e.ts`) fails the build if any of these break:
+`npm run test:e2e` (`e2e/a11y.e2e.ts`) fails the build if any of these break:
 
 - axe-core finds no WCAG 2.2 AA violations at 320, 390, 768 and 1440 px.
 - The skip link is the first Tab stop and moves focus into `<main>`.
