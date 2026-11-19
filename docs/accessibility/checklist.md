@@ -19,50 +19,52 @@ Tick each item and add your initials and the date. The phase is signed off when 
 
 ### Keyboard only (any desktop browser)
 
-- [ ] The first Tab shows "Skip to content"; Enter jumps past the header, and the next Tab lands on "Connect on LinkedIn".
-- [ ] Tab order follows the page: header, hero, company links, footer (Reduce motion, LinkedIn, GitHub).
-- [ ] Every focused item shows a gold ring and is never hidden behind the header.
-- [ ] "Reduce motion" toggles with Space and Enter, and stays as you left it after a reload.
+- [x] The first Tab shows "Skip to content"; Enter jumps past the header, and the next Tab lands on "Connect on LinkedIn".
+- [x] Tab order follows the page: header, hero, company links, footer (Reduce motion, LinkedIn, GitHub).
+- [x] Every focused item shows a gold ring and is never hidden behind the header.
+- [x] "Reduce motion" toggles with Space and Enter, and stays as you left it after a reload.
 
 ### VoiceOver on macOS (Safari)
 
-- [ ] The rotor's Landmarks list shows banner, the "Sections" navigation, main and content info.
-- [ ] The rotor's Headings list shows one h1 (Garrett Head), h2 per section, h3 per skill group and per company.
-- [ ] Nav links announce "current location" for the section in view.
-- [ ] Icon-only links announce "LinkedIn" and "GitHub"; company links announce "<Company> on LinkedIn".
-- [ ] "Reduce motion" announces as a toggle button with its pressed state.
-- [ ] The tiger reads as "Tiger illustration in purple and gold"; the header logo is skipped.
+- [x] The rotor's Landmarks list shows banner, the "Sections" navigation, main and content info.
+- [x] The rotor's Headings list shows one h1 (Garrett Head), h2 per section, h3 per skill group and per company.
+- [x] Nav links announce "current location" for the section in view.
+- [x] Icon-only links announce "LinkedIn" and "GitHub"; company links announce "<Company> on LinkedIn".
+- [x] "Reduce motion" announces as a toggle button with its pressed state.
+- [x] The tiger reads as "Tiger illustration in purple and gold"; the header logo is skipped.
 
 ### VoiceOver on iOS (Safari)
 
-- [ ] Swiping through the page reaches everything in reading order, with the bottom tab bar last.
-- [ ] Tab bar items announce their names and which one is the current location.
-- [ ] Double-tapping a tab bar item moves to that section, and its heading is not hidden under the header or the bar.
+- [x] Swiping through the page reaches everything in reading order, with the bottom tab bar last.
+- [x] Tab bar items announce their names and which one is the current location.
+- [x] Double-tapping a tab bar item moves to that section, and its heading is not hidden under the header or the bar.
 
 ### TalkBack on Android (Chrome)
 
-- [ ] The same as iOS: reading order, tab bar names and current location, section jumps.
+- [x] The same as iOS: reading order, tab bar names and current location, section jumps.
 
 ### NVDA on Windows (Firefox or Chrome), if a Windows machine is available
 
-- [ ] H and D (heading and landmark navigation) match the macOS lists above.
-- [ ] Browse mode reads every role card, including its dates and tech labels.
+- [x] H and D (heading and landmark navigation) match the macOS lists above.
+- [x] Browse mode reads every role card, including its dates and tech labels.
 
 ### Display settings
 
-- [ ] 200% browser zoom at 1280 px wide: nothing overlaps or is cut off.
-- [ ] 400% browser zoom: one column, no sideways scrolling.
-- [ ] Windows Contrast themes (forced colors): all text readable, tiger visible, buttons and pills outlined, active nav underlined.
-- [ ] macOS Increase contrast: borders and footer text get stronger.
-- [ ] OS Reduce motion on: sections fade in without sliding; "Reduce motion" shows On.
+- [x] 200% browser zoom at 1280 px wide: nothing overlaps or is cut off.
+- [x] 400% browser zoom: one column, no sideways scrolling.
+- [x] Windows Contrast themes (forced colors): all text readable, tiger visible, buttons and pills outlined, active nav underlined.
+- [x] macOS Increase contrast: borders and footer text get stronger.
+- [x] OS Reduce motion on: sections fade in without sliding; "Reduce motion" shows On.
 
 ## Sign-off
 
 | Pass | Result | Notes | Initials / date |
 | ---- | ------ | ----- | --------------- |
-| Keyboard | | | |
-| VoiceOver macOS | | | |
-| VoiceOver iOS | | | |
-| TalkBack | | | |
-| NVDA | | | |
-| Display settings | | | |
+| Keyboard | Pass | | GH / 2026-11-19 |
+| VoiceOver macOS | Pass | | GH / 2026-11-19 |
+| VoiceOver iOS | Pass | | GH / 2026-11-19 |
+| TalkBack | Pass | | GH / 2026-11-19 |
+| NVDA | Pass | | GH / 2026-11-19 |
+| Display settings | Pass | | GH / 2026-11-19 |
+
+Phase 5 signed off by Garrett Head on 2026-11-19, together with real-device testing and the LinkedIn link-preview check.
