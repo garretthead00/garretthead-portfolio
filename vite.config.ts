@@ -33,6 +33,38 @@ const preloadDisplayFont = (): Plugin => ({
   },
 });
 
+/**
+ * GitHub Pages can't send headers, so the policy ships as a <meta> tag, in the
+ * build only (the dev server injects inline scripts). Inline styles stay
+ * allowed: Motion writes style attributes into the prerendered HTML.
+ */
+const contentSecurityPolicy = (): Plugin => ({
+  name: "content-security-policy",
+  apply: "build",
+  transformIndexHtml: () => [
+    {
+      tag: "meta",
+      attrs: {
+        "http-equiv": "Content-Security-Policy",
+        content: [
+          "default-src 'self'",
+          "script-src 'self'",
+          "style-src 'self' 'unsafe-inline'",
+          "img-src 'self'",
+          "font-src 'self'",
+          "connect-src 'self'",
+          "manifest-src 'self'",
+          "object-src 'none'",
+          "base-uri 'self'",
+          "form-action 'none'",
+          "upgrade-insecure-requests",
+        ].join("; "),
+      },
+      injectTo: "head-prepend",
+    },
+  ],
+});
+
 /** Writes the title, description and link-preview tags from `src/content`. */
 const siteHead = (): Plugin => ({
   name: "site-head",
@@ -46,6 +78,7 @@ export default defineConfig({
     react(),
     tailwindcss(),
     imagetools(),
+    contentSecurityPolicy(),
     siteHead(),
     preloadDisplayFont(),
   ],
