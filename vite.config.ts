@@ -2,6 +2,7 @@ import { defineConfig, type Plugin } from "vite";
 import tailwindcss from "@tailwindcss/vite";
 import react from "@vitejs/plugin-react";
 import { imagetools } from "vite-imagetools";
+import { headTags } from "./src/seo/headTags";
 
 const base = "/garretthead-portfolio/";
 
@@ -32,8 +33,20 @@ const preloadDisplayFont = (): Plugin => ({
   },
 });
 
+/** Writes the title, description and link-preview tags from `src/content`. */
+const siteHead = (): Plugin => ({
+  name: "site-head",
+  transformIndexHtml: () => headTags(),
+});
+
 // Served from https://garretthead00.github.io/garretthead-portfolio/
 export default defineConfig({
   base,
-  plugins: [react(), tailwindcss(), imagetools(), preloadDisplayFont()],
+  plugins: [
+    react(),
+    tailwindcss(),
+    imagetools(),
+    siteHead(),
+    preloadDisplayFont(),
+  ],
 });

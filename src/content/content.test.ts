@@ -1,8 +1,11 @@
+/// <reference types="node" />
+import { existsSync } from "node:fs";
 import { describe, expect, it } from "vitest";
 import * as content from "./index";
 import snapshot from "./resume.snapshot.json";
 
-const { profile, roles, sections, skillGroups, formatYearMonth } = content;
+const { profile, roles, sections, site, skillGroups, formatYearMonth } =
+  content;
 
 describe("résumé content contract", () => {
   it("lists exactly the five résumé roles, matching the snapshot", () => {
@@ -80,6 +83,33 @@ describe("résumé content contract", () => {
       ...skillGroups.map((g) => g.id),
     ];
     expect(new Set(ids).size).toBe(ids.length);
+  });
+});
+
+describe("page metadata", () => {
+  it("uses the live address as the canonical URL", () => {
+    expect(site.url).toBe(
+      "https://garretthead00.github.io/garretthead-portfolio/",
+    );
+  });
+
+  it("names Garrett and his current title in the page title", () => {
+    expect(site.title).toContain(profile.name);
+    expect(site.title).toContain(profile.title);
+  });
+
+  it("keeps the description to the length search results show", () => {
+    expect(site.description.length).toBeGreaterThanOrEqual(50);
+    expect(site.description.length).toBeLessThanOrEqual(160);
+  });
+
+  it("points the link preview at a 1200×630 image that exists", () => {
+    expect(site.shareImage).toMatchObject({ width: 1200, height: 630 });
+    const image = new URL(
+      `../../public/${site.shareImage.path}`,
+      import.meta.url,
+    );
+    expect(existsSync(image)).toBe(true);
   });
 });
 
