@@ -13,7 +13,7 @@ export const SiteHeader = ({ activeId }: SiteHeaderProps) => (
     <div className="container-page flex h-full items-center justify-between gap-4">
       <a
         href="#home"
-        className="flex items-center gap-3 text-white hover:text-white"
+        className="flex items-center gap-3 text-white hover:text-white pointer-coarse:min-h-11"
       >
         <Picture
           picture={tigerMark}
