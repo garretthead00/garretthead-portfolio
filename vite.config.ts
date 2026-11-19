@@ -57,7 +57,6 @@ const contentSecurityPolicy = (): Plugin => ({
           "object-src 'none'",
           "base-uri 'self'",
           "form-action 'none'",
-          "upgrade-insecure-requests",
         ].join("; "),
       },
       injectTo: "head-prepend",
