@@ -1,28 +1,15 @@
 import AxeBuilder from "@axe-core/playwright";
-import { expect, test, type Page } from "@playwright/test";
+import { expect, test } from "@playwright/test";
+import { desktop, phone, revealAll } from "./helpers";
 
 const wcagTags = ["wcag2a", "wcag2aa", "wcag21a", "wcag21aa", "wcag22aa"];
 
-const phone = { width: 390, height: 844 };
-const desktop = { width: 1440, height: 900 };
 const viewports = [
   { width: 320, height: 640 },
   phone,
   { width: 768, height: 1024 },
   desktop,
 ];
-
-/** Scrolls the page end to end so every Reveal has played before checking. */
-const revealAll = async (page: Page) => {
-  await page.evaluate(async () => {
-    for (let y = 0; y < document.body.scrollHeight; y += 300) {
-      window.scrollTo(0, y);
-      await new Promise((resolve) => setTimeout(resolve, 50));
-    }
-    window.scrollTo(0, 0);
-  });
-  await page.waitForTimeout(500);
-};
 
 for (const viewport of viewports) {
   test(`no WCAG 2.2 AA violations at ${viewport.width}px`, async ({ page }) => {
