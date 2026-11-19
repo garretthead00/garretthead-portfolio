@@ -1,0 +1,42 @@
+name: Live site check
+
+# Runs the smoke checks against the deployed site: after every deploy, weekly,
+# and on demand. A failed scheduled run emails the repository owner.
+on:
+  workflow_run:
+    workflows: [Build and deploy]
+    types: [completed]
+    branches: [main]
+  schedule:
+    - cron: "17 14 * * 1"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  smoke:
+    name: Smoke checks on the live site
+    if: github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+
+      - name: Set up Node
+        uses: actions/setup-node@v7
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Wait for GitHub Pages to publish the deploy
+        if: github.event_name == 'workflow_run'
+        run: sleep 120
+
+      - name: Smoke checks (Chrome)
+        env:
+          BASE_URL: https://garretthead00.github.io/garretthead-portfolio/
+        run: npx playwright test e2e/smoke.e2e.ts --project=chrome

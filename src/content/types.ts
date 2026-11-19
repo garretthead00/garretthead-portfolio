@@ -23,6 +23,16 @@ export interface Profile {
   socials: readonly SocialLink[];
 }
 
+/** Page metadata for search results and link previews. */
+export interface Site {
+  /** Canonical address, with a trailing slash. */
+  url: string;
+  title: string;
+  description: string;
+  /** Link-preview image in `public/`, 1200×630. */
+  shareImage: { path: string; width: number; height: number; alt: string };
+}
+
 export interface SkillGroup {
   id: string;
   name: string;
